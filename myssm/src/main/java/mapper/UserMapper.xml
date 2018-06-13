@@ -1,0 +1,131 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.UserMapper">
+
+    <!--===============================user===============================-->
+
+    <select id="findUserByName" parameterType="string" resultType="User">
+        SELECT * FROM user WHERE username=#{username}
+    </select>
+
+    <insert id="addUser" parameterType="User">
+        INSERT INTO user VALUES (#{username},#{password},#{email},#{code},#{active},#{balance},#{total_money},#{credit})
+    </insert>
+
+    <update id="activeUser" parameterType="string">
+        UPDATE user SET active=1 WHERE code=#{code}
+    </update>
+
+    <update id="resetPwd">
+        UPDATE user SET password=#{newPwd} WHERE username=#{username}
+    </update>
+
+    <update id="payUser">
+        UPDATE user SET balance=balance-#{delta},total_money=total_money+#{delta},credit=credit+#{delta} WHERE username=#{username}
+    </update>
+
+    <update id="addUserBalance">
+        UPDATE user SET balance=balance+#{delta} WHERE username=#{username}
+    </update>
+
+    <update id="addUserCredit">
+        UPDATE user SET credit=credit+#{delta} WHERE username=#{username}
+    </update>
+
+    <update id="stopUser">
+        UPDATE user SET active=0 WHERE username=#{username}
+    </update>
+
+    <!--===============================course===============================-->
+
+    <select id="findAllCourses" resultType="Course">
+        SELECT * FROM course
+    </select>
+
+    <select id="findCourseByCid" resultType="Course">
+        SELECT * FROM course WHERE cid=#{cid}
+    </select>
+
+    <!--===============================section===============================-->
+
+    <select id="findSectionByCid" resultType="Section">
+        SELECT * FROM section WHERE cid=#{cid}
+    </select>
+
+    <select id="findSectionBySid" resultType="Section">
+        SELECT * FROM section WHERE sid=#{sid}
+    </select>
+
+    <update id="addSelected">
+        UPDATE section SET selected = selected + #{num} WHERE sid = #{sid}
+    </update>
+
+    <!--===============================order===============================-->
+
+    <insert id="addOrder" parameterType="Order">
+        INSERT INTO order1 VALUES (null,#{username},#{cid},#{cname},#{eid},#{sid},#{srank},#{members},#{payed},#{canceled},#{returned},#{createTime},#{totalMoney},#{realMoney})
+    </insert>
+
+    <select id="findOrderByUsername" resultType="Order">
+        SELECT * FROM order1 WHERE username=#{username} ORDER BY createTime DESC ;
+    </select>
+
+    <update id="setOrderPayed">
+        UPDATE order1 set payed=1 WHERE oid=#{oid}
+    </update>
+
+    <update id="setOrderRealMoney">
+        UPDATE order1 set realMoney=#{realMoney} WHERE oid=#{oid}
+    </update>
+
+    <update id="setOrderReturned">
+        UPDATE order1 SET returned=1 WHERE oid=#{oid}
+    </update>
+
+    <select id="findOrderByOid" resultType="Order">
+        SELECT * FROM order1 WHERE oid=#{oid}
+    </select>
+
+    <select id="getAllOrders" resultType="Order">
+        SELECT * FROM order1
+    </select>
+
+    <update id="setOrderCanceled">
+        UPDATE order1 SET canceled=1 WHERE oid=#{oid}
+    </update>
+
+    <update id="setOrderSid">
+        UPDATE order1 SET sid=#{sid} WHERE oid=#{oid}
+    </update>
+
+    <!--===============================member===============================-->
+
+    <insert id="addMember" parameterType="Member">
+        INSERT into member VALUES (#{cid},#{sid},#{username},null)
+    </insert>
+
+    <delete id="delMemberBySid">
+        DELETE FROM member WHERE sid=#{sid} AND username=#{username}
+    </delete>
+
+    <delete id="delMemberByCid">
+        DELETE FROM member WHERE cid=#{cid} AND username=#{username}
+    </delete>
+
+    <select id="findMember" resultType="Member">
+        SELECT * FROM member WHERE cid=#{cid} AND username=#{username}
+    </select>
+
+    <select id="findMemberByUsername" resultType="Member">
+        SELECT * FROM member WHERE username=#{username}
+    </select>
+
+    <!--===============================inst===============================-->
+
+    <update id="addInstSales">
+        UPDATE education SET sales=sales+#{num} WHERE eid=#{eid}
+    </update>
+
+
+</mapper>

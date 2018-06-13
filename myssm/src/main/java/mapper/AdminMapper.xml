@@ -1,0 +1,75 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.AdminMapper">
+
+    <select id="getRegCount" resultType="int">
+        SELECT count(*) FROM education WHERE approved=0;
+    </select>
+
+    <select id="getModifyCount" resultType="int">
+        SELECT count(*) FROM education_modify WHERE approved=0;
+    </select>
+
+    <select id="findAllReg" resultType="Apply">
+        SELECT eid,name,location,info,approved,createTime FROM education WHERE approved=0 ORDER BY createTime asc;
+    </select>
+
+    <select id="findAllModify" resultType="Apply">
+        SELECT eid,name,location,info,approved,createTime FROM education_modify WHERE approved=0 ORDER BY createTime asc;
+    </select>
+
+    <select id="findRegByTime" resultType="Apply">
+        SELECT eid,name,location,info,approved,createTime FROM education WHERE createTime=#{createTime}
+    </select>
+
+    <select id="findModifyByTime" resultType="Apply">
+        SELECT eid,name,location,info,approved,createTime FROM education_modify WHERE createTime=#{createTime}
+    </select>
+
+    <update id="approveReg">
+        UPDATE education SET approved=#{approved} WHERE createTime=#{createTime}
+    </update>
+
+    <update id="approveModify">
+        UPDATE education_modify SET approved=#{approved} WHERE createTime=#{createTime}
+    </update>
+
+    <update id="updateInst" parameterType="Apply">
+        UPDATE education SET name=#{name},location=#{location},info=#{info} WHERE eid=#{eid}
+    </update>
+
+    <select id="findAllUsers" resultType="User">
+        SELECT * FROM user where active=1
+    </select>
+
+    <select id="findAllInsts" resultType="Institution">
+        SELECT * FROM education WHERE approved=1
+    </select>
+
+    <update id="emptyInstSales">
+        UPDATE education SET sales=0 WHERE eid=#{eid}
+    </update>
+
+    <update id="addInstIncome">
+        UPDATE education SET income=income+#{num} WHERE eid=#{eid}
+    </update>
+
+    <update id="addSysIncome">
+        UPDATE stat SET income=income+#{num}
+    </update>
+
+    <select id="getSysPayedNum" resultType="double">
+        SELECT sum(realMoney) from order1 WHERE payed=1
+    </select>
+
+    <select id="getSysReturnedNum" resultType="double">
+        SELECT sum(realMoney) FROM order1 WHERE returned=1
+    </select>
+
+    <select id="getSysIncome" resultType="double">
+        SELECT income FROM stat
+    </select>
+
+
+</mapper>

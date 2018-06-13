@@ -1,0 +1,102 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.InstMapper">
+
+    <!--========================================counter========================================-->
+
+    <select id="getEidCount" resultType="int">
+        SELECT num FROM counter
+    </select>
+
+    <update id="addEidCount">
+        UPDATE counter SET num=num+1
+    </update>
+
+    <!--========================================education========================================-->
+    
+    <insert id="addInst" parameterType="Institution">
+        INSERT into education VALUES (#{eid},#{name},#{password},#{location},#{info},#{approved},#{sales},#{income},#{createTime})
+    </insert>
+
+    <select id="findInstByEid" resultType="Institution">
+        SELECT * FROM education WHERE eid=#{eid}
+    </select>
+
+    <insert id="addInstModify" parameterType="Institution">
+        INSERT INTO education_modify VALUES (#{eid},#{name},#{location},#{info},#{approved},#{createTime})
+    </insert>
+
+    <!--========================================course========================================-->
+
+    <insert id="addCourse" parameterType="Course">
+        <selectKey keyProperty="cid" order="AFTER" resultType="int">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO course VALUES (null,#{eid},#{name},#{type},#{price},#{number},#{start_time},#{hours_weekly},#{weeks},#{detail})
+    </insert>
+
+    <select id="findCourseByEid" resultType="Course">
+        SELECT * FROM course WHERE eid=#{eid}
+    </select>
+
+    <!--========================================section========================================-->
+
+    <insert id="addSection" parameterType="Section">
+        INSERT INTO section VALUES (null,#{cid},#{teacher},#{location},#{selected},#{amount},#{rank})
+    </insert>
+
+    <!--========================================order========================================-->
+
+    <select id="findOrderCount" resultType="int">
+        SELECT count(*) FROM order1
+    </select>
+
+    <select id="findOrder" resultType="Order">
+        SELECT * FROM order1 limit #{offset},#{rows}
+    </select>
+
+    <insert id="addOrder" parameterType="Order">
+        INSERT INTO order2 VALUES (null,#{username},#{cid},#{cname},#{eid},#{sid},#{srank},#{members},#{createTime},#{totalMoney},#{realMoney})
+    </insert>
+
+    <select id="sumOfPayed" resultType="double">
+        SELECT ifnull(sum(realMoney),0) FROM order1 WHERE eid=#{eid} AND payed=1
+    </select>
+
+    <select id="sumOfReturned" resultType="double">
+        SELECT ifnull(sum(realMoney),0) FROM order1 WHERE eid=#{eid} AND returned=1
+    </select>
+
+    <select id="sumOfOffline" resultType="double">
+        SELECT ifnull(sum(realMoney),0) FROM order2 WHERE eid=#{eid}
+    </select>
+
+    <select id="getOrder1PayedCount" resultType="int">
+        SELECT count(*) FROM order1 WHERE payed=1 and eid=#{eid}
+    </select>
+
+    <select id="getOrder1ReturnedCount" resultType="int">
+        SELECT count(*) FROM order1 WHERE returned=1 and eid=#{eid}
+    </select>
+
+    <select id="getOrder2Count" resultType="int">
+        SELECT count(*) FROM order2 WHERE eid=#{eid}
+    </select>
+    <!--========================================user========================================-->
+
+    <select id="findUser" resultType="User">
+        SELECT * FROM user WHERE username=#{username}
+    </select>
+
+    <!--========================================member========================================-->
+
+    <select id="findMemberBySid" resultType="Member">
+        SELECT * FROM member WHERE sid=#{sid}
+    </select>
+
+    <update id="setMemberGrade">
+        UPDATE member SET grade=#{grade} WHERE cid=#{cid} AND username=#{username}
+    </update>
+
+</mapper>

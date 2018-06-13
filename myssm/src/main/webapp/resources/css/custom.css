@@ -1,0 +1,16 @@
+.login-body{
+    background: url("../img/login/bg1.jpg");
+
+}
+
+.login-form{
+    width:300px;
+    margin:250px auto;
+}
+label.error{
+    color:Red;
+}
+
+.form-control{
+    color: red;
+}
