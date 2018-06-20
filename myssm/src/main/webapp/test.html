@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*div{ background-color:red; transition:background-color 1s linear 0.2s;}*/
+        /*div:hover{ background-color:yellow;}*/
+        .nav_stand {
+            width: 176px;
+            height: 381px;
+            background: #38BCA4;
+            cursor: pointer;
+            float: left;
+            position: relative;
+        }
+
+        .nav_head {
+            color: white;
+            background-color: #31a894;
+            font-size: 20px;
+            font-weight: bold;/*字体粗细*/
+            height: 40px;
+            line-height: 40px;/*行高*/
+            text-indent: 20px;/*文本缩进*/
+            width: 176px;
+        }
+
+        .nav_stand dd{
+            margin: 0;
+            color: #fff;
+            font-size: 15px;
+            line-height: 30px;
+            text-indent: 20px;
+            display: block;
+            background:;
+        }
+
+
+
+        .nav_stand dd:hover {
+            color: #03a093;
+            background: #fff;
+        }
+
+        .nav_stand dd .nav_panel{
+            opacity: 0;
+            display: block;
+            position: absolute;
+            top:0;
+            left: 176px;
+            width: 0;
+            height: 381px;
+            transition: width,opacity 1s,1s ease,eas 0.5s,0.5s;
+            /*-webkit-transition: all 1.5s;*/
+            background-color: red;
+
+
+
+        }
+
+        .nav_stand dd:hover .nav_panel{
+            width: 684px;
+            opacity: 1;
+
+
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<div>
+    <div class="nav_stand">
+        <div class="nav_head">
+            <b>课程导航</b>
+        </div>
+        <dl>
+            <dd>
+                <a>小学辅导</a>
+                <div class="nav_panel"></div>
+            </dd>
+            <dd></dd>
+            <dd></dd>
+            <dd></dd>
+        </dl>
+    </div>
+</div>
+
+</body>
+</html>
