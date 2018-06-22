@@ -1,16 +1,86 @@
-.login-body{
-    background: url("../img/login/bg1.jpg");
+.nav_stand {
+    width: 176px;
+    height: 381px;
+    background: #38BCA4;
+    cursor: pointer;
+    float: left;
+    position: relative;
+}
+
+.nav_head {
+    color: white;
+    background-color: #31a894;
+    font-size: 20px;
+    font-weight: bold;/*字体粗细*/
+    height: 40px;
+    line-height: 40px;/*行高*/
+    text-indent: 20px;/*文本缩进*/
+    width: 176px;
+}
+
+.nav_stand>dl>dd{
+    margin: 0;
+    height: 40px;
+    display: block;
+    text-indent: 20px;
+    background: url(http://images.xdf.cn/cms20150819/zuixinban/images/index_bg.png) no-repeat 46px -35px;
+    transition: text-indent 0.5s ease 0s;
+}
+
+.nav_stand>dl>dd:hover {
+    background: #fff;
+    text-indent: 35px;
+}
+
+.nav_stand>dl>dd>a{
+     color: #fff;
+     font-size: 15px;
+     line-height: 40px;
+
+
+ }
+
+.nav_stand>dl>dd:hover>a{
+    color: #03a093;
 
 }
 
-.login-form{
-    width:300px;
-    margin:250px auto;
-}
-label.error{
-    color:Red;
+.nav_panel dd,dt{
+    font-size: 12px;
+    margin: 0;
+    display: block;
+    text-indent: 20px;
+    color: #31a894;
+    line-height: 23px;
 }
 
-.form-control{
-    color: red;
+
+.nav_panel a{
+    color: #b3b3b3;
+
+}
+.nav_panel a:hover{
+    color: #31a894;
+}
+
+.nav_panel span{
+    margin:0 15px;
+}
+
+.nav_stand dd .nav_panel{
+    display: none;
+    position: absolute;
+    top:0;
+    left: 176px;
+    width: 684px;
+    height: 381px;
+    background-color: rgba(0, 191, 255, 0.36);
+
+
+
+}
+
+.nav_stand dd:hover .nav_panel{
+    display: block;
+
 }
