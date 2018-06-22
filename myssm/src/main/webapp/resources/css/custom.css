@@ -23,7 +23,7 @@
     height: 40px;
     display: block;
     text-indent: 20px;
-    background: url(http://images.xdf.cn/cms20150819/zuixinban/images/index_bg.png) no-repeat 46px -35px;
+    /*background: url(http://images.xdf.cn/cms20150819/zuixinban/images/index_bg.png) no-repeat 46px -35px;*/
     transition: text-indent 0.5s ease 0s;
 }
 
@@ -57,6 +57,7 @@
 
 .nav_panel a{
     color: #b3b3b3;
+    text-decoration: none;
 
 }
 .nav_panel a:hover{
@@ -72,9 +73,10 @@
     position: absolute;
     top:0;
     left: 176px;
-    width: 684px;
+    width: 484px;
     height: 381px;
-    background-color: rgba(0, 191, 255, 0.36);
+    background-color: white;
+    z-index: 999;
 
 
 
@@ -82,5 +84,20 @@
 
 .nav_stand dd:hover .nav_panel{
     display: block;
+
+}
+
+.nav_stand>dl>dd>span{
+    font-size: 5px;
+    color: white;
+    float: right;
+    margin-top: 12px;
+    margin-right: 20px;
+}
+
+.nav_scn{
+    height: 381px;
+    float: left;
+    width: 800px;
 
 }
