@@ -10,7 +10,7 @@
     margin-left: 100px;
     width: 200px;
     height: 381px;
-    background: black;
+    background: #5d5d5d;
     cursor: pointer;
     float: left;
     position: relative;
@@ -396,17 +396,18 @@ body{
 
 .all_courses{
     margin-left: 100px;
-    height:450px;
+    height:400px;
     width:1250px;
     background: url("/resources/img/custom/likebg.jpg") no-repeat;
 }
 
 .courses_header{
+    margin-left: 100px;
     margin-top: 10px;
-    background-color: #e6e6e6;
+    margin-bottom: 10px;
+    background-color: transparent;
     width:1250px;
     height: 45px;
-    border-bottom: solid 2px #00bfff;
 }
 
 .courses_header a{
@@ -423,7 +424,6 @@ body{
     display: inline-block;
     height: 44px;
     width: 80px;
-    background-color: transparent;
     color: #797979;
     text-align: center;
     text-decoration: none;
@@ -435,13 +435,8 @@ body{
     display: inline-block;
     height: 44px;
     width: 80px;
-    text-align: center;
     text-decoration: none;
-    border-top: solid 2px #00bfff;
-    border-left: solid 1px #00bfff;
-    border-right: solid 1px #00bfff;
-    border-bottom: solid 2px white;
-    background-color: white;
+    text-align: center;
     color:#00bfff;
 }
 

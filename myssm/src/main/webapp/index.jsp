@@ -337,16 +337,18 @@
 </div>
 
 
+<div class="courses_header">
+    <span style="font-size: 25px;margin-left: 10px;line-height: 45px">热门课程</span>
+    <a class="a_active" style="margin-left: 50px">大学</a>
+    <a class="a_notactive">小学</a>
+    <a class="a_notactive">中学</a>
+    <a class="a_notactive">英语</a>
+    <a class="a_notactive">留学</a>
+</div>
+
 <div class="all_courses">
 
-    <div class="courses_header">
-        <span style="font-size: 20px;margin-left: 10px;line-height: 45px">热门课程</span>
-        <a class="a_active" style="margin-left: 50px">大学</a>
-        <a class="a_notactive">小学</a>
-        <a class="a_notactive">中学</a>
-        <a class="a_notactive">英语</a>
-        <a class="a_notactive">留学</a>
-    </div>
+
     <div class="all_left">
         <span class="font_vertical">精选课程</span>
     </div>
