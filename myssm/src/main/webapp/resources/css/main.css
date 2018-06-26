@@ -32,7 +32,7 @@
 .nav_stand>dl>dd>a{
     text-decoration: none;
     color: #fff;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 40px;
 
 
@@ -88,7 +88,7 @@
     color: white;
     float: left;
     line-height: 40px;
-    margin-left: 20px;
+    margin-left: 30px;
     margin-right: 10px;
     margin-top: -1px;
 }
@@ -244,6 +244,7 @@
 }
 
 .login_panel a{
+    cursor: pointer;
     display:inline-block;
     margin:0 10px;
     color: black;
@@ -257,23 +258,14 @@
 /*===========================================================*/
 .login_tip{
     float: left;
-    height:300px;
-    width: 250px;
-    margin: 40px 0 40px 20px;
+    height:280px;
+    width: 230px;
+    margin: 50px 0 50px 10px;
     background-color: #d8d8d8;
     text-align: center;
     padding-top: 15px;
 }
 
-.login_btn{
-     display: block;
-     background-color:#51bd6c;
-     color: white;
-     width: 150px;
-     height: 40px;
-     margin: 20px 50px 0 50px;
-
- }
 
 .login_btn{
     display: block;
@@ -281,7 +273,7 @@
     color: white;
     width: 150px;
     height: 40px;
-    margin: 35px 50px 0 50px;
+    margin: 35px 40px 0 40px;
 
 }
 

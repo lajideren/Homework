@@ -236,7 +236,7 @@
     </div>
 
     <div class="login_tip">
-        <h4 style="margin-bottom: 45px">马上学习精品课程</h4>
+        <h4 style="margin-bottom: 40px">马上学习精品课程</h4>
         <img style="width: 80px" src="<%=ctx%>/resources/img/custom/avatar.png">
         <button class="login_btn">登录</button>
     </div>
