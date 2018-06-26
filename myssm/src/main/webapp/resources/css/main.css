@@ -1,0 +1,291 @@
+.clear{
+    clear: both;
+}
+.mid_section{
+    background-color: #68777e;
+}
+
+.nav_stand {
+    z-index: 100;
+    margin-left: 100px;
+    width: 200px;
+    height: 381px;
+    background: black;
+    cursor: pointer;
+    float: left;
+    position: relative;
+}
+
+
+.nav_stand>dl>dd{
+    margin: 0;
+    height: 40px;
+    display: block;
+    transition: text-indent 0.5s ease 0s;
+}
+
+.nav_stand>dl>dd:hover {
+    background: #59afee;
+    text-indent: 10px;
+}
+
+.nav_stand>dl>dd>a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    line-height: 40px;
+
+
+}
+
+
+.nav_panel dd,dt{
+    font-size: 12px;
+    margin: 0;
+    display: block;
+    text-indent: 20px;
+    color: #51bd6c;
+    line-height: 23px;
+}
+
+
+.nav_panel a{
+    color: #b3b3b3;
+    text-decoration: none;
+
+}
+.nav_panel a:hover{
+    color: #51bd6c;
+}
+
+.nav_panel span{
+    margin:0 15px;
+}
+
+.nav_stand dd .nav_panel{
+    padding-top: 20px;
+    display: none;
+    position: absolute;
+    top:0;
+    left: 200px;
+    width: 484px;
+    height: 381px;
+    background-color: white;
+    z-index: 999;
+    border: solid 1px #b3b3b3;
+
+
+
+}
+
+.nav_stand dd:hover .nav_panel{
+    display: block;
+
+}
+
+.dd_span1{
+    font-size: 7px;
+    color: white;
+    float: left;
+    line-height: 40px;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: -1px;
+}
+
+.dd_span2{
+    font-size: 7px;
+    color: white;
+    float: right;
+    line-height: 40px;
+    margin-right: 30px;
+    margin-top: -2px;
+}
+
+.nav_stand dd:hover .dd_span2{
+    margin-right: 20px;
+    transition: margin-right 0.5s ease 0s;
+}
+
+
+
+
+.nav_scn{
+    height: 381px;
+    float: left;
+    width: 800px;
+}
+
+.carousel-inner .item{
+    height: 381px;
+    width: 800px;
+}
+
+
+
+/*===================================最上一栏===================================*/
+
+.top_header{
+    height: 70px;margin-bottom: 20px;padding-top: 15px;
+
+}
+
+.logo{
+    margin-left: 50px;
+    float: left;width:300px;height: 60px;
+    color: #51bd6c;
+}
+
+.title_font{
+    display: block;
+    float: left;
+    height: 60px;
+    text-indent: 50px;
+    font-size: 50px;
+}
+
+.slogan_font{
+    display: block;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 20px;
+    font-size: 19px;
+}
+
+
+
+.search{
+    float: right;height: 60px;
+    font-size: 0;
+}
+
+.searchbox{
+    padding: 0;margin: 15px 0;height: 35px;vertical-align: middle;
+    width: 280px;
+    border: solid 1px #51bd6c;
+    letter-spacing: 5px;
+    font-size: 15px;
+}
+.searchbtn{
+    padding: 0;margin: 0;vertical-align: middle;height: 35px;width: 50px;
+    border: none;
+    background-color: #51bd6c;
+    color: white;
+    font-size: 15px;
+    display: inline-block;
+}
+.nav_tool{
+    float: left;
+    height: 381px;
+    width: 300px;
+}
+
+.tool_header{
+    height: 100px;
+}
+
+.selector{
+    float: left;width: 60px;height: 30px;background-color: #eea236;border-radius: 15px;
+    margin:15px 0 15px 10px;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+    cursor:pointer ;
+    position: relative;
+}
+
+.city_panel{
+    position: absolute;
+    top: 30px;
+    height: 400px;
+    width: 600px;
+    background-color: #ffffff;
+    z-index: 100;
+    text-align: left;
+    display: none;
+
+}
+
+.city_panel span{
+    color: #59afee;
+}
+
+.city_panel dd{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.city_panel dl{
+    float: left;width: 47%;height: 100%;
+}
+
+.city_panel a{
+    display: inline-block;
+    margin-left: 13px;
+    color: #0f0f0f;
+    text-decoration: none;
+
+}
+.city_panel a:hover{
+    color: white;
+    background-color: #0e77af;
+}
+
+.login_panel{
+    margin-right: 50px;
+    color: black;
+    float: right;
+    height: 60px;
+    width: 150px;
+    text-align: center;
+    line-height: 60px;
+
+}
+
+.login_panel a{
+    display:inline-block;
+    margin:0 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.login_panel a:hover{
+    color: #51bd6c;
+}
+
+/*===========================================================*/
+.login_tip{
+    float: left;
+    height:300px;
+    width: 250px;
+    margin: 40px 0 40px 20px;
+    background-color: #d8d8d8;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.login_btn{
+     display: block;
+     background-color:#51bd6c;
+     color: white;
+     width: 150px;
+     height: 40px;
+     margin: 20px 50px 0 50px;
+
+ }
+
+.login_btn{
+    display: block;
+    background-color:#51bd6c;
+    color: white;
+    width: 150px;
+    height: 40px;
+    margin: 35px 50px 0 50px;
+
+}
+
+.login_btn:hover{
+    background-color: #64e985;
+
+}

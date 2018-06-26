@@ -10,6 +10,7 @@
 <%
     String ctx=request.getContextPath();
 %>
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -21,220 +22,9 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/bootstrap-3.3.5-dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/custom.css">
-    <style>
-        .nav_stand {
-            margin-left: 80px;
-            width: 176px;
-            height: 381px;
-            background: #59afee;
-            cursor: pointer;
-            float: left;
-            position: relative;
-        }
+    <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/bootstrap-3.3.5-dist/css/bootstrap.css"/>
 
-        .nav_head {
-            color: white;
-            background-color: #549bd6;
-            font-size: 20px;
-            font-weight: bold;/*字体粗细*/
-            height: 40px;
-            line-height: 40px;/*行高*/
-            text-indent: 20px;/*文本缩进*/
-            width: 176px;
-        }
-
-        .nav_stand>dl>dd{
-            margin: 0;
-            height: 40px;
-            display: block;
-            text-indent: 20px;
-            /*background: url(http://images.xdf.cn/cms20150819/zuixinban/images/index_bg.png) no-repeat 46px -35px;*/
-            transition: text-indent 0.5s ease 0s;
-        }
-
-        .nav_stand>dl>dd:hover {
-            background: #fff;
-            text-indent: 35px;
-        }
-
-        .nav_stand>dl>dd>a{
-            color: #fff;
-            font-size: 15px;
-            line-height: 40px;
-
-
-        }
-
-        .nav_stand>dl>dd:hover>a{
-            color: #59afee;
-
-        }
-
-        .nav_panel dd,dt{
-            font-size: 12px;
-            margin: 0;
-            display: block;
-            text-indent: 20px;
-            color: #59afee;
-            line-height: 23px;
-        }
-
-
-        .nav_panel a{
-            color: #b3b3b3;
-            text-decoration: none;
-
-        }
-        .nav_panel a:hover{
-            color: #59afee;
-        }
-
-        .nav_panel span{
-            margin:0 15px;
-        }
-
-        .nav_stand dd .nav_panel{
-            display: none;
-            position: absolute;
-            top:0;
-            left: 176px;
-            width: 484px;
-            height: 381px;
-            background-color: white;
-            z-index: 999;
-
-
-
-        }
-
-        .nav_stand dd:hover .nav_panel{
-            display: block;
-
-        }
-
-        .nav_stand>dl>dd>span{
-            font-size: 5px;
-            color: white;
-            float: right;
-            margin-top: 12px;
-            margin-right: 20px;
-        }
-
-        .nav_scn{
-            height: 381px;
-            float: left;
-            width: 700px;
-            margin-left: 10px;
-
-        }
-
-        .carousel-inner .item{
-            height: 381px;
-            width: 700px;
-        }
-    </style>
-
-    <style>
-        .selector{
-            float: left;width: 60px;height: 30px;background-color: #eea236;border-radius: 15px;
-            margin:35px 0 35px 10px;
-            text-align: center;
-            color: white;
-            line-height: 30px;
-            cursor:pointer ;
-            position: relative;
-        }
-
-        .city_panel{
-            position: absolute;
-            top: 30px;
-            height: 400px;
-            width: 600px;
-            background-color: #ffffff;
-            z-index: 100;
-            text-align: left;
-            display: none;
-
-        }
-
-        .city_panel span{
-            color: #59afee;
-        }
-
-        .city_panel dd{
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .city_panel dl{
-            float: left;width: 47%;height: 100%;
-        }
-
-        .city_panel a{
-             display: inline-block;
-             margin-left: 13px;
-             color: #0f0f0f;
-            text-decoration: none;
-
-         }
-        .city_panel a:hover{
-            color: white;
-            background-color: #0e77af;
-        }
-
-    </style>
-
-    <style>
-
-
-
-        .logo{
-            margin-left: 80px;float: left;width: 176px;height: 100px;
-            background-size: cover;
-            text-align: center;
-        }
-
-        .title_font{
-            margin-top: 10px;
-             font-size: 50px;
-             color: #59afee;
-             display: block;
-         }
-
-        .slogan_font{
-            margin-top: 10px;
-            font-size: 20px;
-            font-weight: normal;
-            color: #59afee;
-            display: block;
-        }
-
-
-
-        .search{
-            float: left;margin-left: 50px;height: 100px;
-            font-size: 0;
-        }
-
-        .searchbox{
-            padding: 0;margin: 25px 0;height: 50px;vertical-align: middle;
-            width: 600px;
-            border: solid 3px #59afee;
-            letter-spacing: 5px;
-            font-size: 15px;
-        }
-        .searchbtn{
-            padding: 0;margin: 0;vertical-align: middle;height: 50px;width: 100px;
-            border: none;
-            background-color: #59afee;
-            color: white;
-            letter-spacing: 5px;
-            font-size: 20px;
-            display: inline-block;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/main.css" />
 
     <script type="application/javascript">
         $(document).ready(function () {
@@ -260,7 +50,7 @@
 </head>
 <body>
 
-<div style="height: 100px;margin-bottom: 20px">
+<div class="top_header">
 
     <div class="logo">
         <span class="title_font glyphicon glyphicon-education"></span>
@@ -289,26 +79,32 @@
         </div>
     </div>
 
+    <div class="login_panel">
+        <a>登录</a>
+        |
+        <a>注册</a>
+    </div>
+
     <div class="search">
         <form>
             <input class="searchbox" type="text" placeholder="输入课程或班号">
-            <button class="searchbtn"><span style="font-size: 17px" class="glyphicon glyphicon-search"></span>搜索</button>
-
+            <button class="searchbtn"><span class="glyphicon glyphicon-search"></span></button>
         </form>
+    </div>
+
+    <div>
+
     </div>
 
 
 </div>
 
-<div >
+<div class="mid_section">
     <div class="nav_stand">
-        <div class="nav_head">
-            <b>课程导航</b>
-        </div>
-        <dl style="margin-top: 15px">
+        <dl style="margin-top: 40px">
             <dd>
-                <a>学前辅导</a>
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-book dd_span1"></span><a>学前辅导</a>
+                <span class="glyphicon glyphicon-chevron-right dd_span2" aria-hidden="true"></span>
                 <div class="nav_panel">
                     <dl>
                         <dt>幼儿</dt>
@@ -327,8 +123,9 @@
                 </div>
             </dd>
             <dd>
+                <span class="glyphicon glyphicon-compressed dd_span1"></span>
                 <a>小学辅导</a>
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-right dd_span2" aria-hidden="true"></span>
                 <div class="nav_panel">
                     <dl>
                         <dt>一年级</dt>
@@ -371,28 +168,33 @@
                 </div>
             </dd>
             <dd>
+                <span class="glyphicon glyphicon-list-alt dd_span1"></span>
                 <a>中学辅导</a>
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-right dd_span2" aria-hidden="true"></span>
                 <div class="nav_panel"></div>
             </dd>
             <dd>
+                <span class="glyphicon glyphicon-pencil dd_span1"></span>
                 <a>大学考试</a>
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-right dd_span2" aria-hidden="true"></span>
                 <div class="nav_panel"></div>
             </dd>
             <dd>
+                <span class="glyphicon glyphicon-globe dd_span1"></span>
                 <a>英语学习</a>
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-right dd_span2" aria-hidden="true"></span>
                 <div class="nav_panel"></div>
             </dd>
             <dd>
+                <span class="glyphicon glyphicon-plane dd_span1"></span>
                 <a>出国留学</a>
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-right dd_span2" aria-hidden="true"></span>
                 <div class="nav_panel"></div>
             </dd>
             <dd>
+                <span class="glyphicon glyphicon-picture dd_span1"></span>
                 <a>夏冬令营</a>
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-right dd_span2" aria-hidden="true"></span>
                 <div class="nav_panel"></div>
             </dd>
         </dl>
@@ -409,15 +211,15 @@
             <!-- 轮播（Carousel）项目 -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="<%=ctx%>/resources/img/custom/scn1.jpg" alt="First slide" style="width: 100%;height: 100%">
+                    <img src="<%=ctx%>/resources/img/custom/p1.jpg" alt="First slide" style="height: 100%;width: 100%">
                     <div class="carousel-caption">标题 1</div>
                 </div>
                 <div class="item">
-                    <img src="<%=ctx%>/resources/img/custom/scn2.jpg" alt="Second slide" style="width: 100%;height: 100%">
+                    <img src="<%=ctx%>/resources/img/custom/p2.jpg" alt="Second slide" style="height: 100%;width: 100%">
                     <div class="carousel-caption">标题 2</div>
                 </div>
                 <div class="item">
-                    <img src="<%=ctx%>/resources/img/custom/scn3.jpg" alt="Third slide" style="width: 100%;height: 100%">
+                    <img src="<%=ctx%>/resources/img/custom/p3.jpg" alt="Third slide" style="height: 100%;width: 100%">
                     <div class="carousel-caption">标题 3</div>
                 </div>
             </div>
@@ -432,6 +234,22 @@
             </a>
         </div>
     </div>
+
+    <div class="login_tip">
+        <h4 style="margin-bottom: 45px">马上学习精品课程</h4>
+        <img style="width: 80px" src="<%=ctx%>/resources/img/custom/avatar.png">
+        <button class="login_btn">登录</button>
+    </div>
+
+    <div class="clear"></div>
+
+    <%--<div class="nav_tool">--%>
+        <%--<div class="tool_header">--%>
+            <%--<div style="float: left;background-color: #0e77af;height: 100px;width: 100px">--%>
+
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
 </div>
 
 </body>
