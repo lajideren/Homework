@@ -42,6 +42,15 @@
                 $('#cur_city').text($(this).text());
                 $('.city_panel').css('display','none');
 
+            });
+
+            $('.courses_header a').click(function () {
+
+                $('.courses_header a').removeClass('a_active');
+                $('.courses_header a').addClass('a_notactive');
+                $(this).removeClass('a_notactive');
+                $(this).addClass('a_active');
+
             })
         });
     </script>
@@ -243,14 +252,178 @@
 
     <div class="clear"></div>
 
-    <%--<div class="nav_tool">--%>
-        <%--<div class="tool_header">--%>
-            <%--<div style="float: left;background-color: #0e77af;height: 100px;width: 100px">--%>
-
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
 </div>
+
+<div class="like_section">
+    <div>
+        <span style="font-size:25px">猜你喜欢</span>
+        <a class="refresh"><span class="glyphicon glyphicon-refresh"></span>换一批</a>
+
+    </div>
+    <div class="like_courses">
+        <ul class="like_list">
+            <li>
+                <div class="like_img">
+                    <img src="<%=ctx%>/resources/img/custom/c1.jpg">
+                </div>
+
+                <a>
+                    <p class="font_cname">三年级英语培优春季班</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="like_img">
+                    <img src="<%=ctx%>/resources/img/custom/c2.jpg">
+                </div>
+                <a>
+                    <p class="font_cname">三年级英语培优春季班</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="like_img">
+                    <img src="<%=ctx%>/resources/img/custom/c3.jpg">
+                </div>
+                <a>
+                    <p class="font_cname">三年级英语培优春季班</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="like_img">
+                    <img src="<%=ctx%>/resources/img/custom/c4.jpg">
+                </div>
+                <a>
+                    <p class="font_cname">三年级英语培优春季班</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="like_img">
+                    <img src="<%=ctx%>/resources/img/custom/c5.jpg">
+                </div>
+                <a>
+                    <p class="font_cname">三年级英语培优春季班</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="like_img">
+                    <img src="<%=ctx%>/resources/img/custom/c6.jpg">
+                </div>
+                <a>
+                    <p class="font_cname">三年级英语培优春季班</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price">￥318</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div class="all_courses">
+
+    <div class="courses_header">
+        <span style="font-size: 20px;margin-left: 10px;line-height: 45px">热门课程</span>
+        <a class="a_active" style="margin-left: 50px">大学</a>
+        <a class="a_notactive">小学</a>
+        <a class="a_notactive">中学</a>
+        <a class="a_notactive">英语</a>
+        <a class="a_notactive">留学</a>
+    </div>
+    <div class="all_left">
+        <span class="font_vertical">精选课程</span>
+    </div>
+
+    <div style="float:left;width: 1000px">
+        <ul class="all_list">
+            <li>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+
+<div style="height: 300px"></div>
 
 </body>
 </html>

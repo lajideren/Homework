@@ -133,7 +133,7 @@
 .logo{
     margin-left: 50px;
     float: left;width:300px;height: 60px;
-    color: #51bd6c;
+    color: #636363;
 }
 
 .title_font{
@@ -200,10 +200,11 @@
     top: 30px;
     height: 400px;
     width: 600px;
-    background-color: #ffffff;
+    background-color: white;
     z-index: 100;
     text-align: left;
     display: none;
+    border: solid 1px #d8d8d8;
 
 }
 
@@ -258,12 +259,12 @@
 /*===========================================================*/
 .login_tip{
     float: left;
+    background-color: #f1f1f1;
     height:280px;
     width: 230px;
-    margin: 50px 0 50px 10px;
-    background-color: #d8d8d8;
+    margin: 50px 0 50px 0;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 35px;
 }
 
 
@@ -279,5 +280,225 @@
 
 .login_btn:hover{
     background-color: #64e985;
+
+}
+
+/*=============================like courses==============================*/
+.like_section{
+    overflow: hidden;
+    height: 352px;
+    margin-top: 40px;
+    /*background: url(/resources/img/custom/likebg.jpg) no-repeat;*/
+    margin-left: 100px;
+
+}
+
+
+
+.like_courses{
+    float: left;
+    margin-top: 10px;
+}
+
+.like_list{
+    width: 1400px;
+    height: 352px;
+
+}
+
+.like_list li{
+    opacity: 0.8;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+    width: 200px;
+    height: 270px;
+    border: 1px solid #d8d8d8;
+    background-color: white;
+}
+
+.like_img{
+    width:200px ;
+    height: 150px;
+    overflow: hidden;
+}
+
+.like_list li img{
+
+    width: 200px;
+    height: 150px;
+    transform: scale(1.0);
+}
+
+.like_list li:hover img{
+    -webkit-transform: scale(1.20);
+}
+.like_list li a{
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.like_list li:hover{
+    box-shadow: 2px 2px 2px #888888;
+    cursor: pointer;
+}
+
+.font_cname{
+    font-size: 15px;
+    color: black;
+}
+
+.font_info{
+    font-size: 13px;
+    color: #b3b3b3;
+}
+
+.font_price{
+    font-size: 17px;
+    color: red;
+}
+
+
+.like_list a{
+    text-decoration: none;
+}
+
+.refresh{
+    text-decoration: none;
+    color: black;
+    float: right;
+    font-size: 17px;
+    margin-right: 100px;
+    margin-top: 10px;
+}
+
+.refresh:hover{
+    color:#29aeb3;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p{
+    margin-bottom: 5px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+body{
+    background-color: #f4f4f4;
+}
+
+/*=============================all courses==============================*/
+
+.all_courses{
+    margin-left: 100px;
+    height:450px;
+    width:1250px;
+    background: url("/resources/img/custom/likebg.jpg") no-repeat;
+}
+
+.courses_header{
+    margin-top: 10px;
+    background-color: #e6e6e6;
+    width:1250px;
+    height: 45px;
+    border-bottom: solid 2px #00bfff;
+}
+
+.courses_header a{
+    text-decoration: none;
+}
+
+.courses_header a:hover{
+    cursor: pointer;
+}
+
+.a_notactive{
+    line-height: 45px;
+    font-size: 15px;
+    display: inline-block;
+    height: 44px;
+    width: 80px;
+    background-color: transparent;
+    color: #797979;
+    text-align: center;
+    text-decoration: none;
+}
+
+.a_active{
+    line-height: 45px;
+    font-size: 15px;
+    display: inline-block;
+    height: 44px;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+    border-top: solid 2px #00bfff;
+    border-left: solid 1px #00bfff;
+    border-right: solid 1px #00bfff;
+    border-bottom: solid 2px white;
+    background-color: white;
+    color:#00bfff;
+}
+
+.all_left{
+    float: left;height: 400px;width: 250px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.all_list li{
+    opacity: 0.9;
+    float: left;
+    margin-right: 30px;
+    margin-top: 20px;
+    width: 220px;
+    height: 160px;
+    border: 1px solid #d8d8d8;
+    background-color: white;
+    transition: opacity 0.5s ease 0s ;
+}
+
+.all_list li a{
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 30px;
+    padding-left: 30px;
+
+}
+
+.all_list li:hover{
+    opacity: 1;
+    box-shadow: 2px 2px 2px #888888;
+    cursor: pointer;
+
+}
+
+.font_cname1{
+    font-size: 16px;
+    color: black;
+}
+
+.font_info1{
+    font-size: 13px;
+    color: #b3b3b3;
+}
+
+.font_price1{
+    font-size: 17px;
+    color: red;
+}
+
+.font_vertical{
+    display: block;
+    height: 180px;
+    width: 50px;
+    margin:50px auto;
+    font-size: 50px;
+    color: white;
 
 }
