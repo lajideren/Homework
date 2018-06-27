@@ -6,3 +6,4 @@ myssm/.idea
 myssm/out
 myssm/target
 *.iml
+myssm/src/main/webapp/resources/img
