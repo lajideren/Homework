@@ -256,9 +256,8 @@
 
 <div class="like_section">
     <div>
-        <span style="font-size:25px">猜你喜欢</span>
+        <span class="font_title">猜你喜欢</span>
         <a class="refresh"><span class="glyphicon glyphicon-refresh"></span>换一批</a>
-
     </div>
     <div class="like_courses">
         <ul class="like_list">
@@ -269,161 +268,163 @@
 
                 <a>
                     <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price">￥318</p>
+                    <p class="font_info">课程简介：轻松愉快的氛围中培养孩子英语学习兴趣，进一步习得语言知识，积累英语语感，提高语言能力</p>
                 </a>
             </li>
             <li>
                 <div class="like_img">
                     <img src="<%=ctx%>/resources/img/custom/c2.jpg">
                 </div>
+
                 <a>
                     <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price">￥318</p>
+                    <p class="font_info">课程简介：通过深入浅出的讲解帮助学员在初中开始阶段占得学习先机，快速完成学习转型。享受独到的优能中学课程服务体系。严格的考勤管理，以学员为中心的课堂管理机制，针对性的课后训练。更多的增值服务等待学员家长来亲身体验</p>
                 </a>
             </li>
             <li>
                 <div class="like_img">
                     <img src="<%=ctx%>/resources/img/custom/c3.jpg">
                 </div>
+
                 <a>
                     <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price">￥318</p>
+                    <p class="font_info">课程简介：以学员为中心的课堂管理机制，针对性的课后训练。更多的增值服务等待学员家长来亲身体验</p>
                 </a>
             </li>
             <li>
                 <div class="like_img">
                     <img src="<%=ctx%>/resources/img/custom/c4.jpg">
                 </div>
+
                 <a>
                     <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price">￥318</p>
+                    <p class="font_info">课程简介：以学员为中心的课堂管理机制，针对性的课后训练。更多的增值服务等待学员家长来亲身体验</p>
                 </a>
             </li>
             <li>
                 <div class="like_img">
                     <img src="<%=ctx%>/resources/img/custom/c5.jpg">
                 </div>
+
                 <a>
                     <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price">￥318</p>
+                    <p class="font_info">课程简介：以学员为中心的课堂管理机制，针对性的课后训练。更多的增值服务等待学员家长来亲身体验</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div class="all_section">
+    <div>
+        <span class="font_title">学前辅导</span>
+        <a class="a_active" style="margin-left: 50px">幼儿</a>
+        <a class="a_notactive">幼儿多元智能</a>
+        <span class="refresh">查看全部>></span>
+    </div>
+    <div class="all_courses">
+        <ul class="all_list">
+            <li>
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c7.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
                 </a>
             </li>
             <li>
-                <div class="like_img">
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c8.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c9.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c10.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="all_img">
                     <img src="<%=ctx%>/resources/img/custom/c6.jpg">
                 </div>
                 <a>
-                    <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price">￥318</p>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
                 </a>
             </li>
-
+            <li>
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c1.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c2.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c3.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
         </ul>
     </div>
-
-
-</div>
-
-
-<div class="courses_header">
-    <span style="font-size: 25px;margin-left: 10px;line-height: 45px">热门课程</span>
-    <a class="a_active" style="margin-left: 50px">大学</a>
-    <a class="a_notactive">小学</a>
-    <a class="a_notactive">中学</a>
-    <a class="a_notactive">英语</a>
-    <a class="a_notactive">留学</a>
-</div>
-
-<div class="all_courses">
-
-
-    <div class="all_left">
-        <span class="font_vertical">精选课程</span>
-    </div>
-
-    <div style="float:left;width: 1000px">
-        <ul class="all_list">
-            <li>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_info1"><span style="margin-right: 5px" class="glyphicon glyphicon-time"></span>2017-9-24至2018-9-24</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-
-
+    <div class="all_right">
+        <p class="rank_title"><span class="mark_line">|</span>热门排行</p>
+        <ul class="rank_list">
+            <li><span class="rankn rank1">1</span><a>三年级英语培优春季班</a></li>
+            <li><span class="rankn rank2">2</span><a>三年级英语培优春季班</a></li>
+            <li><span class="rankn rank3">3</span><a>三年级英语培优春季班</a></li>
+            <li><span class="rankn rank_other">4</span><a>三年级英语培优春季班</a></li>
+            <li><span class="rankn rank_other">5</span><a>三年级英语培优春季班</a></li>
+            <li><span class="rankn rank_other">6</span><a>三年级英语培优春季班</a></li>
+            <li><span class="rankn rank_other">7</span><a>三年级英语培优春季班</a></li>
+            <li><span class="rankn rank_other">8</span><a>三年级英语培优春季班</a></li>
         </ul>
     </div>
 </div>
+
 
 <div style="height: 300px"></div>
 

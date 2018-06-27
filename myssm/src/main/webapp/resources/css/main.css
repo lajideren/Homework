@@ -287,7 +287,7 @@
 .like_section{
     overflow: hidden;
     height: 352px;
-    margin-top: 40px;
+    margin-top: 50px;
     /*background: url(/resources/img/custom/likebg.jpg) no-repeat;*/
     margin-left: 100px;
 
@@ -297,7 +297,6 @@
 
 .like_courses{
     float: left;
-    margin-top: 10px;
 }
 
 .like_list{
@@ -307,27 +306,28 @@
 }
 
 .like_list li{
-    opacity: 0.8;
-    margin-right: 10px;
+    margin-right: 14px;
     margin-bottom: 10px;
     float: left;
-    width: 200px;
-    height: 270px;
+    width: 235px;
+    height: 300px;
     border: 1px solid #d8d8d8;
     background-color: white;
+    overflow: hidden;
 }
 
 .like_img{
-    width:200px ;
-    height: 150px;
+    width:235px ;
+    height: 180px;
     overflow: hidden;
 }
 
 .like_list li img{
 
-    width: 200px;
-    height: 150px;
+    width: 235px;
+    height: 180px;
     transform: scale(1.0);
+
 }
 
 .like_list li:hover img{
@@ -337,11 +337,18 @@
     display: inline-block;
     padding-top: 10px;
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 .like_list li:hover{
     box-shadow: 2px 2px 2px #888888;
     cursor: pointer;
+}
+
+.font_title{
+    display: inline-block;
+    font-size:25px;
+    margin-bottom: 10px;
 }
 
 .font_cname{
@@ -350,8 +357,12 @@
 }
 
 .font_info{
-    font-size: 13px;
-    color: #b3b3b3;
+    font-size: 11px;
+    color: #878787;
+}
+
+.font_info span{
+    margin-right: 5px;
 }
 
 .font_price{
@@ -362,15 +373,17 @@
 
 .like_list a{
     text-decoration: none;
+    height: 20px;
+    line-height: 20px;
 }
 
 .refresh{
     text-decoration: none;
-    color: black;
+    color: #797979;
     float: right;
-    font-size: 17px;
-    margin-right: 100px;
-    margin-top: 10px;
+    font-size: 15px;
+    margin-right: 110px;
+    margin-top: 15px;
 }
 
 .refresh:hover{
@@ -394,27 +407,28 @@ body{
 
 /*=============================all courses==============================*/
 
+.all_section{
+    overflow: hidden;
+    height: 600px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
 .all_courses{
-    margin-left: 100px;
-    height:400px;
-    width:1250px;
-    background: url("/resources/img/custom/likebg.jpg") no-repeat;
+    float: left;
 }
 
-.courses_header{
-    margin-left: 100px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: transparent;
-    width:1250px;
-    height: 45px;
+.all_list{
+    width: 990px;
+    height: 600px;
 }
 
-.courses_header a{
+
+.all_section a{
     text-decoration: none;
 }
 
-.courses_header a:hover{
+.all_list a:hover{
     cursor: pointer;
 }
 
@@ -423,7 +437,7 @@ body{
     font-size: 15px;
     display: inline-block;
     height: 44px;
-    width: 80px;
+    width: 100px;
     color: #797979;
     text-align: center;
     text-decoration: none;
@@ -434,35 +448,54 @@ body{
     font-size: 15px;
     display: inline-block;
     height: 44px;
-    width: 80px;
+    width: 100px;
     text-decoration: none;
     text-align: center;
     color:#00bfff;
 }
 
-.all_left{
-    float: left;height: 400px;width: 250px;
-    overflow: hidden;
-    background: transparent;
-}
+
+
+
 
 .all_list li{
-    opacity: 0.9;
+    opacity: 0.95;
     float: left;
-    margin-right: 30px;
-    margin-top: 20px;
+    margin-right: 23px;
+    margin-bottom: 20px;
     width: 220px;
-    height: 160px;
+    height: 190px;
     border: 1px solid #d8d8d8;
     background-color: white;
     transition: opacity 0.5s ease 0s ;
+    overflow: hidden;
+}
+
+.all_img{
+    width:220px ;
+    height: 130px;
+    overflow: hidden;
+}
+
+.all_list li img{
+
+    width: 220px;
+    height: 130px;
+    transform: scale(1.0);
+
+}
+
+.all_list li:hover img {
+    -webkit-transform: scale(1.20);
 }
 
 .all_list li a{
+    width: 220px;
     text-decoration: none;
     display: inline-block;
-    padding-top: 30px;
-    padding-left: 30px;
+    padding-top: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
 
 }
 
@@ -474,26 +507,80 @@ body{
 }
 
 .font_cname1{
-    font-size: 16px;
+    font-size: 14px;
     color: black;
 }
 
 .font_info1{
-    font-size: 13px;
+    float: left;
+    font-size: 11px;
     color: #b3b3b3;
 }
 
 .font_price1{
-    font-size: 17px;
+    float: right;
+    font-size: 11px;
     color: red;
 }
 
-.font_vertical{
-    display: block;
-    height: 180px;
-    width: 50px;
-    margin:50px auto;
-    font-size: 50px;
-    color: white;
+.all_right{
+    float: left;height: 400px;width: 240px;
+    overflow: hidden;
+    background: white;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+.rank_title{
+    font-size: 20px;border-bottom: solid 1px #c4c4c4
+}
+
+.mark_line{
+    color: #64e985;margin-right: 5px;
+    font-weight: 900;
+}
+
+.rank_list{
+    display: block;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+
+.rank_list a {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    color: black;
+}
+
+.rankn{
+    margin-right: 5px;
+    margin-top: -3px;
+    text-align: center;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+    vertical-align: middle;
+    border-radius: 4px;
+    color: white;
+}
+
+.rank1{
+    background-color: #ff6616;
+}
+
+.rank2{
+    background-color: #ff951d;
+}
+
+.rank3{
+    background-color: #ffd526;
+}
+
+.rank_other{
+    background-color: #b5b5b5;
 }
