@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import po.*;
 import service.AdminService;
 import service.InstService;
-import service.UserService;
+import service.CourseService;
 import util.NumberUtil;
 
 import java.sql.Date;
@@ -20,7 +20,7 @@ public class test {
 ////        System.out.println(adminService.getRegCount());
 ////        System.out.println(adminService.getModifyCount());
 //
-//        List<Apply> applies1=adminService.findAllReg();
+//        List<Course> applies1=CourseService.findPrimaryCourse();
 //        List<Apply> applies2=adminService.findAllModify();
 //
 //        for(Apply apply:applies1){
