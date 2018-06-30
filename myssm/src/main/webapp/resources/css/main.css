@@ -123,138 +123,7 @@
 
 
 
-/*===================================最上一栏===================================*/
 
-.top_header{
-    height: 70px;margin-bottom: 20px;padding-top: 15px;
-
-}
-
-.logo{
-    margin-left: 50px;
-    float: left;width:300px;height: 60px;
-    color: #636363;
-}
-
-.title_font{
-    display: block;
-    float: left;
-    height: 60px;
-    text-indent: 50px;
-    font-size: 50px;
-}
-
-.slogan_font{
-    display: block;
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    margin-left: 20px;
-    font-size: 19px;
-}
-
-
-
-.search{
-    float: right;height: 60px;
-    font-size: 0;
-}
-
-.searchbox{
-    padding: 0;margin: 15px 0;height: 35px;vertical-align: middle;
-    width: 280px;
-    border: solid 1px #51bd6c;
-    letter-spacing: 5px;
-    font-size: 15px;
-}
-.searchbtn{
-    padding: 0;margin: 0;vertical-align: middle;height: 35px;width: 50px;
-    border: none;
-    background-color: #51bd6c;
-    color: white;
-    font-size: 15px;
-    display: inline-block;
-}
-.nav_tool{
-    float: left;
-    height: 381px;
-    width: 300px;
-}
-
-.tool_header{
-    height: 100px;
-}
-
-.selector{
-    float: left;width: 60px;height: 30px;background-color: #eea236;border-radius: 15px;
-    margin:15px 0 15px 10px;
-    text-align: center;
-    color: white;
-    line-height: 30px;
-    cursor:pointer ;
-    position: relative;
-}
-
-.city_panel{
-    position: absolute;
-    top: 30px;
-    height: 400px;
-    width: 600px;
-    background-color: white;
-    z-index: 100;
-    text-align: left;
-    display: none;
-    border: solid 1px #d8d8d8;
-
-}
-
-.city_panel span{
-    color: #59afee;
-}
-
-.city_panel dd{
-    margin-left: 20px;
-    margin-top: 10px;
-}
-
-.city_panel dl{
-    float: left;width: 47%;height: 100%;
-}
-
-.city_panel a{
-    display: inline-block;
-    margin-left: 13px;
-    color: #0f0f0f;
-    text-decoration: none;
-
-}
-.city_panel a:hover{
-    color: white;
-    background-color: #0e77af;
-}
-
-.login_panel{
-    margin-right: 50px;
-    color: black;
-    float: right;
-    height: 60px;
-    width: 150px;
-    text-align: center;
-    line-height: 60px;
-
-}
-
-.login_panel a{
-    cursor: pointer;
-    display:inline-block;
-    margin:0 10px;
-    color: black;
-    text-decoration: none;
-}
-
-.login_panel a:hover{
-    color: #51bd6c;
-}
 
 /*===========================================================*/
 .login_tip{
@@ -401,9 +270,7 @@ ul{
     padding: 0;
 }
 
-body{
-    background-color: #f4f4f4;
-}
+
 
 /*=============================all courses==============================*/
 
@@ -584,3 +451,10 @@ body{
 .rank_other{
     background-color: #b5b5b5;
 }
+
+
+/*=========================================course.jsp=============================================*/
+/*=========================================course.jsp=============================================*/
+/*=========================================course.jsp=============================================*/
+/*=========================================course.jsp=============================================*/
+

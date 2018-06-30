@@ -1,0 +1,144 @@
+
+body {
+    background-color: #f4f4f4;
+}
+
+
+/*===================================最上一栏===================================*/
+
+.top_header{
+    height: 50px;
+    background-color: #252731;
+}
+
+.logo{
+    margin-left: 50px;
+    float: left;width:300px;height: 50px;
+    color: #e1e1e1;
+}
+
+.title_font{
+    display: block;
+    float: left;
+    height: 50px;
+    text-indent: 50px;
+    font-size: 35px;
+    line-height: 50px;
+}
+
+.slogan_font{
+    display: block;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 20px;
+    font-size: 19px;
+    text-decoration: none;
+    color: #e1e1e1;
+}
+
+.slogan_font:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+
+.search{
+    float: right;height: 50px;
+    font-size: 0;
+}
+
+.searchbox{
+    padding: 0;margin: 8px 0;height: 34px;vertical-align: middle;
+    width: 280px;
+    letter-spacing: 5px;
+    font-size: 15px;
+}
+.searchbtn{
+    padding: 0;margin: 0;vertical-align: middle;height: 34px;width: 34px;
+    border: none;
+    background-color: #51bd6c;
+    color: white;
+    font-size: 15px;
+    display: inline-block;
+}
+.nav_tool{
+    float: left;
+    height: 381px;
+    width: 300px;
+}
+
+
+.selector{
+    float: left;width: 60px;height: 26px;background-color: #eea236;border-radius: 15px;
+    margin:12px 0 12px 10px;
+    text-align: center;
+    color: white;
+    line-height: 26px;
+    cursor:pointer ;
+    position: relative;
+}
+
+.city_panel{
+    position: absolute;
+    top: 26px;
+    height: 310px;
+    width: 800px;
+    background-color: white;
+    z-index: 999;
+    text-align: left;
+    display: none;
+    border: solid 1px #d8d8d8;
+
+}
+
+.city_panel span{
+    color: #59afee;
+}
+
+.city_panel dd{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.city_panel dl{
+    float: left;width: 49%;height: 100%;
+}
+
+.city_panel a{
+    display: inline-block;
+    margin-left: 13px;
+    color: #4f4f4f;
+    text-decoration: none;
+
+}
+.city_panel a:hover{
+    color: white;
+    background-color: #0e77af;
+}
+
+.login_panel{
+    margin-right: 50px;
+    color: whitesmoke;
+    float: right;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    line-height: 50px;
+
+}
+
+.login_panel a{
+    cursor: pointer;
+    display:inline-block;
+    margin:0 10px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.login_panel a:hover{
+    color: #51bd6c;
+}
+
+
