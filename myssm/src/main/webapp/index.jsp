@@ -60,7 +60,7 @@
 </head>
 <body>
 
-<div class="top_header">
+<div class="top_header" >
 
     <div class="logo">
         <span class="title_font glyphicon glyphicon-education"></span>
@@ -118,8 +118,8 @@
 </div>
 
 <div class="mid_section">
-    <div class="nav_stand">
-        <dl style="margin-top: 40px">
+    <div class="nav_stand" >
+        <dl>
             <dd>
                 <span class="glyphicon glyphicon-book dd_span1"></span><a>学前辅导</a>
                 <span class="glyphicon glyphicon-chevron-right dd_span2" aria-hidden="true"></span>
@@ -229,15 +229,15 @@
             <!-- 轮播（Carousel）项目 -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="<%=ctx%>/resources/img/custom/p1.jpg" alt="First slide" style="height: 100%;width: 100%">
+                    <img src="<%=ctx%>/resources/img/custom/p1.jpg" alt="First slide">
                     <div class="carousel-caption">标题 1</div>
                 </div>
                 <div class="item">
-                    <img src="<%=ctx%>/resources/img/custom/p2.jpg" alt="Second slide" style="height: 100%;width: 100%">
+                    <img src="<%=ctx%>/resources/img/custom/p2.jpg" alt="Second slide">
                     <div class="carousel-caption">标题 2</div>
                 </div>
                 <div class="item">
-                    <img src="<%=ctx%>/resources/img/custom/p3.jpg" alt="Third slide" style="height: 100%;width: 100%">
+                    <img src="<%=ctx%>/resources/img/custom/p3.jpg" alt="Third slide">
                     <div class="carousel-caption">标题 3</div>
                 </div>
             </div>
@@ -253,11 +253,11 @@
         </div>
     </div>
 
-    <div class="login_tip">
-        <h4 style="margin-bottom: 40px">马上学习精品课程</h4>
-        <img style="width: 80px" src="<%=ctx%>/resources/img/custom/avatar.png">
-        <button class="login_btn">登录</button>
-    </div>
+    <%--<div class="login_tip">--%>
+        <%--<h4 style="margin-bottom: 40px">马上学习精品课程</h4>--%>
+        <%--<img style="width: 80px" src="<%=ctx%>/resources/img/custom/avatar.png">--%>
+        <%--<button class="login_btn">登录</button>--%>
+    <%--</div>--%>
 
     <div class="clear"></div>
 

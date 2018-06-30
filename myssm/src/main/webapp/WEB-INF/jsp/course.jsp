@@ -66,7 +66,7 @@
 
     <div class="logo">
         <span class="title_font glyphicon glyphicon-education"></span>
-        <a href="http://localhost:8080/index.jsp" class="slogan_font">Training College</a>
+        <span class="slogan_font">Training College</span>
     </div>
 
     <div class="selector">
