@@ -53,22 +53,22 @@
     margin: 0;
     display: block;
     text-indent: 20px;
-    color: #51bd6c;
+    color: #2b7bee;
     line-height: 23px;
 }
 
 
 .nav_panel a{
-    color: #b3b3b3;
+    color: #8a8a8a;
     text-decoration: none;
 
 }
 .nav_panel a:hover{
-    color: #51bd6c;
+    color: #2d81f9;
 }
 
 .nav_panel span{
-    margin:0 15px;
+    margin:0 10px;
 }
 
 
@@ -78,9 +78,9 @@
     position: absolute;
     top:0;
     left: 180px;
-    width: 484px;
+    width: 670px;
     height: 381px;
-    background-color: white;
+    background-color: #f6f6f6;
     z-index: 999;
     border: solid 1px #b3b3b3;
 
@@ -308,20 +308,11 @@ ul{
 }
 
 .all_list{
-    width: 990px;
     height: 600px;
 }
 
 
-.all_section a{
-    text-decoration: none;
-}
-
-.all_list a:hover{
-    cursor: pointer;
-}
-
-.a_notactive{
+.all_section>div>a{
     line-height: 45px;
     font-size: 15px;
     display: inline-block;
@@ -329,8 +320,22 @@ ul{
     width: 100px;
     color: #797979;
     text-align: center;
+
+}
+
+.all_section>div>a:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: #3692e3;
+
+}
+
+.all_list a:hover{
+    cursor: pointer;
     text-decoration: none;
 }
+
+
 
 .a_active{
     line-height: 45px;
@@ -350,25 +355,25 @@ ul{
 .all_list li{
     opacity: 0.95;
     float: left;
-    margin-right: 23px;
+    margin-right: 21px;
     margin-bottom: 20px;
-    width: 220px;
-    height: 190px;
+    width: 230px;
+    height: 210px;
     background-color: white;
     transition: opacity 0.5s ease 0s ;
     overflow: hidden;
 }
 
 .all_img{
-    width:220px ;
-    height: 130px;
+    width:230px ;
+    height: 150px;
     overflow: hidden;
 }
 
 .all_list li img{
 
-    width: 220px;
-    height: 130px;
+    width: 230px;
+    height: 150px;
     transform: scale(1.0);
 
 }

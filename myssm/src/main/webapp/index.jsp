@@ -45,14 +45,7 @@
 
             });
 
-            $('.courses_header a').click(function () {
 
-                $('.courses_header a').removeClass('a_active');
-                $('.courses_header a').addClass('a_notactive');
-                $(this).removeClass('a_notactive');
-                $(this).addClass('a_active');
-
-            })
         });
     </script>
 
@@ -189,7 +182,93 @@
                 <span class="glyphicon glyphicon-list-alt dd_span1"></span>
                 <a>中学辅导</a>
                 <span class="glyphicon glyphicon-chevron-right dd_span2" aria-hidden="true"></span>
-                <div class="nav_panel"></div>
+                <div class="nav_panel">
+                    <dl>
+                        <dt>初一</dt>
+                        <dd>
+                            <a>语文</a><span>|</span>
+                            <a>数学</a><span>|</span>
+                            <a>英语</a><span>|</span>
+                            <a>物理</a><span>|</span>
+                            <a>化学</a><span>|</span>
+                            <a>生物</a><span>|</span>
+                            <a>政治</a><span>|</span>
+                            <a>历史</a><span>|</span>
+                            <a>地理</a><span>|</span>
+                            <a>科学</a><span>|</span>
+                        </dd>
+                        <dt>初二</dt>
+                        <dd>
+                            <a>语文</a><span>|</span>
+                            <a>数学</a><span>|</span>
+                            <a>英语</a><span>|</span>
+                            <a>物理</a><span>|</span>
+                            <a>化学</a><span>|</span>
+                            <a>生物</a><span>|</span>
+                            <a>政治</a><span>|</span>
+                            <a>历史</a><span>|</span>
+                            <a>地理</a><span>|</span>
+                            <a>科学</a><span>|</span>
+                        </dd>
+                        <dt>中考</dt>
+                        <dd>
+                            <a>语文</a><span>|</span>
+                            <a>数学</a><span>|</span>
+                            <a>英语</a><span>|</span>
+                            <a>物理</a><span>|</span>
+                            <a>化学</a><span>|</span>
+                            <a>生物</a><span>|</span>
+                            <a>政治</a><span>|</span>
+                            <a>历史</a><span>|</span>
+                            <a>地理</a><span>|</span>
+                            <a>科学</a><span>|</span>
+                            <a>理综</a><span>|</span>
+                            <a>文综</a><span>|</span>
+                        </dd>
+                        <dt>高一</dt>
+                        <dd>
+                            <a>语文</a><span>|</span>
+                            <a>数学</a><span>|</span>
+                            <a>英语</a><span>|</span>
+                            <a>物理</a><span>|</span>
+                            <a>化学</a><span>|</span>
+                            <a>生物</a><span>|</span>
+                            <a>政治</a><span>|</span>
+                            <a>历史</a><span>|</span>
+                            <a>地理</a><span>|</span>
+                            <a>理综</a><span>|</span>
+                            <a>文综</a><span>|</span>
+                        </dd>
+                        <dt>高二</dt>
+                        <dd>
+                            <a>语文</a><span>|</span>
+                            <a>数学</a><span>|</span>
+                            <a>英语</a><span>|</span>
+                            <a>物理</a><span>|</span>
+                            <a>化学</a><span>|</span>
+                            <a>生物</a><span>|</span>
+                            <a>政治</a><span>|</span>
+                            <a>历史</a><span>|</span>
+                            <a>地理</a><span>|</span>
+                            <a>理综</a><span>|</span>
+                            <a>文综</a><span>|</span>
+                        </dd>
+                        <dt>高三</dt>
+                        <dd>
+                            <a>语文</a><span>|</span>
+                            <a>数学</a><span>|</span>
+                            <a>英语</a><span>|</span>
+                            <a>物理</a><span>|</span>
+                            <a>化学</a><span>|</span>
+                            <a>生物</a><span>|</span>
+                            <a>政治</a><span>|</span>
+                            <a>历史</a><span>|</span>
+                            <a>地理</a><span>|</span>
+                            <a>理综</a><span>|</span>
+                            <a>文综</a><span>|</span>
+                        </dd>
+                    </dl>
+                </div>
             </dd>
             <dd>
                 <span class="glyphicon glyphicon-pencil dd_span1"></span>
@@ -331,9 +410,8 @@
 <div class="all_section">
     <div>
         <span class="font_title">学前辅导</span>
-        <a class="a_active" style="margin-left: 50px">幼儿</a>
-        <a class="a_notactive">幼儿多元智能</a>
-        <span class="refresh">查看全部>></span>
+        <a style="margin-left: 50px">幼儿</a>
+        <a>幼儿多元智能</a>
     </div>
     <div class="all_courses">
         <ul class="all_list">
@@ -417,21 +495,41 @@
                     <p class="font_price1">￥318</p>
                 </a>
             </li>
+            <li>
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c12.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <li>
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c13.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
         </ul>
     </div>
-    <div class="all_right">
-        <p class="rank_title"><span class="mark_line">|</span>热门排行</p>
-        <ul class="rank_list">
-            <li><span class="rankn rank1">1</span><a>三年级英语培优春季班</a></li>
-            <li><span class="rankn rank2">2</span><a>三年级英语培优春季班</a></li>
-            <li><span class="rankn rank3">3</span><a>三年级英语培优春季班</a></li>
-            <li><span class="rankn rank_other">4</span><a>三年级英语培优春季班</a></li>
-            <li><span class="rankn rank_other">5</span><a>三年级英语培优春季班</a></li>
-            <li><span class="rankn rank_other">6</span><a>三年级英语培优春季班</a></li>
-            <li><span class="rankn rank_other">7</span><a>三年级英语培优春季班</a></li>
-            <li><span class="rankn rank_other">8</span><a>三年级英语培优春季班</a></li>
-        </ul>
-    </div>
+    <%--<div class="all_right">--%>
+        <%--<p class="rank_title"><span class="mark_line">|</span>热门排行</p>--%>
+        <%--<ul class="rank_list">--%>
+            <%--<li><span class="rankn rank1">1</span><a>三年级英语培优春季班</a></li>--%>
+            <%--<li><span class="rankn rank2">2</span><a>三年级英语培优春季班</a></li>--%>
+            <%--<li><span class="rankn rank3">3</span><a>三年级英语培优春季班</a></li>--%>
+            <%--<li><span class="rankn rank_other">4</span><a>三年级英语培优春季班</a></li>--%>
+            <%--<li><span class="rankn rank_other">5</span><a>三年级英语培优春季班</a></li>--%>
+            <%--<li><span class="rankn rank_other">6</span><a>三年级英语培优春季班</a></li>--%>
+            <%--<li><span class="rankn rank_other">7</span><a>三年级英语培优春季班</a></li>--%>
+            <%--<li><span class="rankn rank_other">8</span><a>三年级英语培优春季班</a></li>--%>
+        <%--</ul>--%>
+    <%--</div>--%>
 </div>
 
 

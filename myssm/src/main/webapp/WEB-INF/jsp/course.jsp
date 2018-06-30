@@ -43,14 +43,7 @@
 
             });
 
-            $('.courses_header a').click(function () {
 
-                $('.courses_header a').removeClass('a_active');
-                $('.courses_header a').addClass('a_notactive');
-                $(this).removeClass('a_notactive');
-                $(this).addClass('a_active');
-
-            })
         });
     </script>
 
