@@ -9,6 +9,9 @@
 
 <%
     String ctx=request.getContextPath();
+    String requestUrl = (String)request.getAttribute("requestUrl");
+
+//    System.out.println(requestUrl);
 %>
 <!DOCTYPE html>
 <html>
@@ -17,6 +20,7 @@
 
     <%--jquery引入要在bootstrap之前  ！！！！非常重要--%>
     <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/jquery-3.1.1.min.js"></script>
+    <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/jquery.validate.min.js"></script>
     <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
 
 
@@ -24,6 +28,87 @@
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/bootstrap-3.3.5-dist/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/header.css" />
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/course.css" />
+
+    <script type="application/javascript">
+        $(document).ready(function(){
+            $.validator.addMethod("checkName",function(value,element,params){
+                var checkName = /^\w{2,10}$/g;
+                return this.optional(element)||(checkName.test(value));
+            },"只允许6-15位英文字母或数字");
+            $.validator.addMethod("checkPwd",function(value,element,params){
+                var checkPwd = /^\w{2,10}$/g;
+                return this.optional(element)||(checkPwd.test(value));
+            },"只允许6-15位英文字母或数字");
+            $.validator.addMethod("checkEml",function(value,element,params){
+                var checkEmail = /^[a-z0-9]+@([a-z0-9]+\.)+[a-z]{2,4}$/i;
+                return this.optional(element)||(checkEmail.test(value));
+            },"请输入正确的邮箱！");
+        })
+    </script>
+    <script type="application/javascript">
+        function login() {
+            var form1 = $('#loginForm');
+            form1.validate({
+                rules: {
+                    username: {
+                        required: true,
+                        // checkName: true
+                    },
+                    password: {
+                        required: true,
+                        // checkPwd: true
+                    }
+                },
+                messages: {
+                    username: {
+                        required: "名字必填"
+                    },
+                    password: {
+                        required: "密码必填"
+                    }
+                }
+            });
+            if (form1.valid()) {
+                form1.attr("action", "<%=ctx%>/client/login");
+                form1.submit();
+            }
+        }
+        function register() {
+            var form1=$('#registerForm');
+            form1.validate({
+                rules:{
+                    username:{
+                        required:true,
+                        checkName:true
+                    },
+                    password:{
+                        required:true,
+                        checkPwd:true
+                    },
+                    email:{
+                        required:true,
+                        checkEml:true
+                    }
+                },
+                messages:{
+                    username:{
+                        required:"用户名不能为空"
+                    },
+                    password:{
+                        required:"密码不能为空"
+                    },
+                    email:{
+                        required:"邮箱不能为空"
+                    }
+                }
+            });
+            if(form1.valid()) {
+                alert("注册成功");
+                form1.attr("action","<%=ctx%>/client/register");
+                form1.submit();
+            }
+        }
+    </script>
 
     <script type="application/javascript">
         $(document).ready(function () {
@@ -43,8 +128,29 @@
 
             });
 
-
         });
+    </script>
+
+    <script type="application/javascript">
+        function sleep(numberMillis) {
+            var now = new Date();
+            var exitTime = now.getTime() + numberMillis;
+            while (true) {
+                now = new Date();
+                if (now.getTime() > exitTime)
+                    return;
+            }
+        }
+
+        function buy() {
+            var username='<%=(String)session.getAttribute("username")%>';
+            if(username=='null'){
+                $('#btn_login').click();
+            }else{
+                sleep(500);
+                alert('订购成功');
+            }
+        }
     </script>
 
 </head>
@@ -59,7 +165,7 @@
 
     <div class="logo">
         <span class="title_font glyphicon glyphicon-education"></span>
-        <span class="slogan_font">Training College</span>
+        <a href="http://localhost:8080/" class="slogan_font">Training College</a>
     </div>
 
     <div class="selector">
@@ -93,9 +199,24 @@
     </div>
 
     <div class="login_panel">
-        <a>登录</a>
+
+        <%
+            String username=(String) session.getAttribute("username");
+            if(username==null){
+        %>
+        <a data-toggle="modal" data-target="#loginModal" id="btn_login">登录</a>
         |
-        <a>注册</a>
+        <a data-toggle="modal" data-target="#registerModal" >注册</a>
+        <%
+        }else{
+        %>
+        <a>个人中心</a>
+        |
+        <a href="<%=ctx%>/client/logout">登出</a>
+        <%
+            }
+        %>
+
     </div>
 
     <div class="search">
@@ -134,7 +255,7 @@
                     <p><span class="font_left">上课时间:</span><%=course.getTime()%></p>
                     <p><span class="font_left">地点:</span><%=course.getLocation()%></p>
                 </div>
-                <button class="btn_buy">立即订购</button>
+                <button class="btn_buy" onclick="buy()">立即订购</button>
             </div>
 
 
@@ -188,6 +309,72 @@
     </div>
 </div>
 
+
+<!-- 登录窗口 -->
+<div id="loginModal" class="modal fade" >
+    <div class="modal-dialog" style="width: 400px;margin-top: 200px">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" class="form-group">
+                    <div class="form-group">
+                        <label for="">用户名</label>
+                        <input name="username" class="form-control" type="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">密码</label>
+                        <input name="password" class="form-control" type="password" placeholder="">
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-primary" onclick="login()">登录</button>
+                        <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                    </div>
+                    <a href="" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">还没有账号？点我注册</a>
+                    <input type="hidden" name="requestUrl" value="<%=requestUrl%>">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 注册窗口 -->
+<div id="registerModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog" style="width: 400px;margin-top: 200px">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm" class="form-group">
+                    <div class="form-group">
+                        <label for="">用户名</label>
+                        <input name="username" class="form-control" type="text" placeholder="6-15位字母或数字">
+                    </div>
+                    <div class="form-group">
+                        <label for="">密码</label>
+                        <input name="password" class="form-control" type="password" placeholder="6-15位字母或数字">
+                    </div>
+                    <div class="form-group">
+                        <label for="">邮箱</label>
+                        <input name="email" class="form-control" placeholder="例如:123@123.com">
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-primary" onclick="register()">提交</button>
+                        <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                    </div>
+                    <a href="" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">已有账号？点我登录</a>
+                    <input type="hidden" name="requestUrl" value="<%=requestUrl%>">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

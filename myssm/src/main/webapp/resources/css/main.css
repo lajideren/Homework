@@ -44,8 +44,9 @@
     font-size: 15px;
     line-height: 50px;
 
-
 }
+
+
 
 
 .nav_panel dd,dt{
@@ -94,7 +95,8 @@
 }
 
 .dd_span1{
-    font-size: 7px;
+    display: inline-block;
+    font-size: 10px;
     color: white;
     float: left;
     line-height: 40px;
@@ -104,7 +106,8 @@
 }
 
 .dd_span2{
-    font-size: 7px;
+    display: inline-block;
+    font-size: 10px;
     color: white;
     float: right;
     line-height: 40px;

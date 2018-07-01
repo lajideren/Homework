@@ -28,22 +28,17 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<Course> findCourse(String sort, String grade, String subject) {
+    public List<Course> findCourseTop10(String sort, String city) {
         return null;
     }
 
     @Override
-    public List<Course> findCourseById(String cid) {
+    public List<Course> findLikeCourseTop5() {
         return null;
     }
 
     @Override
-    public List<Course> findCourseByName(String name) {
-        return null;
-    }
-
-    @Override
-    public List<Course> findLikeCourse(int n) {
+    public List<Course> findCourseByName(String cname) {
         return null;
     }
 

@@ -16,10 +16,10 @@ public class MainController {
 
 
     @RequestMapping("/")
-    public String showIndex(HttpSession session,Model model){
+    public String showIndex(HttpSession session,Model model,String city){
 
 
-        System.out.println("1312312312321");
+        System.out.println("city:"+city);
 
         List<List<Course>> list=new ArrayList<>();
 

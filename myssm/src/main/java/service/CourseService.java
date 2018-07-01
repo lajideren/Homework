@@ -11,37 +11,29 @@ public interface CourseService {
     List<Course> findPrimaryCourse();
 
     /**
-     * 三个条件不是全部需要
-     * @param sort 类别
-     * @param grade 年级
-     * @param subject 科目
+     * 找出前10个课程
+     * @param sort 种类
+     * @param city 城市
      * @return
      */
-    List<Course> findCourse(String sort,String grade,String subject);
-
+    List<Course> findCourseTop10(String sort,String city);
 
     /**
-     * 通过课程id模糊搜索课程，id完整时返回list的长度为1
-     * @param cid
-     * @return 返回list类型为了搜索框的模糊搜索
+     * 随机推荐5门课程
+     * @return
      */
-    List<Course> findCourseById(String cid);
+    List<Course> findLikeCourseTop5();
 
 
     /**
      * 同ById方法
-     * @param name
-     * @return
+     * @param cname
+     * @return 最多返回10个
      */
-    List<Course> findCourseByName(String name);
+    List<Course> findCourseByName(String cname);
 
 
-    /**
-     * 随机推荐的课程
-     * @param n 数量
-     * @returnse
-     */
-    List<Course> findLikeCourse(int n);
+
 
 
 }

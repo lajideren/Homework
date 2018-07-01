@@ -40,6 +40,7 @@ public class CourseController {
         }
 
         model.addAttribute("course",course);
+        model.addAttribute("requestUrl","http://localhost:8080/course/showInfo?cid="+cid);
 
         return "course";
 
