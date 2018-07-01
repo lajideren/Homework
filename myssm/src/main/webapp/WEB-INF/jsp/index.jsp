@@ -437,11 +437,11 @@
             <!-- 轮播（Carousel）项目 -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="<%=ctx%>/resources/img/custom/p1.jpg" alt="First slide">
+                    <img src="<%=ctx%>/resources/img/custom/p2.jpg" alt="First slide">
                     <div class="carousel-caption"></div>
                 </div>
                 <div class="item">
-                    <img src="<%=ctx%>/resources/img/custom/p2.jpg" alt="Second slide">
+                    <img src="<%=ctx%>/resources/img/custom/p1.jpg" alt="Second slide">
                     <div class="carousel-caption"></div>
                 </div>
                 <div class="item">
