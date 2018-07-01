@@ -7,4 +7,7 @@ myssm/out
 myssm/target
 *.iml
 myssm/src/main/webapp/resources/img
+
+myssm/src/main/webapp/resources/jquery-ui-1.12.1/images
+
 *.jpg

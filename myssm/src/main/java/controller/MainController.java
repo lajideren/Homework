@@ -36,8 +36,10 @@ public class MainController {
         Course course=new Course();
         course.setCid("1111");
         for(int i=0;i<10;i++)
-        allList1.add(course);
-
+            allList1.add(course);
+        course.setCid("2222");
+        for(int i=0;i<5;i++)
+            likelist.add(course);
         model.addAttribute("list",list);
 
         return "index";

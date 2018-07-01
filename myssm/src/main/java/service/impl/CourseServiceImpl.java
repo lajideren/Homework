@@ -42,6 +42,11 @@ public class CourseServiceImpl implements CourseService {
         return null;
     }
 
+    @Override
+    public Course findCourseById(String cid) {
+        return null;
+    }
+
     public static void main(String[] args) {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/applicationContext-*.xml");
         CourseService courseService=(CourseService) applicationContext.getBean("courseService");

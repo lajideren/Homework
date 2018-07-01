@@ -26,11 +26,19 @@ public interface CourseService {
 
 
     /**
-     * 同ById方法
+     * 通过课程名称模糊查找课程
      * @param cname
      * @return 最多返回10个
      */
     List<Course> findCourseByName(String cname);
+
+
+    /**
+     * 通过id查找课程
+     * @param cid
+     * @return
+     */
+    Course findCourseById(String cid);
 
 
 

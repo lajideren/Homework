@@ -22,6 +22,7 @@
     <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/jquery-3.1.1.min.js"></script>
     <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/jquery.validate.min.js"></script>
     <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+    <script type="application/javascript" src="<%=ctx%>/resources/jquery-ui-1.12.1/jquery-ui.js"></script>
 
 
 
@@ -29,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/main.css" />
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/jquery-ui-1.12.1/jquery-ui.css" />
 
     <script type="application/javascript">
         $(document).ready(function(){
@@ -112,6 +114,11 @@
     </script>
 
     <script type="application/javascript">
+
+        function search() {
+            window.location.href='http://localhost:8080/course/showInfoByName?cname='+$('#searchText').val();
+        }
+
         $(document).ready(function () {
             $('.selector').hover(
                 function () {
@@ -133,10 +140,30 @@
                 window.location.href='http://localhost:8080/course/showInfo?cid='+$(this).val();
             });
 
+            $('.like_section li').click(function () {
+                window.location.href='http://localhost:8080/course/showInfo?cid='+$(this).val();
+            });
+
 
             $('.city_panel a').click(function () {
                 window.location.href='http://localhost:8080/?city='+$(this).text();
-            })
+            });
+
+            $('#searchText').bind('input propertychange', function() {
+                $.ajax({
+                    type:"POST",
+                    url:"<%=ctx%>/course/findByName",
+                    data:"cname="+$(this).val(),
+                    dataType:"json",
+                    success:function (data) {
+                        $('#searchText').autocomplete({
+                            source: data
+                        });
+                    }
+                });
+            });
+
+
         });
     </script>
 
@@ -201,10 +228,8 @@
     </div>
 
     <div class="search">
-        <form>
-            <input class="searchbox" type="text" placeholder="输入课程或班号">
-            <button class="searchbtn"><span class="glyphicon glyphicon-search"></span></button>
-        </form>
+            <input id="searchText" class="searchbox" type="text" placeholder="输入课程名称">
+            <button class="searchbtn" onclick="search()"><span class="glyphicon glyphicon-search"></span></button>
     </div>
 
     <div>
@@ -457,6 +482,10 @@
 
 %>
 
+<%
+    nums=RandomUtil.randomArray(1,14,5);
+%>
+
 <div class="like_section">
     <div>
         <span class="font_title">猜你喜欢</span>
@@ -464,9 +493,13 @@
     </div>
     <div class="like_courses">
         <ul class="like_list">
-            <li>
+
+            <%
+                for(int i=0;i<5;i++){
+            %>
+            <li value="<%=likeList.get(i).getCid()%>">
                 <div class="like_img">
-                    <img src="<%=ctx%>/resources/img/custom/c1.jpg">
+                    <img src="<%=ctx%>/resources/img/custom/c<%=nums[i]%>.jpg">
                 </div>
 
                 <a>
@@ -474,46 +507,11 @@
                     <p class="font_info">课程简介：轻松愉快的氛围中培养孩子英语学习兴趣，进一步习得语言知识，积累英语语感，提高语言能力</p>
                 </a>
             </li>
-            <li>
-                <div class="like_img">
-                    <img src="<%=ctx%>/resources/img/custom/c2.jpg">
-                </div>
 
-                <a>
-                    <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info">课程简介：通过深入浅出的讲解帮助学员在初中开始阶段占得学习先机，快速完成学习转型。享受独到的优能中学课程服务体系。严格的考勤管理，以学员为中心的课堂管理机制，针对性的课后训练。更多的增值服务等待学员家长来亲身体验</p>
-                </a>
-            </li>
-            <li>
-                <div class="like_img">
-                    <img src="<%=ctx%>/resources/img/custom/c3.jpg">
-                </div>
+            <%
+                }
+            %>
 
-                <a>
-                    <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info">课程简介：以学员为中心的课堂管理机制，针对性的课后训练。更多的增值服务等待学员家长来亲身体验</p>
-                </a>
-            </li>
-            <li>
-                <div class="like_img">
-                    <img src="<%=ctx%>/resources/img/custom/c4.jpg">
-                </div>
-
-                <a>
-                    <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info">课程简介：以学员为中心的课堂管理机制，针对性的课后训练。更多的增值服务等待学员家长来亲身体验</p>
-                </a>
-            </li>
-            <li>
-                <div class="like_img">
-                    <img src="<%=ctx%>/resources/img/custom/c5.jpg">
-                </div>
-
-                <a>
-                    <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info">课程简介：以学员为中心的课堂管理机制，针对性的课后训练。更多的增值服务等待学员家长来亲身体验</p>
-                </a>
-            </li>
 
         </ul>
     </div>
@@ -522,7 +520,9 @@
 </div>
 
 
-
+<%
+    nums=RandomUtil.randomArray(1,14,10);
+%>
 
 <div class="all_section">
     <div>
