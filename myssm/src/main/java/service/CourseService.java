@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface CourseService {
 
+
+
     List<Course> findPrimaryCourse();
 
     /**
@@ -32,6 +34,14 @@ public interface CourseService {
      * @return
      */
     List<Course> findCourseByName(String name);
+
+
+    /**
+     * 随机推荐的课程
+     * @param n 数量
+     * @returnse
+     */
+    List<Course> findLikeCourse(int n);
 
 
 }

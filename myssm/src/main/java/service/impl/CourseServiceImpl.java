@@ -27,6 +27,26 @@ public class CourseServiceImpl implements CourseService {
         return courseMapper.findPrimaryCourse();
     }
 
+    @Override
+    public List<Course> findCourse(String sort, String grade, String subject) {
+        return null;
+    }
+
+    @Override
+    public List<Course> findCourseById(String cid) {
+        return null;
+    }
+
+    @Override
+    public List<Course> findCourseByName(String name) {
+        return null;
+    }
+
+    @Override
+    public List<Course> findLikeCourse(int n) {
+        return null;
+    }
+
     public static void main(String[] args) {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/applicationContext-*.xml");
         CourseService courseService=(CourseService) applicationContext.getBean("courseService");

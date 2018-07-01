@@ -19,7 +19,6 @@
       <param-value>classpath:spring/springmvc.xml</param-value>
     </init-param>
 
-
   </servlet>
 
   <context-param>

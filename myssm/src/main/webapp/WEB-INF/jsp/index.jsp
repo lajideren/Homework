@@ -1,4 +1,6 @@
-<%--
+<%@ page import="util.RandomUtil" %>
+<%@ page import="pobject.Course" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: wsy
   Date: 2018/6/22
@@ -44,6 +46,10 @@
                 $('.city_panel').css('display','none');
 
             });
+
+            $('.all_section li').click(function () {
+                window.location.href='http://localhost:8080/course/showInfo?cid='+$(this).val();
+            })
 
 
         });
@@ -309,15 +315,15 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <img src="<%=ctx%>/resources/img/custom/p1.jpg" alt="First slide">
-                    <div class="carousel-caption">标题 1</div>
+                    <div class="carousel-caption"></div>
                 </div>
                 <div class="item">
                     <img src="<%=ctx%>/resources/img/custom/p2.jpg" alt="Second slide">
-                    <div class="carousel-caption">标题 2</div>
+                    <div class="carousel-caption"></div>
                 </div>
                 <div class="item">
                     <img src="<%=ctx%>/resources/img/custom/p3.jpg" alt="Third slide">
-                    <div class="carousel-caption">标题 3</div>
+                    <div class="carousel-caption"></div>
                 </div>
             </div>
             <!-- 轮播（Carousel）导航 -->
@@ -341,6 +347,17 @@
     <div class="clear"></div>
 
 </div>
+
+<%
+    int[] nums=RandomUtil.randomArray(1,14,10);
+    List<List<Course>> list=(List)request.getAttribute("list");
+
+    List<Course> likeList=list.get(0);
+    List<Course> allList1=list.get(1);
+    List<Course> allList2=list.get(2);
+    List<Course> allList3=list.get(3);
+
+%>
 
 <div class="like_section">
     <div>
@@ -407,6 +424,8 @@
 </div>
 
 
+
+
 <div class="all_section">
     <div>
         <span class="font_title">学前辅导</span>
@@ -415,121 +434,98 @@
     </div>
     <div class="all_courses">
         <ul class="all_list">
-            <li>
+            <%
+                for(int i=0;i<10;i++){
+            %>
+            <li value="<%=allList1.get(i).getCid()%>">
                 <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c7.jpg">
+                    <img src="<%=ctx%>/resources/img/custom/c<%=nums[i]%>.jpg">
                 </div>
                 <a>
                     <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span>长沙天马301教室</p>
+                    <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
                     <p class="font_price1">￥318</p>
                 </a>
             </li>
-            <li>
-                <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c8.jpg">
-                </div>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c9.jpg">
-                </div>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c10.jpg">
-                </div>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c6.jpg">
-                </div>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c1.jpg">
-                </div>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c2.jpg">
-                </div>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c3.jpg">
-                </div>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c12.jpg">
-                </div>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
-            <li>
-                <div class="all_img">
-                    <img src="<%=ctx%>/resources/img/custom/c13.jpg">
-                </div>
-                <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker"></span>鞍山</p>
-                    <p class="font_price1">￥318</p>
-                </a>
-            </li>
+            <%
+                }
+            %>
+
         </ul>
     </div>
-    <%--<div class="all_right">--%>
-        <%--<p class="rank_title"><span class="mark_line">|</span>热门排行</p>--%>
-        <%--<ul class="rank_list">--%>
-            <%--<li><span class="rankn rank1">1</span><a>三年级英语培优春季班</a></li>--%>
-            <%--<li><span class="rankn rank2">2</span><a>三年级英语培优春季班</a></li>--%>
-            <%--<li><span class="rankn rank3">3</span><a>三年级英语培优春季班</a></li>--%>
-            <%--<li><span class="rankn rank_other">4</span><a>三年级英语培优春季班</a></li>--%>
-            <%--<li><span class="rankn rank_other">5</span><a>三年级英语培优春季班</a></li>--%>
-            <%--<li><span class="rankn rank_other">6</span><a>三年级英语培优春季班</a></li>--%>
-            <%--<li><span class="rankn rank_other">7</span><a>三年级英语培优春季班</a></li>--%>
-            <%--<li><span class="rankn rank_other">8</span><a>三年级英语培优春季班</a></li>--%>
-        <%--</ul>--%>
-    <%--</div>--%>
+</div>
+
+<%
+    nums=RandomUtil.randomArray(1,14,10);
+%>
+<div class="all_section">
+    <div>
+        <span class="font_title">小学辅导</span>
+        <a style="margin-left: 50px">一年级</a>
+        <a>二年级</a>
+        <a>三年级</a>
+        <a>四年级</a>
+        <a>五年级</a>
+        <a>六年级</a>
+    </div>
+    <div class="all_courses">
+        <ul class="all_list">
+            <%
+                for(int i=0;i<10;i++){
+            %>
+            <li value="<%=allList1.get(i).getCid()%>">
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c<%=nums[i]%>.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span>长沙天马301教室</p>
+                    <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <%
+                }
+            %>
+        </ul>
+    </div>
+</div>
+
+<%
+    nums=RandomUtil.randomArray(1,14,10);
+%>
+<div class="all_section">
+    <div>
+        <span class="font_title">中学辅导</span>
+        <a style="margin-left: 50px">初一</a>
+        <a>初二</a>
+        <a>中考</a>
+        <a>高一</a>
+        <a>高二</a>
+        <a>高三</a>
+    </div>
+    <div class="all_courses">
+        <ul class="all_list">
+            <%
+                for(int i=0;i<10;i++){
+            %>
+            <li value="<%=allList1.get(i).getCid()%>">
+                <div class="all_img">
+                    <img src="<%=ctx%>/resources/img/custom/c<%=nums[i]%>.jpg">
+                </div>
+                <a>
+                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span>长沙天马301教室</p>
+                    <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
+                    <p class="font_price1">￥318</p>
+                </a>
+            </li>
+            <%
+                }
+            %>
+        </ul>
+    </div>
 </div>
 
 

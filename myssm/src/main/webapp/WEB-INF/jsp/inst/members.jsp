@@ -120,7 +120,7 @@
 <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<%=ctx%>/index.jsp">TrainingCollege</a>
+            <a class="navbar-brand" href="<%=ctx%>/WEB-INF/index.jsp">TrainingCollege</a>
         </div>
         <div>
             <ul class="nav navbar-nav">

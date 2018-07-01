@@ -69,7 +69,7 @@
     <div class="container">
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="<%=ctx%>/index.jsp"><span class="glyphicon glyphicon-book"></span>&nbsp;TrainingCollege</a>
+            <a class="navbar-brand" href="<%=ctx%>/WEB-INF/index.jsp"><span class="glyphicon glyphicon-book"></span>&nbsp;TrainingCollege</a>
         </div>
         <div>
 

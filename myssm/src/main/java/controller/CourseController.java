@@ -19,6 +19,8 @@ public class CourseController {
 
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 
+        System.out.println(cid);
+
         Course course=new Course();
         course.setSort("大学考试");
         course.setGrade("英语考级");
