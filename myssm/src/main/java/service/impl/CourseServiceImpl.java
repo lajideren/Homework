@@ -23,11 +23,6 @@ public class CourseServiceImpl implements CourseService {
     private CourseMapper courseMapper;
 
     @Override
-    public List<Course> findPrimaryCourse() {
-        return courseMapper.findPrimaryCourse();
-    }
-
-    @Override
     public List<Course> findCourseTop10(String sort, String city) {
         return courseMapper.findCourseTop10(sort, city);
     }
@@ -48,6 +43,11 @@ public class CourseServiceImpl implements CourseService {
     public Course findCourseById(String cid) {
         return courseMapper.findCourseById(cid);
 
+    }
+
+    @Override
+    public List<Course> findCourse(String sort, String grade, String subject, int pageNum, int pageSize) {
+        return null;
     }
 
     public static void main(String[] args) {
