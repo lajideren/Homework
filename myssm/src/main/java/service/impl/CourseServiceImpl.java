@@ -29,30 +29,33 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<Course> findCourseTop10(String sort, String city) {
-        return null;
+        return courseMapper.findCourseTop10(sort, city);
     }
 
     @Override
     public List<Course> findLikeCourseTop5() {
-        return null;
+
+        return courseMapper.findLikeCourseTop5();
     }
 
     @Override
     public List<Course> findCourseByName(String cname) {
-        return null;
+
+        return courseMapper.findCourseByName(cname);
     }
 
     @Override
     public Course findCourseById(String cid) {
-        return null;
+        return courseMapper.findCourseById(cid);
+
     }
 
     public static void main(String[] args) {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/applicationContext-*.xml");
         CourseService courseService=(CourseService) applicationContext.getBean("courseService");
-        List<Course> courses = courseService.findPrimaryCourse();
+        List<Course> courses = courseService.findCourseTop10("小学辅导","长沙");
         for(Course co:courses){
-            System.out.println(co.getCid());
+            System.out.println(co.getCname());
         }
     }
 }
