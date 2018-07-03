@@ -47,9 +47,10 @@ public interface CourseService {
      * @param grade
      * @param subject
      * @param pageNum 第几页
+     * @param pageSize 每页大小
      * @return
      */
-    List<Course> findCourse(String sort,String grade,String subject,int pageNum);
+    List<Course> findCourse(String sort,String grade,String subject,int pageNum,int pageSize);
 
 
 
