@@ -8,7 +8,6 @@ public interface CourseService {
 
 
 
-    List<Course> findPrimaryCourse();
 
     /**
      * 找出前10个课程
