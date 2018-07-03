@@ -41,8 +41,15 @@ public interface CourseService {
     Course findCourseById(String cid);
 
 
-
-    List<Course> findCourse(String sort,String grade,String subject);
+    /**
+     * 页的大小是9，写死在代码
+     * @param sort
+     * @param grade
+     * @param subject
+     * @param pageNum 第几页
+     * @return
+     */
+    List<Course> findCourse(String sort,String grade,String subject,int pageNum);
 
 
 
