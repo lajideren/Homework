@@ -23,7 +23,16 @@
         SELECT * FROM Course WHERE cid=#{cid}
     </select>
 
-
+    <select id="findCourse" resultType="pobject.Course">
+        SELECT * FROM Course WHERE sort=#{sort}
+        <if test="grade != null and grade != ''">
+            AND grade=#{grade}
+            <if test="subject != null and subject != ''">
+                AND subject=#{subject}
+            </if>
+        </if>
+        LIMIT #{pageNum},#{pageSize}
+    </select>
 
 
 

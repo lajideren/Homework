@@ -36,4 +36,16 @@ public interface CourseMapper {
      * @return
      */
     Course findCourseById(String cid);
+
+
+    /**
+     * 页的大小是9，写死在代码
+     * @param sort
+     * @param grade
+     * @param subject
+     * @param pageNum 第几页
+     * @param pageSize 每页大小
+     * @return
+     */
+    List<Course> findCourse(@Param("sort")String sort,@Param("grade")String grade,@Param("subject")String subject,@Param("pageNum")int pageNum, @Param("pageSize")int pageSize);
 }

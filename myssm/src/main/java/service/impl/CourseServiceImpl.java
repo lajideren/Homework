@@ -47,15 +47,17 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<Course> findCourse(String sort, String grade, String subject, int pageNum, int pageSize) {
-        return null;
+        //获取当前页数起始位置
+        pageNum *= pageSize;
+        return courseMapper.findCourse(sort, grade, subject, pageNum, pageSize);
     }
 
     public static void main(String[] args) {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/applicationContext-*.xml");
         CourseService courseService=(CourseService) applicationContext.getBean("courseService");
-        List<Course> courses = courseService.findCourseTop10("小学辅导","长沙");
+        List<Course> courses = courseService.findCourse("中学辅导","高一","物理",0,9);
         for(Course co:courses){
-            System.out.println(co.getCname());
+            System.out.println(co.getCid()+"       "+co.getCname());
         }
     }
 }
