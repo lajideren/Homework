@@ -42,6 +42,10 @@ public interface CourseService {
 
 
 
+    List<Course> findCourse(String sort,String grade,String subject);
+
+
+
 
 
 }
