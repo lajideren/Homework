@@ -116,7 +116,7 @@
     <script type="application/javascript">
 
         function search() {
-            window.location.href='http://localhost:8080/course/showInfoByName?cname='+$('#searchText').val();
+            window.location.href='http://localhost:8080/course/showInfoByName?cname='+$('#searchText').attr('value')
         }
 
         $(document).ready(function () {
@@ -137,16 +137,20 @@
             });
 
             $('.all_section li').click(function () {
-                window.location.href='http://localhost:8080/course/showInfo?cid='+$(this).val();
+                window.location.href='http://localhost:8080/course/showInfo?cid='+$(this).attr("value");
             });
 
             $('.like_section li').click(function () {
-                window.location.href='http://localhost:8080/course/showInfo?cid='+$(this).val();
+                window.location.href='http://localhost:8080/course/showInfo?cid='+$(this).attr("value");;
             });
 
 
             $('.city_panel a').click(function () {
                 window.location.href='http://localhost:8080/?city='+$(this).text();
+            });
+
+            $('#refreshdiv').click(function () {
+                window.location.href='http://localhost:8080';
             });
 
             $('#searchText').bind('input propertychange', function() {
@@ -164,6 +168,11 @@
             });
 
 
+
+        });
+
+        $(document).on('click', '.ui-menu-item', function () {
+            window.location.href='http://localhost:8080/course/showInfoByName?cname='+$(this).text();
         });
     </script>
 
@@ -179,7 +188,20 @@
     </div>
 
     <div class="selector">
-        <span id="cur_city">所在地</span>
+        <span id="cur_city">
+            <%
+                String city=(String)session.getAttribute("city");
+                if(city!=null){
+            %>
+            <%=city%>
+            <%
+                }else{
+            %>
+            所在地
+            <%
+                }
+            %>
+        </span>
         <span style="display: inline-block;font-size: 6px" class="glyphicon glyphicon-chevron-down"></span>
         <div class="city_panel" >
             <dl>
@@ -472,7 +494,7 @@
 </div>
 
 <%
-    int[] nums=RandomUtil.randomArray(1,14,10);
+    int[] nums;
     List<List<Course>> list=(List)request.getAttribute("list");
 
     List<Course> likeList=list.get(0);
@@ -487,15 +509,16 @@
 %>
 
 <div class="like_section">
-    <div>
+    <div id="refreshdiv">
         <span class="font_title">猜你喜欢</span>
-        <a class="refresh"><span class="glyphicon glyphicon-refresh"></span>换一批</a>
+        <a class="refresh"><span style="font-size: 14px;margin-right: 2px" class="glyphicon glyphicon-refresh"></span>换一批</a>
     </div>
     <div class="like_courses">
         <ul class="like_list">
 
             <%
                 for(int i=0;i<5;i++){
+
             %>
             <li value="<%=likeList.get(i).getCid()%>">
                 <div class="like_img">
@@ -503,8 +526,8 @@
                 </div>
 
                 <a>
-                    <p class="font_cname">三年级英语培优春季班</p>
-                    <p class="font_info">课程简介：轻松愉快的氛围中培养孩子英语学习兴趣，进一步习得语言知识，积累英语语感，提高语言能力</p>
+                    <p class="font_cname"><%=likeList.get(i).getCname()%></p>
+                    <p class="font_info"><%=likeList.get(i).getSummary()%></p>
                 </a>
             </li>
 
@@ -540,8 +563,8 @@
                     <img src="<%=ctx%>/resources/img/custom/c<%=nums[i]%>.jpg">
                 </div>
                 <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span>长沙天马301教室</p>
+                    <p class="font_cname1"><%=allList1.get(i).getCname()%></p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=allList1.get(i).getLocation()%></p>
                     <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
                     <p class="font_price1">￥318</p>
                 </a>
@@ -572,13 +595,13 @@
             <%
                 for(int i=0;i<10;i++){
             %>
-            <li value="<%=allList1.get(i).getCid()%>">
+            <li value="<%=allList2.get(i).getCid()%>">
                 <div class="all_img">
                     <img src="<%=ctx%>/resources/img/custom/c<%=nums[i]%>.jpg">
                 </div>
                 <a>
                     <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span>长沙天马301教室</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=allList2.get(i).getLocation()%></p>
                     <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
                     <p class="font_price1">￥318</p>
                 </a>
@@ -608,13 +631,13 @@
             <%
                 for(int i=0;i<10;i++){
             %>
-            <li value="<%=allList1.get(i).getCid()%>">
+            <li value="<%=allList3.get(i).getCid()%>">
                 <div class="all_img">
                     <img src="<%=ctx%>/resources/img/custom/c<%=nums[i]%>.jpg">
                 </div>
                 <a>
                     <p class="font_cname1">三年级英语培优春季班</p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span>长沙天马301教室</p>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=allList3.get(i).getLocation()%></p>
                     <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
                     <p class="font_price1">￥318</p>
                 </a>
@@ -633,10 +656,12 @@
      <div id="loginModal" class="modal fade" >
          <div class="modal-dialog" style="width: 400px;margin-top: 200px">
              <div class="modal-content">
-                 <div class="modal-body">
+                 <div class="modal-header">
+
                      <button class="close" data-dismiss="modal">
                          <span>&times;</span>
                      </button>
+                     <span class="modal_header_font">登录</span>
                  </div>
                  <div class="modal-body">
                      <form id="loginForm" class="form-group">
@@ -663,10 +688,11 @@
      <div id="registerModal" class="modal fade" tabindex="-1">
          <div class="modal-dialog" style="width: 400px;margin-top: 200px">
              <div class="modal-content">
-                 <div class="modal-body">
+                 <div class="modal-header">
                      <button class="close" data-dismiss="modal">
                          <span>&times;</span>
                      </button>
+                     <span class="modal_header_font">注册</span>
                  </div>
                  <div class="modal-body">
                      <form id="registerForm" class="form-group">

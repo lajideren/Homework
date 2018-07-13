@@ -7,9 +7,13 @@ body {
 /*===================================最上一栏===================================*/
 
 .top_header{
+    position: fixed;
     height: 50px;
     background-color: #343434;
     box-shadow: 4px 0 4px #888888;
+    z-index: 3;
+    width: 100%;
+    top:0;
 }
 
 .logo{
@@ -154,4 +158,11 @@ label.error
 {
     color:red;
     font-size:10px;;
+}
+
+.modal_header_font{
+    font-size: 17px;
+    font-weight: bolder;
+    text-align: center;
+    display: block;
 }

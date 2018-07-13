@@ -3,12 +3,12 @@
 }
 .mid_section{
     /*background-color: #dbdbdb;*/
-    margin-top: 30px;
+    margin-top: 80px;
 }
 
 .nav_stand {
     border-radius: 10px 0 0 10px;
-    z-index: 100;
+    z-index: 2;
     margin-left: 100px;
     width: 180px;
     height: 381px;
@@ -273,7 +273,7 @@
 
 .refresh{
     text-decoration: none;
-    color: #797979;
+    color: #2b7bee;
     float: right;
     font-size: 15px;
     margin-right: 110px;
@@ -281,7 +281,7 @@
 }
 
 .refresh:hover{
-    color:#29aeb3;
+    color: #2d87ff;
     text-decoration: none;
     cursor: pointer;
 }
@@ -318,11 +318,11 @@ ul{
 
 .all_section>div>a{
     line-height: 50px;
-    font-size: 15px;
+    font-size: 14px;
     display: inline-block;
     height: 50px;
     margin-right: 30px;
-    color: #797979;
+    color: #565656;
     text-align: center;
 
 }
@@ -391,7 +391,7 @@ ul{
     width: 220px;
     text-decoration: none;
     display: inline-block;
-    padding-top: 7px;
+    padding-top: 9px;
     padding-left: 20px;
     padding-right: 20px;
 
@@ -405,13 +405,13 @@ ul{
 }
 
 .font_cname1{
-    font-size: 14px;
+    font-size: 13px;
     color: black;
 }
 
 .font_info1{
     float: left;
-    font-size: 13px;
+    font-size: 12px;
     color: #a1a1a1;
 }
 
@@ -424,7 +424,7 @@ ul{
 
 .font_price1{
     float: right;
-    font-size: 13px;
+    font-size: 12px;
     color: #ff5f23;
 }
 
@@ -489,6 +489,7 @@ ul{
 .rank_other{
     background-color: #b5b5b5;
 }
+
 
 
 

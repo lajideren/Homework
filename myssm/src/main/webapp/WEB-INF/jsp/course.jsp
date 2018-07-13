@@ -128,6 +128,8 @@
 
             });
 
+
+
         });
     </script>
 
@@ -153,6 +155,83 @@
         }
     </script>
 
+    <script>
+        $(function() {
+            $(".tab a").click(function() {
+                $(this).addClass('curr').siblings().removeClass('curr');
+                var index = $(this).index();
+                number = index;
+                $('.nav .content li').hide();
+                $('.nav .content li:eq(' + index + ')').show();
+            });
+        })
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div, input, textarea, button, a {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        ul, li, ol{
+            list-style: none;
+        }
+        a {
+            color: #323232;
+            outline-style: none;
+            text-decoration: none;
+        }
+        .border-b {
+            position: relative;
+        }
+        .border-b:after {
+            top: auto;
+            bottom: 0;
+        }
+        .border-t:before, .border-b:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: #ddd;
+            right: 0;
+            height: 1px;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+        .nav {
+            background-color: #fff;
+            text-align: center;
+        }
+        .nav .tab {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .tab a {
+            float: left;
+            width: 49%;
+            height: 2.56rem;
+            line-height:2.56rem;
+            display: inline-block;
+            border-right: 1px solid #e1e1e1;
+        }
+        .tab a:last-child {
+            border-right: 0;
+        }
+        .tab .curr {
+            border-bottom: 2px solid #fc7831;
+            color: #fc7831;
+        }
+        .content ul li {
+            display: none;
+            padding: 3%;
+            width: 94%;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -169,7 +248,20 @@
     </div>
 
     <div class="selector">
-        <span id="cur_city">北京</span>
+        <span id="cur_city">
+            <%
+                String city=(String)session.getAttribute("city");
+                if(city!=null){
+            %>
+            <%=city%>
+            <%
+            }else{
+            %>
+            所在地
+            <%
+                }
+            %>
+        </span>
         <span style="display: inline-block;font-size: 6px" class="glyphicon glyphicon-chevron-down"></span>
         <div class="city_panel" >
             <dl>
@@ -233,6 +325,8 @@
 
 </div>
 
+
+
 <div class="contain1">
     <div class="content1">
         <div class="breadpath">
@@ -266,6 +360,19 @@
 
 </div>
 
+<div class="nav">
+    <div class="tab border-b">
+        <a href="javascript:;" rel="external nofollow" rel="external nofollow" class="curr">商品介绍</a>
+        <a href="javascript:;" rel="external nofollow" rel="external nofollow" >评价(99)</a>
+    </div>
+    <div class="content">
+        <ul>
+            <li style="display: block">商品介绍</li>
+            <li>评价</li>
+        </ul>
+    </div>
+</div>
+
 <div class="detail_section">
     <div class="detail_title">
         <span class="font_detail_title">课程详情</span>
@@ -279,6 +386,7 @@
     <span class="font_detail_content"><%=course.getGoal()%></span>
     <span class="font_detail_title_sm"><span class="glyphicon glyphicon-book"></span>课程内容</span>
     <span class="font_detail_content"><%=course.getContent()%></span>
+    <div style="height: 200px"></div>
 </div>
 
 <div class="teacher_section">
@@ -310,14 +418,16 @@
 </div>
 
 
+
 <!-- 登录窗口 -->
 <div id="loginModal" class="modal fade" >
     <div class="modal-dialog" style="width: 400px;margin-top: 200px">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-header">
                 <button class="close" data-dismiss="modal">
                     <span>&times;</span>
                 </button>
+                <span class="modal_header_font">登录</span>
             </div>
             <div class="modal-body">
                 <form id="loginForm" class="form-group">
@@ -345,10 +455,11 @@
 <div id="registerModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog" style="width: 400px;margin-top: 200px">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-header">
                 <button class="close" data-dismiss="modal">
                     <span>&times;</span>
                 </button>
+                <span class="modal_header_font">注册</span>
             </div>
             <div class="modal-body">
                 <form id="registerForm" class="form-group">

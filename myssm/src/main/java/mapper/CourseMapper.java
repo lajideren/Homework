@@ -27,7 +27,7 @@ public interface CourseMapper {
      * @param cname
      * @return 最多返回10个
      */
-    List<Course> findCourseByName(String cname);
+    List<Course> findCourseByName(@Param("cname")String cname);
 
 
     /**
@@ -35,7 +35,7 @@ public interface CourseMapper {
      * @param cid
      * @return
      */
-    Course findCourseById(String cid);
+    Course findCourseById(@Param("cid")String cid);
 
 
     /**

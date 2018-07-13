@@ -204,5 +204,29 @@ public class Course {
     public String getEndTimeString(){
         return simpleDateFormat.format(endTime);
     }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "cid='" + cid + '\'' +
+                ", cname='" + cname + '\'' +
+                ", sort='" + sort + '\'' +
+                ", grade='" + grade + '\'' +
+                ", subject='" + subject + '\'' +
+                ", summary='" + summary + '\'' +
+                ", crowd='" + crowd + '\'' +
+                ", goal='" + goal + '\'' +
+                ", content='" + content + '\'' +
+                ", feature='" + feature + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", price=" + price +
+                ", period=" + period +
+                ", time='" + time + '\'' +
+                ", city='" + city + '\'' +
+                ", location='" + location + '\'' +
+                ", count=" + count +
+                '}';
+    }
 }
 

@@ -8,7 +8,11 @@
     </select>
 
     <select id="findCourseTop10" resultType="pobject.Course">
-        SELECT * FROM Course WHERE sort=#{sort} AND city=#{city} ORDER BY count LIMIT 5
+        SELECT * FROM Course WHERE sort=#{sort}
+        <if test="city!=null">
+            AND city=#{city}
+        </if>
+        ORDER BY count LIMIT 10
     </select>
 
     <select id="findLikeCourseTop5" resultType="pobject.Course">
@@ -16,7 +20,7 @@
     </select>
 
     <select id="findCourseByName" resultType="pobject.Course">
-        SELECT * FROM Course WHERE cname=#{cname}
+        SELECT * FROM Course WHERE cname like '%${cname}%' LIMIT 10
     </select>
 
     <select id="findCourseById" resultType="pobject.Course">
