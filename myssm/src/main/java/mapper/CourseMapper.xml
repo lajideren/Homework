@@ -3,12 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.CourseMapper">
 
-    <select id="findPrimaryCourse" resultType="pobject.Course">
-        SELECT * FROM Course WHERE sort = '小学辅导';
-    </select>
 
     <select id="findCourseTop10" resultType="pobject.Course">
-        SELECT * FROM Course WHERE sort=#{sort}
+        SELECT * FROM course WHERE sort=#{sort}
         <if test="city!=null">
             AND city=#{city}
         </if>
@@ -16,19 +13,19 @@
     </select>
 
     <select id="findLikeCourseTop5" resultType="pobject.Course">
-        SELECT * FROM Course LIMIT 5
+        SELECT * FROM course LIMIT 5
     </select>
 
     <select id="findCourseByName" resultType="pobject.Course">
-        SELECT * FROM Course WHERE cname like '%${cname}%' LIMIT 10
+        SELECT * FROM course WHERE cname like '%${cname}%' LIMIT 10
     </select>
 
     <select id="findCourseById" resultType="pobject.Course">
-        SELECT * FROM Course WHERE cid=#{cid}
+        SELECT * FROM course WHERE cid=#{cid}
     </select>
 
     <select id="findCourse" resultType="pobject.Course">
-        SELECT * FROM Course WHERE sort=#{sort}
+        SELECT * FROM course WHERE sort=#{sort}
         <if test="grade != null and grade != ''">
             AND grade=#{grade}
             <if test="subject != null and subject != ''">

@@ -29,109 +29,9 @@
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/header.css" />
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/course.css" />
 
-    <script type="application/javascript">
-        $(document).ready(function(){
-            $.validator.addMethod("checkName",function(value,element,params){
-                var checkName = /^\w{2,10}$/g;
-                return this.optional(element)||(checkName.test(value));
-            },"只允许6-15位英文字母或数字");
-            $.validator.addMethod("checkPwd",function(value,element,params){
-                var checkPwd = /^\w{2,10}$/g;
-                return this.optional(element)||(checkPwd.test(value));
-            },"只允许6-15位英文字母或数字");
-            $.validator.addMethod("checkEml",function(value,element,params){
-                var checkEmail = /^[a-z0-9]+@([a-z0-9]+\.)+[a-z]{2,4}$/i;
-                return this.optional(element)||(checkEmail.test(value));
-            },"请输入正确的邮箱！");
-        })
-    </script>
-    <script type="application/javascript">
-        function login() {
-            var form1 = $('#loginForm');
-            form1.validate({
-                rules: {
-                    username: {
-                        required: true,
-                        // checkName: true
-                    },
-                    password: {
-                        required: true,
-                        // checkPwd: true
-                    }
-                },
-                messages: {
-                    username: {
-                        required: "名字必填"
-                    },
-                    password: {
-                        required: "密码必填"
-                    }
-                }
-            });
-            if (form1.valid()) {
-                form1.attr("action", "<%=ctx%>/client/login");
-                form1.submit();
-            }
-        }
-        function register() {
-            var form1=$('#registerForm');
-            form1.validate({
-                rules:{
-                    username:{
-                        required:true,
-                        checkName:true
-                    },
-                    password:{
-                        required:true,
-                        checkPwd:true
-                    },
-                    email:{
-                        required:true,
-                        checkEml:true
-                    }
-                },
-                messages:{
-                    username:{
-                        required:"用户名不能为空"
-                    },
-                    password:{
-                        required:"密码不能为空"
-                    },
-                    email:{
-                        required:"邮箱不能为空"
-                    }
-                }
-            });
-            if(form1.valid()) {
-                alert("注册成功");
-                form1.attr("action","<%=ctx%>/client/register");
-                form1.submit();
-            }
-        }
-    </script>
-
-    <script type="application/javascript">
-        $(document).ready(function () {
-            $('.selector').hover(
-                function () {
-                    $('.city_panel').css('display','block');
-                },
-                function () {
-                    $('.city_panel').css('display','none');
-                }
-
-            );
-
-            $('.city_panel a').click(function () {
-                $('#cur_city').text($(this).text());
-                $('.city_panel').css('display','none');
-
-            });
 
 
-
-        });
-    </script>
+    <script type="application/javascript" src="<%=ctx%>/resources/js/header.js"></script>
 
     <script type="application/javascript">
         function sleep(numberMillis) {
@@ -166,71 +66,6 @@
             });
         })
     </script>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        div, input, textarea, button, a {
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-        }
-        ul, li, ol{
-            list-style: none;
-        }
-        a {
-            color: #323232;
-            outline-style: none;
-            text-decoration: none;
-        }
-        .border-b {
-            position: relative;
-        }
-        .border-b:after {
-            top: auto;
-            bottom: 0;
-        }
-        .border-t:before, .border-b:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            background: #ddd;
-            right: 0;
-            height: 1px;
-            -webkit-transform: scaleY(0.5);
-            transform: scaleY(0.5);
-            -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-        }
-        .nav {
-            background-color: #fff;
-            text-align: center;
-        }
-        .nav .tab {
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        .tab a {
-            float: left;
-            width: 49%;
-            height: 2.56rem;
-            line-height:2.56rem;
-            display: inline-block;
-            border-right: 1px solid #e1e1e1;
-        }
-        .tab a:last-child {
-            border-right: 0;
-        }
-        .tab .curr {
-            border-bottom: 2px solid #fc7831;
-            color: #fc7831;
-        }
-        .content ul li {
-            display: none;
-            padding: 3%;
-            width: 94%;
-        }
-    </style>
 
 </head>
 <body>
@@ -240,91 +75,7 @@
 
 %>
 
-<div class="top_header">
-
-    <div class="logo">
-        <span class="title_font glyphicon glyphicon-education"></span>
-        <a href="http://localhost:8080/" class="slogan_font">Training College</a>
-    </div>
-
-    <div class="selector">
-        <span id="cur_city">
-            <%
-                String city=(String)session.getAttribute("city");
-                if(city!=null){
-            %>
-            <%=city%>
-            <%
-            }else{
-            %>
-            所在地
-            <%
-                }
-            %>
-        </span>
-        <span style="display: inline-block;font-size: 6px" class="glyphicon glyphicon-chevron-down"></span>
-        <div class="city_panel" >
-            <dl>
-                <dd><span>A</span><a>鞍山</a><a>安阳</a></dd>
-                <dd><span>B</span><a>北京</a><a>保定</a></dd>
-                <dd><span>C</span><a>重庆</a><a>成都</a><a>长沙</a><a>长春</a><a>沧州</a></dd>
-                <dd><span>D</span><a>大连</a><a>东莞</a></dd>
-                <dd><span>F</span><a>福州</a><a>佛山</a></dd>
-                <dd><span>G</span><a>广州</a><a>贵阳</a></dd>
-                <dd><span>H</span><a>哈尔滨</a><a>杭州</a><a>合肥</a><a>呼和浩特</a><a>黄石</a><a>邯郸</a><a>海口</a></dd>
-                <dd><span>J</span><a>济南</a><a>荆州</a><a>吉林</a><a>焦作</a><a>锦州</a></dd>
-                <dd><span>K</span><a>昆明</a></dd>
-                <dd><span>L</span><a>兰州</a><a>洛阳</a><a>连云港</a></dd>
-            </dl>
-            <dl>
-                <dd><span>M</span><a>绵阳</a></dd>
-                <dd><span>N</span><a>南京</a><a>南昌</a><a>南宁</a><a>宁波</a><a>南通</a></dd>
-                <dd><span>Q</span><a>青岛</a><a>秦皇岛</a></dd>
-                <dd><span>S</span><a>上海</a><a>沈阳</a><a>深圳</a><a>石家庄</a><a>苏州</a><a>十堰</a></dd>
-                <dd><span>T</span><a>天津</a><a>太原</a><a>唐山</a></dd>
-                <dd><span>W</span><a>武汉</a><a>无锡</a><a>乌鲁木齐</a><a>温州</a><a>潍坊</a></dd>
-                <dd><span>X</span><a>西安</a><a>厦门</a><a>徐州</a><a>襄阳</a><a>湘潭</a><a>新乡</a></dd>
-                <dd><span>Y</span><a>宜昌</a><a>烟台</a><a>扬州</a><a>银川</a><a>盐城</a></dd>
-                <dd><span>Z</span><a>郑州</a><a>镇江</a><a>株洲</a><a>珠海</a><a>中山</a></dd>
-            </dl>
-        </div>
-    </div>
-
-    <div class="login_panel">
-
-        <%
-            String username=(String) session.getAttribute("username");
-            if(username==null){
-        %>
-        <a data-toggle="modal" data-target="#loginModal" id="btn_login">登录</a>
-        |
-        <a data-toggle="modal" data-target="#registerModal" >注册</a>
-        <%
-        }else{
-        %>
-        <a>个人中心</a>
-        |
-        <a href="<%=ctx%>/client/logout">登出</a>
-        <%
-            }
-        %>
-
-    </div>
-
-    <div class="search">
-        <form>
-            <input class="searchbox" type="text" placeholder="输入课程或班号">
-            <button class="searchbtn"><span class="glyphicon glyphicon-search"></span></button>
-        </form>
-    </div>
-
-    <div>
-
-    </div>
-
-
-</div>
-
+<%@include file="header.jsp"%>
 
 
 <div class="contain1">
@@ -360,33 +111,37 @@
 
 </div>
 
-<div class="nav">
-    <div class="tab border-b">
-        <a href="javascript:;" rel="external nofollow" rel="external nofollow" class="curr">商品介绍</a>
-        <a href="javascript:;" rel="external nofollow" rel="external nofollow" >评价(99)</a>
-    </div>
-    <div class="content">
-        <ul>
-            <li style="display: block">商品介绍</li>
-            <li>评价</li>
-        </ul>
-    </div>
-</div>
+
 
 <div class="detail_section">
-    <div class="detail_title">
-        <span class="font_detail_title">课程详情</span>
-    </div>
+    <%--<div class="detail_title">--%>
+        <%--<span class="font_detail_title">课程详情</span>--%>
+    <%--</div>--%>
 
-    <span class="font_detail_title_sm"><span class="glyphicon glyphicon-th-list"></span>课程简介</span>
-    <span class="font_detail_content"><%=course.getSummary()%></span>
-    <span class="font_detail_title_sm"><span class="glyphicon glyphicon-user"></span>适用学员</span>
-    <span class="font_detail_content"><%=course.getCrowd()%></span>
-    <span class="font_detail_title_sm"><span class="glyphicon glyphicon-globe"></span>学习目标</span>
-    <span class="font_detail_content"><%=course.getGoal()%></span>
-    <span class="font_detail_title_sm"><span class="glyphicon glyphicon-book"></span>课程内容</span>
-    <span class="font_detail_content"><%=course.getContent()%></span>
-    <div style="height: 200px"></div>
+        <div class="nav">
+            <div class="tab border-b">
+                <a href="javascript:;" rel="external nofollow" rel="external nofollow" class="curr">课程详情</a>
+                <a href="javascript:;" rel="external nofollow" rel="external nofollow" >评价(12)</a>
+            </div>
+            <div class="content">
+                <ul>
+                    <li style="display: block">
+                        <span class="font_detail_title_sm"><span class="glyphicon glyphicon-th-list"></span>课程简介</span>
+                        <span class="font_detail_content"><%=course.getSummary()%></span>
+                        <span class="font_detail_title_sm"><span class="glyphicon glyphicon-user"></span>适用学员</span>
+                        <span class="font_detail_content"><%=course.getCrowd()%></span>
+                        <span class="font_detail_title_sm"><span class="glyphicon glyphicon-globe"></span>学习目标</span>
+                        <span class="font_detail_content"><%=course.getGoal()%></span>
+                        <span class="font_detail_title_sm"><span class="glyphicon glyphicon-book"></span>课程内容</span>
+                        <span class="font_detail_content"><%=course.getContent()%></span>
+                        <div style="height: 200px"></div>
+                    </li>
+                    <li>评价</li>
+                </ul>
+            </div>
+        </div>
+
+
 </div>
 
 <div class="teacher_section">
@@ -432,16 +187,16 @@
             <div class="modal-body">
                 <form id="loginForm" class="form-group">
                     <div class="form-group">
-                        <label for="">用户名</label>
+                        <label>用户名</label>
                         <input name="username" class="form-control" type="text" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="">密码</label>
+                        <label>密码</label>
                         <input name="password" class="form-control" type="password" placeholder="">
                     </div>
                     <div class="text-right">
-                        <button class="btn btn-primary" onclick="login()">登录</button>
-                        <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" onclick="login()">登录</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
                     </div>
                     <a href="" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">还没有账号？点我注册</a>
                     <input type="hidden" name="requestUrl" value="<%=requestUrl%>">
@@ -464,20 +219,20 @@
             <div class="modal-body">
                 <form id="registerForm" class="form-group">
                     <div class="form-group">
-                        <label for="">用户名</label>
+                        <label>用户名</label>
                         <input name="username" class="form-control" type="text" placeholder="6-15位字母或数字">
                     </div>
                     <div class="form-group">
-                        <label for="">密码</label>
+                        <label>密码</label>
                         <input name="password" class="form-control" type="password" placeholder="6-15位字母或数字">
                     </div>
                     <div class="form-group">
-                        <label for="">邮箱</label>
+                        <label>邮箱</label>
                         <input name="email" class="form-control" placeholder="例如:123@123.com">
                     </div>
                     <div class="text-right">
-                        <button class="btn btn-primary" onclick="register()">提交</button>
-                        <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" onclick="register()">提交</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
                     </div>
                     <a href="" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">已有账号？点我登录</a>
                     <input type="hidden" name="requestUrl" value="<%=requestUrl%>">

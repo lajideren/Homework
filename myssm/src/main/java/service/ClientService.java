@@ -9,7 +9,7 @@ public interface ClientService {
      * @param password 密码
      * @return true为成功，false失败
      */
-    boolean register(String username,String password);
+    boolean register(String username,String password,String email);
 
     /**
      * 登录，身份验证

@@ -18,6 +18,7 @@
     <bean id="instService" class="service.impl.InstServiceImpl"/>
     <bean id="adminService" class="service.impl.AdminServiceImpl"/>
     <bean id="courseService" class="service.impl.CourseServiceImpl"/>
+    <bean id="clientService" class="service.impl.ClientServiceImpl"/>
 
 
 
