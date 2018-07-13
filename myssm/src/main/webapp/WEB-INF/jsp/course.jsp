@@ -9,9 +9,6 @@
 
 <%
     String ctx=request.getContextPath();
-    String requestUrl = (String)request.getAttribute("requestUrl");
-
-//    System.out.println(requestUrl);
 %>
 <!DOCTYPE html>
 <html>
@@ -199,7 +196,6 @@
                         <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
                     </div>
                     <a href="" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">还没有账号？点我注册</a>
-                    <input type="hidden" name="requestUrl" value="<%=requestUrl%>">
                 </form>
             </div>
         </div>
@@ -235,7 +231,6 @@
                         <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
                     </div>
                     <a href="" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">已有账号？点我登录</a>
-                    <input type="hidden" name="requestUrl" value="<%=requestUrl%>">
                 </form>
             </div>
         </div>

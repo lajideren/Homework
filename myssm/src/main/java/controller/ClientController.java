@@ -21,19 +21,15 @@ public class ClientController {
 
     @RequestMapping("login")
     @ResponseBody
-    public Map<String,Object> login(HttpSession session, String username, String password,String requestUrl){
+    public Map<String,Object> login(HttpSession session, String username, String password){
 
         Map<String,Object> map=new HashMap<>();
 
-        if(requestUrl==null){
-            requestUrl="http://localhost:8080";
-        }
 
         if(clientService.login(username, password)) {
 
             session.setAttribute("username", username);
             map.put("res",true);
-            map.put("requestUrl",requestUrl);
 
         }else {
             map.put("res",false);
@@ -53,20 +49,15 @@ public class ClientController {
 
     @RequestMapping("register")
     @ResponseBody
-    public Map<String,Object> register(HttpSession session,String username,String password,String email,String requestUrl){
+    public Map<String,Object> register(HttpSession session,String username,String password,String email){
 
 
         Map<String,Object> map=new HashMap<>();
-
-        if(requestUrl==null){
-            requestUrl="http://localhost:8080";
-        }
 
         if(clientService.register(username, password, email)) {
 
             session.setAttribute("username", username);
             map.put("res",true);
-            map.put("requestUrl",requestUrl);
 
         }else {
             map.put("res",false);
@@ -74,5 +65,14 @@ public class ClientController {
 
         return map;
 
+    }
+
+
+    @RequestMapping("setCity")
+    @ResponseBody
+    public String setCity(HttpSession session,String city){
+        System.out.println(city);
+        session.setAttribute("city",city);
+        return  "";
     }
 }

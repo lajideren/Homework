@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pobject.Course;
 import service.CourseService;
 
@@ -20,11 +21,13 @@ public class MainController {
 
 
     @RequestMapping("/")
-    public String showIndex(HttpSession session,Model model,String city){
+    public String showIndex(HttpSession session,Model model){
 
 
 
         List<List<Course>> list=new ArrayList<>();
+
+        String city=(String)session.getAttribute("city");
 
         List<Course> likelist=courseService.findLikeCourseTop5();
 //        List<Course> allList1=courseService.findCourseTop10("学前辅导",city);
@@ -33,9 +36,6 @@ public class MainController {
         List<Course> allList3=courseService.findCourseTop10("小学辅导",city);
 
 //        List<Course> allList3=courseService.findCourseTop10("中学辅导",city);
-        if(city!=null){
-            session.setAttribute("city",city);
-        }
 
         list.add(likelist);
         list.add(allList1);
@@ -46,11 +46,12 @@ public class MainController {
 
 
         model.addAttribute("list",list);
-        model.addAttribute("city",city);
 
         return "index";
 
     }
+
+
 
 
 }

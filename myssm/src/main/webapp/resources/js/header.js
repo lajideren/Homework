@@ -1,9 +1,3 @@
-function search() {
-    window.location.href='http://localhost:8080/course/showInfoByName?cname='+$('#searchText').attr('value')
-}
-
-
-
 $(document).on('click', '.ui-menu-item', function () {
     window.location.href='http://localhost:8080/course/showInfoByName?cname='+$(this).text();
 });
@@ -20,7 +14,14 @@ $(document).ready(function () {
     );
 
     $('.city_panel a').click(function () {
-        window.location.href='http://localhost:8080/?city='+$(this).text();
+        $.ajax({
+            type:"POST",
+            url:"http://localhost:8080/client/setCity",
+            data:"city=长沙",
+            success:function (data) {
+                window.location.reload();
+            }
+        });
     });
 
     $('#searchText').bind('input propertychange', function() {
@@ -89,7 +90,7 @@ function login() {
                 if(!data.res){
                     alert("用户名不存在或密码错误");
                 }else {
-                    window.location.href=data.requestUrl;
+                    window.location.reload();
                 }
             }
         })
@@ -135,7 +136,7 @@ function register() {
                     alert("用户名已存在");
                 }else {
                     alert('注册成功');
-                    window.location.href=data.requestUrl;
+                    window.location.reload();
                 }
             }
         })

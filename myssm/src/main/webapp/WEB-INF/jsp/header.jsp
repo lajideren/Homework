@@ -21,7 +21,7 @@
             %>
             <%=city%>
             <%
-            }else{
+                }else{
             %>
             所在地
             <%
@@ -77,7 +77,7 @@
 
     <div class="search">
         <input id="searchText" class="searchbox" type="text" placeholder="输入课程名称">
-        <button class="searchbtn" onclick="search()"><span class="glyphicon glyphicon-search"></span></button>
+        <button class="searchbtn"><span class="glyphicon glyphicon-search"></span></button>
     </div>
 
 
