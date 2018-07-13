@@ -7,10 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pobject.Course;
 import service.CourseService;
-
-import javax.servlet.http.HttpSession;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,4 +44,15 @@ public class CourseController {
 
     }
 
+
+    @RequestMapping("showInfoByName")
+    public String showInfoByName(String cname,Model model){
+
+
+        Course course=courseService.findCourseByName(cname).get(0);
+        model.addAttribute("course",course);
+
+        return "course";
+
+    }
 }

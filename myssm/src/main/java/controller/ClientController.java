@@ -70,9 +70,7 @@ public class ClientController {
 
     @RequestMapping("setCity")
     @ResponseBody
-    public String setCity(HttpSession session,String city){
-        System.out.println(city);
+    public void setCity(HttpSession session,String city){
         session.setAttribute("city",city);
-        return  "";
     }
 }
