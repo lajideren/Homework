@@ -75,4 +75,163 @@ public class SubjectUtil {
         }
         return null;
     }
+
+
+    public static int[] getNums(String sort,String grade,String subject){
+
+        int[] nums=new int[3];
+
+        if(sort.equals("学前辅导")){
+
+            nums[0]=1;
+
+            switch (grade) {
+                case "幼儿":
+                    nums[1] = 1;
+                    break;
+                case "幼儿多元智能":
+                    nums[1] = 2;
+                    break;
+                default:
+                    nums[1] = 0;
+                    break;
+            }
+
+            switch (subject) {
+                case "英语":
+                    nums[2] = 1;
+                    break;
+                case "数学":
+                    nums[2] = 2;
+                    break;
+                case "语文":
+                    nums[2] = 3;
+                    break;
+                default:
+                    nums[2] = 0;
+                    break;
+            }
+
+
+
+        }else if(sort.equals("小学辅导")){
+
+            nums[0]=2;
+
+            switch (grade) {
+                case "一年级":
+                    nums[1] = 1;
+                    break;
+                case "二年级":
+                    nums[1] = 2;
+                    break;
+                case "三年级":
+                    nums[1] = 3;
+                    break;
+                case "四年级":
+                    nums[1] = 4;
+                    break;
+                case "五年级":
+                    nums[1] = 5;
+                    break;
+                case "六年级":
+                    nums[1] = 6;
+                    break;
+                default:
+                    nums[1] = 0;
+                    break;
+            }
+
+
+            switch (subject) {
+                case "英语":
+                    nums[2] = 1;
+                    break;
+                case "数学":
+                    nums[2] = 2;
+                    break;
+                case "语文":
+                    nums[2] = 3;
+                    break;
+                default:
+                    nums[2] = 0;
+                    break;
+            }
+
+        }else if(sort.equals("中学辅导")){
+
+            nums[0]=3;
+
+            switch (grade) {
+                case "初一":
+                    nums[1] = 1;
+                    break;
+                case "初二":
+                    nums[1] = 2;
+                    break;
+                case "中考":
+                    nums[1] = 3;
+                    break;
+                case "高一":
+                    nums[1] = 4;
+                    break;
+                case "高二":
+                    nums[1] = 5;
+                    break;
+                case "高三":
+                    nums[1] = 6;
+                    break;
+                default:
+                    nums[1] = 0;
+                    break;
+            }
+
+            switch (subject) {
+                case "语文":
+                    nums[2] = 1;
+                    break;
+                case "数学":
+                    nums[2] = 2;
+                    break;
+                case "英语":
+                    nums[2] = 3;
+                    break;
+                case "物理":
+                    nums[2] = 4;
+                    break;
+                case "化学":
+                    nums[2] = 5;
+                    break;
+                case "生物":
+                    nums[2] = 6;
+                    break;
+                case "政治":
+                    nums[2] = 7;
+                    break;
+                case "历史":
+                    nums[2] = 8;
+                    break;
+                case "地理":
+                    nums[2] = 9;
+                    break;
+                case "理综":
+                    nums[2] = 10;
+                    break;
+                case "文综":
+                    nums[2] = 11;
+                    break;
+                default:
+                    nums[2] = 0;
+                    break;
+            }
+
+        }else{
+
+            nums[0]=0;
+            nums[1]=0;
+            nums[2]=0;
+        }
+
+        return nums;
+    }
 }

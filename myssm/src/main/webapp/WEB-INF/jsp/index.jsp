@@ -49,6 +49,15 @@
             $('#refreshdiv').click(function () {
                 window.location.href='http://localhost:8080';
             });
+
+            $('.nav_panel>dl>dd>a').click(function () {
+                sort=$(this).closest('div').closest('dd').prevAll('dd').length+1;
+                grade=$(this).parent().prevAll('dt').length;
+                subject=$(this).prevAll('a').length+1;
+
+                window.location.href='http://localhost:8080/search/getCourseList?sort='+sort+'&grade='+grade+'&subject='+subject;
+            })
+
         });
     </script>
 
@@ -70,7 +79,7 @@
                     <dl>
                         <dt>幼儿</dt>
                         <dd>
-                            <a href="<%=ctx%>/search/getCourseList?sort=1&grade=1&subject=1">英语</a><span>|</span>
+                            <a>英语</a><span>|</span>
                             <a>数学</a><span>|</span>
                             <a>语文</a>
                         </dd>

@@ -1,5 +1,6 @@
 <%@ page import="pobject.Course" %>
-<%@ page import="util.RandomUtil" %><%--
+<%@ page import="util.RandomUtil" %>
+<%@ page import="util.SubjectUtil" %><%--
   Created by IntelliJ IDEA.
   User: wsy
   Date: 2018/6/30
@@ -95,15 +96,24 @@
 
 <%
     int[] nums=RandomUtil.randomArray(1,18,1);
+
+    String sort=course.getSort();
+    String grade=course.getGrade();
+    String subject=course.getSubject();
+
+    int[] ranks=SubjectUtil.getNums(sort,grade,subject);
+//    for(int temp:ranks){
+//        System.out.println(temp);
+//    }
 %>
 
 <div class="contain1">
     <div class="content1">
         <div class="breadpath">
-            <a>首页</a>
-            <span class="breadsep">&gt</span><a><%=course.getSort()%></a>
-            <span class="breadsep">&gt</span><a><%=course.getGrade()%></a>
-            <span class="breadsep">&gt</span><a><%=course.getSubject()%></a>
+            <a href="http://localhost:8080/">首页</a>
+            <span class="breadsep">&gt</span><a href="http://localhost:8080/search/getCourseList?sort=<%=ranks[0]%>&grade=0&subject=0"><%=sort%></a>
+            <span class="breadsep">&gt</span><a href="http://localhost:8080/search/getCourseList?sort=<%=ranks[0]%>&grade=<%=ranks[1]%>&subject=0"><%=grade%></a>
+            <span class="breadsep">&gt</span><a href="http://localhost:8080/search/getCourseList?sort=<%=ranks[0]%>&grade=<%=ranks[1]%>&subject=<%=ranks[2]%>"><%=subject%></a>
             <span class="breadsep">&gt</span><%=course.getCname()%>
         </div>
 
