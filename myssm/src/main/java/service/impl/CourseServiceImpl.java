@@ -15,6 +15,7 @@ import service.AdminService;
 import service.CourseService;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CourseServiceImpl implements CourseService {
@@ -24,13 +25,22 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<Course> findCourseTop10(String sort, String city) {
-        return courseMapper.findCourseTop10(sort, city);
+
+        List<Course> courses=new ArrayList<>();
+        for(int i=0;i<10;i++){
+            courses.add(courseMapper.findCourseRand(sort, city));
+        }
+        return courses;
     }
 
     @Override
     public List<Course> findLikeCourseTop5() {
 
-        return courseMapper.findLikeCourseTop5();
+        List<Course> courses=new ArrayList<>();
+        for(int i=0;i<5;i++){
+            courses.add(courseMapper.findCourseRand(null, null));
+        }
+        return courses;
     }
 
     @Override

@@ -17,7 +17,7 @@ $(document).ready(function () {
         $.ajax({
             type:"POST",
             url:"http://localhost:8080/client/setCity",
-            data:"city=长沙",
+            data:"city="+$(this).text(),
             success:function (data) {
                 window.location.reload();
             }

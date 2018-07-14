@@ -62,7 +62,6 @@
 .font_cname{
     font-size: 25px;
     display: block;
-    margin-bottom: 10px;
 }
 
 .font_left{
@@ -81,12 +80,24 @@
 }
 
 .btn_buy{
-    top:250px;
+    top:270px;
     position: absolute;
     display: block;
     height: 50px;
     width: 250px;
     background-color: #f66630;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.btn_view{
+    top:270px;
+    position: absolute;
+    display: block;
+    height: 50px;
+    width: 250px;
+    background-color: #62d777;
     color: white;
     border: none;
     font-size: 20px;
@@ -99,6 +110,18 @@
     font-size: 14px;
 }
 
+.font_price{
+    font-size: 20px;
+    color: red;
+    display: block;
+    line-height: 30px;
+}
+.font_cid{
+    font-size: 16px;
+    color: #565656;
+    display: block;
+    line-height: 30px;
+}
 
 
 /*==================================================*/
@@ -109,7 +132,7 @@
     float: left;
     width: 800px;
     background-color: white;
-    padding: 30px 50px 30px 50px;
+    padding: 10px 50px 30px 50px;
     min-height: 600px;
 
 }
@@ -245,7 +268,7 @@ a {
 .tab a {
     float: left;
     width: 20%;
-    line-height:30px;
+    line-height:40px;
     display: inline-block;
     text-align: center;
     text-decoration: none;
@@ -264,7 +287,7 @@ a {
 }
 
 .content ul{
-    padding-top: 40px;
+    padding: 40px 10px 0 10px ;
 }
 
 

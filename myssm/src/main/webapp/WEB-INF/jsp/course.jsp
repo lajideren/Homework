@@ -10,6 +10,11 @@
 <%
     String ctx=request.getContextPath();
 %>
+
+<%
+    Course course=(Course) request.getAttribute("course");
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,11 +48,21 @@
 
         function buy() {
             var username='<%=(String)session.getAttribute("username")%>';
-            if(username=='null'){
+            if(username==='null'){
                 $('#btn_login').click();
             }else{
-                sleep(500);
-                alert('订购成功');
+
+                $.ajax({
+                    type:'POST',
+                    url:'http://localhost:8080/course/addOrder',
+                    data:'cid='+'<%=course.getCid()%>',
+                    success:function () {
+                        sleep(500);
+                        alert('订购成功');
+                        window.location.reload();
+                    }
+                })
+
             }
         }
     </script>
@@ -67,10 +82,7 @@
 </head>
 <body>
 
-<%
-    Course course=(Course) request.getAttribute("course");
 
-%>
 
 <%@include file="header.jsp"%>
 
@@ -91,13 +103,27 @@
             </div>
             <div class="intro_right">
                 <span class="font_cname"><%=course.getCname()%><span class="font_share">分享</span></span>
+                <span class="font_cid">班号:<%=course.getCid()%></span>
+                <span class="font_price">￥<%=course.getPrice()%></span>
                 <div class="timediv">
                     <p><span class="font_left">开课时间:</span><%=course.getStartTimeString()%>至<%=course.getEndTimeString()%>至</p>
                     <p><span class="font_left">总计课时:</span><%=course.getPeriod()%></p>
                     <p><span class="font_left">上课时间:</span><%=course.getTime()%></p>
                     <p><span class="font_left">地点:</span><%=course.getLocation()%></p>
                 </div>
+                <%
+                    boolean selected=(boolean)request.getAttribute("selected");
+                    if(selected){
+                %>
+                <button class="btn_view" onclick="">查看课程</button>
+                <%
+                    }else{
+                %>
+
                 <button class="btn_buy" onclick="buy()">立即订购</button>
+                <%
+                    }
+                %>
             </div>
 
 
@@ -111,9 +137,6 @@
 
 
 <div class="detail_section">
-    <%--<div class="detail_title">--%>
-        <%--<span class="font_detail_title">课程详情</span>--%>
-    <%--</div>--%>
 
         <div class="nav">
             <div class="tab border-b">
@@ -131,7 +154,7 @@
                         <span class="font_detail_content"><%=course.getGoal()%></span>
                         <span class="font_detail_title_sm"><span class="glyphicon glyphicon-book"></span>课程内容</span>
                         <span class="font_detail_content"><%=course.getContent()%></span>
-                        <div style="height: 200px"></div>
+                        <div style="height: 100px"></div>
                     </li>
                     <li>评价</li>
                 </ul>
@@ -236,6 +259,8 @@
         </div>
     </div>
 </div>
+
+<div style="float: left;clear: left;height: 100px"></div>
 
 </body>
 </html>

@@ -4,17 +4,20 @@
 <mapper namespace="mapper.CourseMapper">
 
 
-    <select id="findCourseTop10" resultType="pobject.Course">
-        SELECT * FROM course WHERE sort=#{sort}
+    <select id="findCourseRand" resultType="pobject.Course" flushCache="true">
+        SELECT * FROM course
+        <where>
+        <if test="sort!=null">
+            AND sort=#{sort}
+        </if>
         <if test="city!=null">
             AND city=#{city}
         </if>
-        ORDER BY count LIMIT 10
+        AND rownum >= ( SELECT floor(rand()* ( (SELECT MAX(rownum) FROM course) - (SELECT MIN(rownum) FROM course) )+(SELECT MIN(rownum) FROM course) ) )
+        LIMIT 1
+        </where>
     </select>
 
-    <select id="findLikeCourseTop5" resultType="pobject.Course">
-        SELECT * FROM course LIMIT 5
-    </select>
 
     <select id="findCourseByName" resultType="pobject.Course">
         SELECT * FROM course WHERE cname like '%${cname}%' LIMIT 10

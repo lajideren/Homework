@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pobject.Course;
 import service.CourseService;
+import service.OrderService;
+
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +19,25 @@ public class CourseController {
 
     @Autowired
     private CourseService courseService;
+    @Autowired
+    private OrderService orderService;
 
 
     @RequestMapping("/showInfo")
-    public String showInfo(String cid,Model model){
+    public String showInfo(HttpSession session,String cid,Model model){
+
+
 
         Course course=courseService.findCourseById(cid);
 
         model.addAttribute("course",course);
+
+        String username=(String)session.getAttribute("username");
+        if(orderService.findOrder(username,cid)){
+            model.addAttribute("selected",true);
+        }else {
+            model.addAttribute("selected",false);
+        }
 
         return "course";
 
@@ -46,13 +60,31 @@ public class CourseController {
 
 
     @RequestMapping("showInfoByName")
-    public String showInfoByName(String cname,Model model){
+    public String showInfoByName(HttpSession session,String cname,Model model){
 
 
         Course course=courseService.findCourseByName(cname).get(0);
         model.addAttribute("course",course);
 
+        String cid=course.getCid();
+        String username=(String)session.getAttribute("username");
+        if(orderService.findOrder(username,cid)){
+            model.addAttribute("selected",true);
+        }else {
+            model.addAttribute("selected",false);
+        }
+
         return "course";
+
+    }
+
+
+    @RequestMapping("addOrder")
+    @ResponseBody
+    public void addOrder(HttpSession session, String cid){
+
+        String username=(String)session.getAttribute("username");
+        orderService.addOrder(username,cid);
 
     }
 }

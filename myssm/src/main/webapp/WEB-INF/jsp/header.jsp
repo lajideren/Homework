@@ -61,7 +61,7 @@
             String username=(String) session.getAttribute("username");
             if(username==null){
         %>
-        <a data-toggle="modal" data-target="#loginModal">登录</a>
+        <a id="btn_login" data-toggle="modal" data-target="#loginModal">登录</a>
         |
         <a data-toggle="modal" data-target="#registerModal">注册</a>
         <%

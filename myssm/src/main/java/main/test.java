@@ -1,12 +1,11 @@
 package main;
 
+import mapper.CourseMapper;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import po.*;
-import service.AdminService;
-import service.ClientService;
-import service.InstService;
-import service.CourseService;
+import pobject.Course;
+import pobject.Order;
+import service.*;
 import util.NumberUtil;
 
 import java.sql.Date;
@@ -17,12 +16,14 @@ public class test {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/applicationContext-*.xml");
-        ClientService clientService=(ClientService) applicationContext.getBean("clientService");
-
-        System.out.println(clientService.register("wsy","111","111@qq.ocom"));
+       CourseService courseService =(CourseService) applicationContext.getBean("courseService");
 
 
+       List<Course> courses=courseService.findLikeCourseTop5();
 
+       for(Course course:courses){
+           System.out.println(course);
+       }
 
     }
 }
