@@ -162,7 +162,7 @@
         <div class="nav">
             <div class="tab border-b">
                 <a href="javascript:;" rel="external nofollow" rel="external nofollow" class="curr">课程详情</a>
-                <a href="javascript:;" rel="external nofollow" rel="external nofollow" >评价(12)</a>
+                <a href="javascript:;" rel="external nofollow" rel="external nofollow" >评价</a>
             </div>
             <div class="content">
                 <ul>
@@ -177,7 +177,7 @@
                         <span class="font_detail_content"><%=course.getContent()%></span>
                         <div style="height: 100px"></div>
                     </li>
-                    <li>评价</li>
+                    <li></li>
                 </ul>
             </div>
         </div>
@@ -188,29 +188,20 @@
 <div class="teacher_section">
     <span class="font_teacher_title"><span class="font_left_sep" >|</span>授课老师</span>
 
+    <%
+        String[] teachers=(String[])request.getAttribute("teachers");
+        for(String temp:teachers){
+    %>
     <div class="teacherdiv">
         <div class="teacherimg">
             <img src="<%=ctx%>/resources/img/avatar.png">
         </div>
 
-        <span class="font_teacher_name">王维纲</span>
+        <span class="font_teacher_name"><%=temp%></span>
     </div>
-
-    <div class="teacherdiv">
-        <div class="teacherimg">
-            <img src="<%=ctx%>/resources/img/avatar.png">
-        </div>
-
-        <span class="font_teacher_name">王维纲</span>
-    </div>
-
-    <div class="teacherdiv">
-        <div class="teacherimg">
-            <img src="<%=ctx%>/resources/img/avatar.png">
-        </div>
-
-        <span class="font_teacher_name">王维纲</span>
-    </div>
+    <%
+        }
+    %>
 </div>
 
 

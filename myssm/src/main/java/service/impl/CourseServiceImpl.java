@@ -70,6 +70,12 @@ public class CourseServiceImpl implements CourseService {
         return courseMapper.findCourse(sort, grade, subject, pageNum, pageSize);
     }
 
+    @Override
+    public String[] findTeacher(String cid) {
+        return courseMapper.findTeacher(cid).split(",");
+
+    }
+
     public static void main(String[] args) {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/applicationContext-*.xml");
         CourseService courseService=(CourseService) applicationContext.getBean("courseService");

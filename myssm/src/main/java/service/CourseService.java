@@ -52,6 +52,14 @@ public interface CourseService {
     List<Course> findCourse(String sort,String grade,String subject,int pageNum,int pageSize);
 
 
+    /**
+     * 查看课程的任课老师
+     * @param cid
+     * @return
+     */
+    String[] findTeacher(String cid);
+
+
 
 
 

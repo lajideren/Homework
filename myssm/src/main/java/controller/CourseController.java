@@ -31,10 +31,12 @@ public class CourseController {
 
 
         Course course=courseService.findCourseById(cid);
-
+        String[] teachers=courseService.findTeacher(cid);
 
 
         model.addAttribute("course",course);
+        model.addAttribute("teachers",teachers);
+
 
         String username=(String)session.getAttribute("username");
         if(orderService.findOrder(username,cid)){
@@ -57,24 +59,6 @@ public class CourseController {
     }
 
 
-    @RequestMapping("showInfoByName")
-    public String showInfoByName(HttpSession session,String cname,Model model){
-
-
-        Course course=courseService.findCourseByName(cname).get(0);
-        model.addAttribute("course",course);
-
-        String cid=course.getCid();
-        String username=(String)session.getAttribute("username");
-        if(orderService.findOrder(username,cid)){
-            model.addAttribute("selected",true);
-        }else {
-            model.addAttribute("selected",false);
-        }
-
-        return "course";
-
-    }
 
 
     @RequestMapping("addOrder")

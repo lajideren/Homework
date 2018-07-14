@@ -39,6 +39,11 @@
     </select>
 
 
+    <select id="findTeacher" resultType="string">
+        SELECT tname FROM teacher WHERE cid=#{cid}
+    </select>
+
+
 
 
 </mapper>

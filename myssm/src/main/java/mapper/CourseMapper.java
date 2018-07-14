@@ -42,4 +42,7 @@ public interface CourseMapper {
      * @return
      */
     List<Course> findCourse(@Param("sort")String sort,@Param("grade")String grade,@Param("subject")String subject,@Param("pageNum")int pageNum, @Param("pageSize")int pageSize);
+
+
+    String findTeacher(@Param("cid")String cid);
 }
