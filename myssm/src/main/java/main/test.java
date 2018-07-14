@@ -19,7 +19,7 @@ public class test {
        CourseService courseService =(CourseService) applicationContext.getBean("courseService");
 
 
-       List<Course> courses=courseService.findLikeCourseTop5();
+       List<Course> courses=courseService.findCourseByName("数学");
 
        for(Course course:courses){
            System.out.println(course);

@@ -11,7 +11,9 @@ import service.OrderService;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/course")
@@ -30,6 +32,8 @@ public class CourseController {
 
         Course course=courseService.findCourseById(cid);
 
+
+
         model.addAttribute("course",course);
 
         String username=(String)session.getAttribute("username");
@@ -45,16 +49,10 @@ public class CourseController {
 
     @RequestMapping("findByName")
     @ResponseBody
-    public List<String> findByName(String cname){
+    public List<Course> findByName(String cname){
 
-        List<Course> courses=courseService.findCourseByName(cname);
 
-        List<String> strs=new ArrayList<>();
-        for(Course course:courses){
-            strs.add(course.getCname());
-        }
-
-        return strs;
+        return courseService.findCourseByName(cname);
 
     }
 

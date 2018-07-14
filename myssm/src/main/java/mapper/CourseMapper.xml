@@ -13,8 +13,8 @@
         <if test="city!=null">
             AND city=#{city}
         </if>
-        AND rownum >= ( SELECT floor(rand()* ( (SELECT MAX(rownum) FROM course) - (SELECT MIN(rownum) FROM course) )+(SELECT MIN(rownum) FROM course) ) )
-        LIMIT 1
+        AND 13 >= char_length (cname)
+        AND 10 >= char_length (location)
         </where>
     </select>
 

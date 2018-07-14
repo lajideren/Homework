@@ -31,9 +31,9 @@ public class MainController {
 
         List<Course> likelist=courseService.findLikeCourseTop5();
 //        List<Course> allList1=courseService.findCourseTop10("学前辅导",city);
-        List<Course> allList1=courseService.findCourseTop10("小学辅导",city);
+        List<Course> allList1=courseService.findCourseTop10("学前辅导",city);
         List<Course> allList2=courseService.findCourseTop10("小学辅导",city);
-        List<Course> allList3=courseService.findCourseTop10("小学辅导",city);
+        List<Course> allList3=courseService.findCourseTop10("中学辅导",city);
 
 //        List<Course> allList3=courseService.findCourseTop10("中学辅导",city);
 

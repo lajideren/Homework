@@ -13,6 +13,7 @@ import po.User;
 import pobject.Course;
 import service.AdminService;
 import service.CourseService;
+import util.RandomUtil;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -26,21 +27,28 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public List<Course> findCourseTop10(String sort, String city) {
 
-        List<Course> courses=new ArrayList<>();
+        List<Course> courses=courseMapper.findCourseRand(sort, city);
+        int[] nums=RandomUtil.randomArray(0,courses.size()-1,10);
+        List<Course> res=new ArrayList<>();
         for(int i=0;i<10;i++){
-            courses.add(courseMapper.findCourseRand(sort, city));
+            res.add(courses.get(nums[i]));
         }
-        return courses;
+
+        return res;
     }
 
     @Override
     public List<Course> findLikeCourseTop5() {
 
-        List<Course> courses=new ArrayList<>();
+        List<Course> courses=courseMapper.findCourseRand(null, null);
+        int[] nums=RandomUtil.randomArray(0,courses.size()-1,5);
+        List<Course> res=new ArrayList<>();
+
         for(int i=0;i<5;i++){
-            courses.add(courseMapper.findCourseRand(null, null));
+            res.add(courses.get(nums[i]));
         }
-        return courses;
+
+        return res;
     }
 
     @Override

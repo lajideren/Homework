@@ -304,7 +304,7 @@
 %>
 
 <%
-    nums=RandomUtil.randomArray(1,14,5);
+    nums=RandomUtil.randomArray(1,18,5);
 %>
 
 <div class="like_section">
@@ -343,7 +343,7 @@
 
 
 <%
-    nums=RandomUtil.randomArray(1,14,10);
+    nums=RandomUtil.randomArray(1,18,10);
 %>
 
 <div class="all_section">
@@ -365,7 +365,7 @@
                     <p class="font_cname1"><%=allList1.get(i).getCname()%></p>
                     <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=allList1.get(i).getLocation()%></p>
                     <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
-                    <p class="font_price1">￥318</p>
+                    <p class="font_price1">￥<%=allList1.get(i).getPrice()%></p>
                 </a>
             </li>
             <%
@@ -377,7 +377,7 @@
 </div>
 
 <%
-    nums=RandomUtil.randomArray(1,14,10);
+    nums=RandomUtil.randomArray(1,18,10);
 %>
 <div class="all_section">
     <div>
@@ -399,10 +399,10 @@
                     <img src="<%=ctx%>/resources/img/custom/c<%=nums[i]%>.jpg">
                 </div>
                 <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_cname1"><%=allList2.get(i).getCname()%></p>
                     <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=allList2.get(i).getLocation()%></p>
                     <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
-                    <p class="font_price1">￥318</p>
+                    <p class="font_price1">￥<%=allList2.get(i).getPrice()%></p>
                 </a>
             </li>
             <%
@@ -413,7 +413,7 @@
 </div>
 
 <%
-    nums=RandomUtil.randomArray(1,14,10);
+    nums=RandomUtil.randomArray(1,18,10);
 %>
 <div class="all_section">
     <div>
@@ -435,10 +435,10 @@
                     <img src="<%=ctx%>/resources/img/custom/c<%=nums[i]%>.jpg">
                 </div>
                 <a>
-                    <p class="font_cname1">三年级英语培优春季班</p>
+                    <p class="font_cname1"><%=allList3.get(i).getCname()%></p>
                     <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=allList3.get(i).getLocation()%></p>
                     <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
-                    <p class="font_price1">￥318</p>
+                    <p class="font_price1">￥<%=allList3.get(i).getPrice()%></p>
                 </a>
             </li>
             <%

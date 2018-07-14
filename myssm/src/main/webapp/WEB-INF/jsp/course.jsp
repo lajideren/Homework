@@ -1,4 +1,5 @@
-<%@ page import="pobject.Course" %><%--
+<%@ page import="pobject.Course" %>
+<%@ page import="util.RandomUtil" %><%--
   Created by IntelliJ IDEA.
   User: wsy
   Date: 2018/6/30
@@ -24,12 +25,14 @@
     <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/jquery-3.1.1.min.js"></script>
     <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/jquery.validate.min.js"></script>
     <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+    <script type="application/javascript" src="<%=ctx%>/resources/jquery-ui-1.12.1/jquery-ui.js"></script>
 
 
 
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/bootstrap-3.3.5-dist/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/header.css" />
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/course.css" />
+    <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/jquery-ui-1.12.1/jquery-ui.css" />
 
 
 
@@ -51,17 +54,20 @@
             if(username==='null'){
                 $('#btn_login').click();
             }else{
+                if(confirm("确认报名该课程?")) {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://localhost:8080/course/addOrder',
+                        data: 'cid=' + '<%=course.getCid()%>',
+                        success: function () {
 
-                $.ajax({
-                    type:'POST',
-                    url:'http://localhost:8080/course/addOrder',
-                    data:'cid='+'<%=course.getCid()%>',
-                    success:function () {
-                        sleep(500);
-                        alert('订购成功');
-                        window.location.reload();
-                    }
-                })
+                            sleep(500);
+                            alert('报名成功');
+                            window.location.reload();
+
+                        }
+                    });
+                }
 
             }
         }
@@ -87,6 +93,10 @@
 <%@include file="header.jsp"%>
 
 
+<%
+    int[] nums=RandomUtil.randomArray(1,18,1);
+%>
+
 <div class="contain1">
     <div class="content1">
         <div class="breadpath">
@@ -99,18 +109,19 @@
 
         <div class="intro_section">
             <div class="imgdiv">
-                <img src="<%=ctx%>/resources/img/custom/c9.jpg">
+                <img src="<%=ctx%>/resources/img/custom/c<%=nums[0]%>.jpg">
             </div>
             <div class="intro_right">
                 <span class="font_cname"><%=course.getCname()%><span class="font_share">分享</span></span>
                 <span class="font_cid">班号:<%=course.getCid()%></span>
-                <span class="font_price">￥<%=course.getPrice()%></span>
+
                 <div class="timediv">
                     <p><span class="font_left">开课时间:</span><%=course.getStartTimeString()%>至<%=course.getEndTimeString()%>至</p>
                     <p><span class="font_left">总计课时:</span><%=course.getPeriod()%></p>
                     <p><span class="font_left">上课时间:</span><%=course.getTime()%></p>
                     <p><span class="font_left">地点:</span><%=course.getLocation()%></p>
                 </div>
+                <span class="font_price"><span style="font-size: 22px">￥</span><%=course.getPrice()%></span>
                 <%
                     boolean selected=(boolean)request.getAttribute("selected");
                     if(selected){
@@ -120,7 +131,7 @@
                     }else{
                 %>
 
-                <button class="btn_buy" onclick="buy()">立即订购</button>
+                <button class="btn_buy" onclick="buy()">立即报名</button>
                 <%
                     }
                 %>

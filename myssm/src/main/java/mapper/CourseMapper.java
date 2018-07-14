@@ -8,12 +8,12 @@ import java.util.List;
 public interface CourseMapper {
 
     /**
-     * 随机选取一门课程
+     *
      * @param sort 种类
      * @param city 城市
      * @return
      */
-    Course findCourseRand(@Param("sort")String sort,@Param("city")String city);
+    List<Course> findCourseRand(@Param("sort")String sort,@Param("city")String city);
 
 
     /**

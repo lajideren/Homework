@@ -1,6 +1,3 @@
-$(document).on('click', '.ui-menu-item', function () {
-    window.location.href='http://localhost:8080/course/showInfoByName?cname='+$(this).text();
-});
 
 $(document).ready(function () {
     $('.selector').hover(
@@ -24,19 +21,30 @@ $(document).ready(function () {
         });
     });
 
-    $('#searchText').bind('input propertychange', function() {
-        $.ajax({
-            type:"POST",
-            url:"http://localhost:8080/course/findByName",
-            data:"cname="+$(this).val(),
-            dataType:"json",
-            success:function (data) {
+    $("#searchText").autocomplete({
+        source:function(request,response){
+            $.ajax({
+                type:"POST",
+                url:"http://localhost:8080/course/findByName",
+                dataType : "json",
+                data:"cname="+$("#searchText").val(),
+                success : function(data) {
+                    // var data = eval(json);//json数组
+                    console.log(data[0]);
 
-                $('#searchText').autocomplete({
-                    source: data
-                });
-            }
-        });
+                    response($.map(data,function(item){
+                        return {
+                            label:item.cname+'--'+ item.cid,//下拉框显示值
+                            value:item.cid//选中后，填充到下拉框的值
+                        }
+                    }));
+                }
+            });
+        },
+        delay: 500,//延迟500ms便于输入
+        select : function(event, ui) {
+            window.location.href='http://localhost:8080/course/showInfo?cid='+ui.item.value;
+        }
     });
 
 
