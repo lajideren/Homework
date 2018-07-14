@@ -56,7 +56,14 @@
                 subject=$(this).prevAll('a').length+1;
 
                 window.location.href='http://localhost:8080/search/getCourseList?sort='+sort+'&grade='+grade+'&subject='+subject;
+            });
+
+            $('.all_section>div>a').click(function(){
+                sort=$(this).closest('.all_section').prevAll('.all_section').length+1;
+                grade=$(this).prevAll('a').length+1;
+                window.location.href='http://localhost:8080/search/getCourseList?sort='+sort+'&grade='+grade+'&subject=0';
             })
+
 
         });
     </script>
