@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import pobject.Comment;
 import pobject.Course;
 import service.CourseService;
 import service.OrderService;
@@ -32,10 +33,13 @@ public class CourseController {
 
         Course course=courseService.findCourseById(cid);
         String[] teachers=courseService.findTeacher(cid);
+        List<Comment> comments=courseService.findComment(cid);
 
 
         model.addAttribute("course",course);
         model.addAttribute("teachers",teachers);
+        model.addAttribute("comments",comments);
+        model.addAttribute("isCmt",false);
 
 
         String username=(String)session.getAttribute("username");
@@ -69,4 +73,35 @@ public class CourseController {
         orderService.addOrder(username,cid);
 
     }
+
+    @RequestMapping("addComment")
+    public String addComment(HttpSession session,String cid,String content,Model model){
+
+
+        String username=(String)session.getAttribute("username");
+        courseService.addComment(cid,username,content);
+
+        Course course=courseService.findCourseById(cid);
+        String[] teachers=courseService.findTeacher(cid);
+        List<Comment> comments=courseService.findComment(cid);
+
+
+        model.addAttribute("course",course);
+        model.addAttribute("teachers",teachers);
+        model.addAttribute("comments",comments);
+        model.addAttribute("isCmt",true);
+
+        if(orderService.findOrder(username,cid)){
+            model.addAttribute("selected",true);
+        }else {
+            model.addAttribute("selected",false);
+        }
+
+        return "course";
+
+    }
+
+
+
+
 }

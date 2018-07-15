@@ -14,7 +14,7 @@
             AND city=#{city}
         </if>
         AND 13 >= char_length (cname)
-        AND 10 >= char_length (location)
+--         AND 10 >= char_length (location)
         </where>
     </select>
 
@@ -42,6 +42,14 @@
     <select id="findTeacher" resultType="string">
         SELECT tname FROM teacher WHERE cid=#{cid}
     </select>
+
+    <select id="findComment" resultType="pobject.Comment">
+        SELECT * FROM comment WHERE cid=#{cid} ORDER BY createTime DESC
+    </select>
+
+    <insert id="addComment">
+        INSERT INTO comment VALUES (null,#{cid},#{username},#{content},#{createTime})
+    </insert>
 
 
 

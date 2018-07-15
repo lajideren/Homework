@@ -1,8 +1,10 @@
 package mapper;
 
 import org.apache.ibatis.annotations.Param;
+import pobject.Comment;
 import pobject.Course;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 public interface CourseMapper {
@@ -45,4 +47,10 @@ public interface CourseMapper {
 
 
     String findTeacher(@Param("cid")String cid);
+
+
+    List<Comment> findComment(@Param("cid")String cid);
+
+
+    void addComment(@Param("cid")String cid, @Param("username")String username, @Param("content")String content, @Param("createTime")Timestamp createTime);
 }
