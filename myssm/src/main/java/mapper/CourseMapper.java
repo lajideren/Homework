@@ -45,6 +45,8 @@ public interface CourseMapper {
      */
     List<Course> findCourse(@Param("sort")String sort,@Param("grade")String grade,@Param("subject")String subject,@Param("pageNum")int pageNum, @Param("pageSize")int pageSize);
 
+    int findCourseCount(@Param("sort")String sort,@Param("grade")String grade,@Param("subject")String subject);
+
 
     String findTeacher(@Param("cid")String cid);
 

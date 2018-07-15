@@ -35,7 +35,18 @@
                 AND subject=#{subject}
             </if>
         </if>
-        LIMIT #{pageNum},#{pageSize}
+        LIMIT (#{pageNum}-1)*#{pageSize},#{pageSize}
+    </select>
+
+
+    <select id="findCourseCount" resultType="int">
+        SELECT count(*) FROM course WHERE sort=#{sort}
+        <if test="grade != null and grade != ''">
+            AND grade=#{grade}
+            <if test="subject != null and subject != ''">
+                AND subject=#{subject}
+            </if>
+        </if>
     </select>
 
 

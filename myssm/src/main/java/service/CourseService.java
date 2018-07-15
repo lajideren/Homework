@@ -52,6 +52,16 @@ public interface CourseService {
      */
     List<Course> findCourse(String sort,String grade,String subject,int pageNum,int pageSize);
 
+    /**
+     * 获得总页数
+     * @param sort
+     * @param grade
+     * @param subject
+     * @param pageSize
+     * @return
+     */
+    int findCoursePageCount(String sort,String grade,String subject,int pageSize);
+
 
     /**
      * 查看课程的任课老师

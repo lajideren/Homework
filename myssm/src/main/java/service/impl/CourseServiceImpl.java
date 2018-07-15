@@ -66,9 +66,15 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<Course> findCourse(String sort, String grade, String subject, int pageNum, int pageSize) {
-        //获取当前页数起始位置
-        pageNum *= pageSize;
+
         return courseMapper.findCourse(sort, grade, subject, pageNum, pageSize);
+    }
+
+    @Override
+    public int findCoursePageCount(String sort, String grade, String subject,int pageSize) {
+        int count=courseMapper.findCourseCount(sort, grade, subject);
+
+        return count%pageSize==0 ? count/pageSize : count/pageSize+1 ;
     }
 
     @Override
