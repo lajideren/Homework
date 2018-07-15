@@ -1,5 +1,6 @@
 package service;
 
+import pobject.Comment;
 import pobject.Course;
 
 import java.util.List;
@@ -58,6 +59,23 @@ public interface CourseService {
      * @return
      */
     String[] findTeacher(String cid);
+
+
+    /**
+     * 查看课程的所有评论，按时间顺序返回
+     * @param cid
+     * @return
+     */
+    List<Comment> findComment(String cid);
+
+
+    /**
+     * 添加一条评论
+     * @param cid
+     * @param username
+     * @param content
+     */
+    void addComment(String cid,String username,String content);
 
 
 

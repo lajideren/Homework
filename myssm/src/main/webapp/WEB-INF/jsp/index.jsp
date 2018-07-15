@@ -320,7 +320,7 @@
 %>
 
 <%
-    nums=RandomUtil.randomArray(1,18,5);
+    nums=RandomUtil.randomArray(1,20,5);
 %>
 
 <div class="like_section">
@@ -359,7 +359,7 @@
 
 
 <%
-    nums=RandomUtil.randomArray(1,18,10);
+    nums=RandomUtil.randomArray(1,20,10);
 %>
 
 <div class="all_section">
@@ -379,8 +379,13 @@
                 </div>
                 <a>
                     <p class="font_cname1"><%=allList1.get(i).getCname()%></p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=allList1.get(i).getLocation()%></p>
-                    <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
+                    <%
+                        String location=allList1.get(i).getLocation();
+                        if(location.length()>10){
+                            location=location.substring(0,8)+"...";
+                        }
+                    %>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=location%></p>                    <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
                     <p class="font_price1">￥<%=allList1.get(i).getPrice()%></p>
                 </a>
             </li>
@@ -393,7 +398,7 @@
 </div>
 
 <%
-    nums=RandomUtil.randomArray(1,18,10);
+    nums=RandomUtil.randomArray(1,20,10);
 %>
 <div class="all_section">
     <div>
@@ -416,8 +421,13 @@
                 </div>
                 <a>
                     <p class="font_cname1"><%=allList2.get(i).getCname()%></p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=allList2.get(i).getLocation()%></p>
-                    <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
+                    <%
+                        String location=allList2.get(i).getLocation();
+                        if(location.length()>10){
+                            location=location.substring(0,8)+"...";
+                        }
+                    %>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=location%></p>                    <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
                     <p class="font_price1">￥<%=allList2.get(i).getPrice()%></p>
                 </a>
             </li>
@@ -429,7 +439,7 @@
 </div>
 
 <%
-    nums=RandomUtil.randomArray(1,18,10);
+    nums=RandomUtil.randomArray(1,20,10);
 %>
 <div class="all_section">
     <div>
@@ -452,7 +462,13 @@
                 </div>
                 <a>
                     <p class="font_cname1"><%=allList3.get(i).getCname()%></p>
-                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=allList3.get(i).getLocation()%></p>
+                    <%
+                        String location=allList3.get(i).getLocation();
+                        if(location.length()>10){
+                            location=location.substring(0,8)+"...";
+                        }
+                    %>
+                    <p class="font_info1"><span class="glyphicon glyphicon-map-marker font_info1_left"></span><%=location%></p>
                     <%--<p class="font_info1"><span class="glyphicon glyphicon-time font_info1_left"></span>2018-07-18至2018-08-06</p>--%>
                     <p class="font_price1">￥<%=allList3.get(i).getPrice()%></p>
                 </a>

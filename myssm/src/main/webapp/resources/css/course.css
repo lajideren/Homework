@@ -1,13 +1,13 @@
 
 .contain1{
     width:100%;
-    height: 400px;
+    height: 450px;
     background: white;
     margin-top: 50px;
 }
 
 .content1{
-    padding-top: 20px;
+    padding-top: 30px;
     margin: 0 auto;
     width:80%;
 }
@@ -23,7 +23,7 @@
 .breadpath{
     font-size: 13px;
     color: #797979;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .breadpath a{
@@ -42,14 +42,14 @@
 .imgdiv{
     margin-top: 7px;
     width:450px;
-    height: 293px;
+    height: 345px;
     float: left;
     overflow: hidden;
 }
 
 .imgdiv img{
     width: 450px;
-    height: 293px;
+    height: 345px;
 }
 
 .intro_right{
@@ -80,8 +80,7 @@
 }
 
 .btn_buy{
-    top:260px;
-    left: 120px;
+    top:300px;
     position: absolute;
     display: block;
     height: 50px;
@@ -93,13 +92,12 @@
 }
 
 .btn_view{
-    top:260px;
-    left: 120px;
+    top:300px;
     position: absolute;
     display: block;
     height: 50px;
     width: 250px;
-    background-color: #62d777;
+    background-color: #5ac66e;
     color: white;
     border: none;
     font-size: 20px;
@@ -114,18 +112,16 @@
 }
 
 .font_price{
-    top:260px;
-    position: absolute;
-    font-size: 28px;
-    color: #ff5e2f;
-    display: block;
-    line-height: 50px;
-}
-.font_cid{
-    font-size: 16px;
-    color: #747474;
+    font-size: 25px;
+    color: red;
     display: block;
     line-height: 40px;
+}
+.font_cid{
+    font-size: 14px;
+    color: #747474;
+    display: block;
+    line-height: 30px;
 }
 
 
@@ -227,6 +223,63 @@
     line-height: 80px;
 }
 
+.commentdiv{
+
+    height: 120px;
+    width: 100%;
+}
+
+.commmentleft{
+    float: left;
+    height: 120px;
+    width: 10%;
+}
+
+.commmentright{
+    float: left;
+    height: 120px;
+    width: 90%;
+}
+
+.commentimg{
+    width: 40px;
+    border-radius: 20px;
+    height: 40px;
+    overflow: hidden;
+
+    /*float: left;*/
+}
+
+.btn_cmt{
+    float: right;
+    margin-top: 10px;
+
+}
+
+.font_cmt_username{
+    font-size: 12px;
+    color: #eea236;
+}
+
+.font_cmt_cnt{
+    line-height:50px;
+    color: #969696;
+}
+
+.font_cmt_content{
+    color: #505050;
+}
+
+.font_cmt_time{
+    color: #aeaeae;
+    font-size: 12px;
+}
+
+.commentimg img{
+    width: 40px;
+    height: 40px;
+}
+
 
 *{
     margin: 0;
@@ -272,7 +325,8 @@ a {
 }
 .tab a {
     float: left;
-    width: 20%;
+    width: 15%;
+    margin-right: 20px;
     line-height:40px;
     display: inline-block;
     text-align: center;
@@ -286,13 +340,38 @@ a {
     border-bottom: 3px solid #59bc37;
     color: #59bc37;
 }
-.content ul li {
-    display: none;
+.content>ul>li {
     width: 100%;
+    display: none;
 }
 
-.content ul{
+.content>ul>li>ul>li {
+    width: 100%;
+    display: block;
+}
+
+.content>ul{
     padding: 40px 10px 0 10px ;
+}
+
+
+.img_msg{
+    width: 200px;
+    height: 170px;
+    margin: 80px auto 0 auto;
+    overflow: hidden;
+}
+
+.img_msg img{
+    width: 200px;
+    height: 170px;
+}
+
+.font_msg{
+    font-size: 20px;
+    display: block;
+    width: 80px;
+    margin: 20px auto 0 auto;
 }
 
 

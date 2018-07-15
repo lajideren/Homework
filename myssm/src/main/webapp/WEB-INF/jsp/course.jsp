@@ -1,6 +1,8 @@
 <%@ page import="pobject.Course" %>
 <%@ page import="util.RandomUtil" %>
-<%@ page import="util.SubjectUtil" %><%--
+<%@ page import="util.SubjectUtil" %>
+<%@ page import="pobject.Comment" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: wsy
   Date: 2018/6/30
@@ -72,7 +74,24 @@
 
             }
         }
+        function comment() {
+            $('#cmtForm').attr('action','http://localhost:8080/course/addComment');
+            $('#cmtForm').submit();
+        }
+
+        function cmt(){
+            var username='<%=(String)session.getAttribute("username")%>';
+            if(username==='null'){
+                $('#btn_login').click();
+            }else{
+                $('#cmtModal').modal('show');
+            }
+        }
     </script>
+
+    <%
+        boolean isCmt=(boolean)request.getAttribute("isCmt");
+    %>
 
     <script>
         $(function() {
@@ -80,9 +99,15 @@
                 $(this).addClass('curr').siblings().removeClass('curr');
                 var index = $(this).index();
                 number = index;
-                $('.nav .content li').hide();
-                $('.nav .content li:eq(' + index + ')').show();
+                $('.nav .content>ul>li').hide();
+                $('.nav .content>ul>li:eq(' + index + ')').show();
             });
+
+            var isCmt=<%=isCmt%>;
+
+            if(isCmt){
+                $('#a_cmt').click();
+            }
         })
     </script>
 
@@ -95,7 +120,7 @@
 
 
 <%
-    int[] nums=RandomUtil.randomArray(1,18,1);
+    int[] nums=RandomUtil.randomArray(1,20,1);
 
     String sort=course.getSort();
     String grade=course.getGrade();
@@ -124,6 +149,7 @@
             <div class="intro_right">
                 <span class="font_cname"><%=course.getCname()%><span class="font_share">分享</span></span>
                 <span class="font_cid">班号:<%=course.getCid()%></span>
+                <span class="font_price"><span style="font-size: 22px">￥</span><%=course.getPrice()%></span>
 
                 <div class="timediv">
                     <p><span class="font_left">开课时间:</span><%=course.getStartTimeString()%>至<%=course.getEndTimeString()%>至</p>
@@ -131,12 +157,12 @@
                     <p><span class="font_left">上课时间:</span><%=course.getTime()%></p>
                     <p><span class="font_left">地点:</span><%=course.getLocation()%></p>
                 </div>
-                <span class="font_price"><span style="font-size: 22px">￥</span><%=course.getPrice()%></span>
+
                 <%
                     boolean selected=(boolean)request.getAttribute("selected");
                     if(selected){
                 %>
-                <button class="btn_view" onclick="">查看课程</button>
+                <button class="btn_view" onclick="">已报名,查看课程</button>
                 <%
                     }else{
                 %>
@@ -162,10 +188,11 @@
         <div class="nav">
             <div class="tab border-b">
                 <a href="javascript:;" rel="external nofollow" rel="external nofollow" class="curr">课程详情</a>
-                <a href="javascript:;" rel="external nofollow" rel="external nofollow" >评价</a>
+                <a id="a_cmt" href="javascript:;" rel="external nofollow" rel="external nofollow" >评价</a>
             </div>
             <div class="content">
                 <ul>
+
                     <li style="display: block">
                         <span class="font_detail_title_sm"><span class="glyphicon glyphicon-th-list"></span>课程简介</span>
                         <span class="font_detail_content"><%=course.getSummary()%></span>
@@ -177,7 +204,52 @@
                         <span class="font_detail_content"><%=course.getContent()%></span>
                         <div style="height: 100px"></div>
                     </li>
-                    <li></li>
+                    <li>
+                        <ul>
+
+                            <%
+                                List<Comment>  comments=(List) request.getAttribute("comments");
+                            %>
+                            <div style="height: 50px;margin-top: -20px;margin-bottom: 20px">
+                                <span class="font_cmt_cnt">共计<%=comments.size()%>条评论</span>
+                                <button class="btn-success btn-sm btn btn_cmt" onclick="cmt()">我来评价</button>
+                            </div>
+                            <%
+
+                                if(comments.size()==0){
+                            %>
+
+                            <div class="img_msg">
+                               <img src="<%=ctx%>/resources/img/custom/msg.png">
+                            </div>
+                            <span class="font_msg">暂无评论</span>
+
+                            <%
+                                }else {
+                                    for(int i=0;i<comments.size();i++){
+                            %>
+                            <li >
+
+                                <div class="commentdiv">
+                                    <div class="commmentleft">
+                                        <div class="commentimg">
+                                            <img src="<%=ctx%>/resources/img/custom/avatar.png">
+                                        </div>
+                                    </div>
+                                    <div class="commmentright">
+                                        <p class="font_cmt_username"><%=comments.get(i).getUsername()%></p>
+                                        <p class="font_cmt_content"><%=comments.get(i).getContent()%></p>
+                                        <p class="font_cmt_time">发表于<%=comments.get(i).getCreateTime()%></p>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <%
+                                    }
+                                }
+                            %>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -266,6 +338,34 @@
                         <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
                     </div>
                     <a href="" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">已有账号？点我登录</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 评论窗口 -->
+<div id="cmtModal" class="modal fade" >
+    <div class="modal-dialog" style="width: 600px;margin-top: 200px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+
+                </button>
+                <span class="modal_header_font">评论内容</span>
+            </div>
+            <div class="modal-body">
+                <form id="cmtForm" class="form-group">
+                    <div class="form-group">
+                        <textarea style="height: 200px" name="content" class="form-control" placeholder="可以从课程内容组织、授课方式的角度评价课程，或者分享课程给你带来了什么收获和启发"></textarea>
+                        <input type="hidden" name="cid" value="<%=course.getCid()%>">
+                    </div>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-success" onclick="comment()">提交</button>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">取消</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import po.Apply;
 import po.Institution;
 import po.User;
+import pobject.Comment;
 import pobject.Course;
 import service.AdminService;
 import service.CourseService;
@@ -31,7 +32,7 @@ public class CourseServiceImpl implements CourseService {
         int[] nums=RandomUtil.randomArray(0,courses.size()-1,10);
         List<Course> res=new ArrayList<>();
         for(int i=0;i<10;i++){
-            res.add(courses.get(nums[i]));
+             res.add(courses.get(nums[i]));
         }
 
         return res;
@@ -76,12 +77,14 @@ public class CourseServiceImpl implements CourseService {
 
     }
 
-    public static void main(String[] args) {
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/applicationContext-*.xml");
-        CourseService courseService=(CourseService) applicationContext.getBean("courseService");
-        List<Course> courses = courseService.findCourse("中学辅导","高一","物理",0,9);
-        for(Course co:courses){
-            System.out.println(co.getCid()+"       "+co.getCname());
-        }
+    @Override
+    public List<Comment> findComment(String cid) {
+        return courseMapper.findComment(cid);
     }
+
+    @Override
+    public void addComment(String cid, String username, String content) {
+        courseMapper.addComment(cid,username,content,new Timestamp(System.currentTimeMillis()));
+    }
+
 }
