@@ -162,7 +162,7 @@
                     boolean selected=(boolean)request.getAttribute("selected");
                     if(selected){
                 %>
-                <button class="btn_view" onclick="">已报名,查看课程</button>
+                <button class="btn_view" onclick="window.location.href='http://localhost:8080/order/getOrderList'">查看课程</button>
                 <%
                     }else{
                 %>

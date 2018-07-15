@@ -151,7 +151,7 @@
                     List<Order> orders = (List<Order>) request.getAttribute("orders");
                 %>
                 <c:forEach items="<%=orders%>" var="order">
-                    <tr>
+                    <tr onclick="window.location.href='http://localhost:8080/course/showInfo?cid=${order.cid}'">
                         <td>${order.oid}</td>
                         <td>${order.cid}</td>
                         <td>${order.createTime}</td>

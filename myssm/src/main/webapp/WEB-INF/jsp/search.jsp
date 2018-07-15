@@ -62,7 +62,7 @@
 
 <%@include file="header.jsp"%>
 
-<div class="select_box" style="margin-top: 30px;">
+<div class="select_box" style="margin-top: 70px;">
     <%
 
     %>
