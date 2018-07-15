@@ -1,12 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import = "util.RandomUtil" %>
 <%@ page import = "pobject.Course" %>
 <%@ page import = "java.util.List" %>
 <%--
-  Created by IntelliJ IDEA.
-  User: wangty
-  Date: 2018/7/4
-  Time: 下午3:19
+  Created by IntelliJ IDEA
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType = "text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
@@ -27,6 +23,7 @@
     <script type="application/javascript" src="<%=ctx%>/resources/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
     <script type="application/javascript" src="<%=ctx%>/resources/jquery-ui-1.12.1/jquery-ui.js"></script>
     <script type="application/javascript" src="<%=ctx%>/resources/js/select.js"></script>
+    <script type="application/javascript" src="<%=ctx%>/resources/js/header.js"></script>
 
 
 
@@ -43,7 +40,7 @@
 
 <%@include file="header.jsp"%>
 
-<div class="select_box">
+<div class="select_box" style="margin-top: 30px;">
     <%
 
     %>
@@ -244,7 +241,7 @@
                             <div class="u-price">
                                 ￥<span>${course.price}</span>
                             </div>
-                            <a class="u-btn4">
+                            <a class="u-btn4" href="<%=ctx%>/course/showInfo?cid=${course.cid}">
                                 查看详情
                             </a>
                         </div>
@@ -253,25 +250,25 @@
                     <div class="m-dotline"></div>
                 </div>
             </c:forEach>
-            <div class="m-courselist">
-                <div class="m-courselist-l pr">
-                    <h2><a>CourseName</a></h2>
-                    <h4></h4>
-                    <p class="u-title max-h"><em>开课时间:</em>2019/2/29</p>
-                    <p class="u-title max-h"><em>上课人数:</em>40</p>
-                    <p class="u-title max-h"><em>简介:</em>无</p>
-                    <div class="m-courselist-select">
-                        <div class="u-price">
-                            ￥<span>1480</span>起
-                        </div>
-                        <a class="u-btn4">
-                            查看详情
-                        </a>
-                    </div>
-                </div>
-                <div class="m-courselist-r"></div>
-                <div class="m-dotline"></div>
-            </div>
+            <%--<div class="m-courselist">--%>
+                <%--<div class="m-courselist-l pr">--%>
+                    <%--<h2><a>CourseName</a></h2>--%>
+                    <%--<h4></h4>--%>
+                    <%--<p class="u-title max-h"><em>开课时间:</em>2019/2/29</p>--%>
+                    <%--<p class="u-title max-h"><em>上课人数:</em>40</p>--%>
+                    <%--<p class="u-title max-h"><em>简介:</em>无</p>--%>
+                    <%--<div class="m-courselist-select">--%>
+                        <%--<div class="u-price">--%>
+                            <%--￥<span>1480</span>--%>
+                        <%--</div>--%>
+                        <%--<a class="u-btn4">--%>
+                            <%--查看详情--%>
+                        <%--</a>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="m-courselist-r"></div>--%>
+                <%--<div class="m-dotline"></div>--%>
+            <%--</div>--%>
             <div class="l selectPageBox">
                 <div class="selectPage r">
                     <span class="disabled">&#60上一页</span>
@@ -281,6 +278,73 @@
                     <input type="text" placeholder="1">
                     <span id="toPage">确定</span>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 登录窗口 -->
+<div id="loginModal" class="modal fade" >
+    <div class="modal-dialog" style="width: 400px;margin-top: 200px">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <span class="modal_header_font">登录</span>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" class="form-group">
+                    <div class="form-group">
+                        <label>用户名</label>
+                        <input name="username" class="form-control" type="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input name="password" class="form-control" type="password" placeholder="">
+                    </div>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-primary" onclick="login()">登录</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                    </div>
+                    <a href="" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">还没有账号？点我注册</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 注册窗口 -->
+<div id="registerModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog" style="width: 400px;margin-top: 200px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <span class="modal_header_font">注册</span>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm" class="form-group">
+                    <div class="form-group">
+                        <label>用户名</label>
+                        <input name="username" class="form-control" type="text" placeholder="2-10位字母或数字">
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input name="password" class="form-control" type="password" placeholder="2-10位字母或数字">
+                    </div>
+                    <div class="form-group">
+                        <label>邮箱</label>
+                        <input name="email" class="form-control" placeholder="例如:123@123.com">
+                    </div>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-primary" onclick="register()">提交</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                    </div>
+                    <a href="" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">已有账号？点我登录</a>
+                </form>
             </div>
         </div>
     </div>

@@ -67,7 +67,7 @@
         <%
         }else{
         %>
-        <a>个人中心</a>
+        <a href="<%=ctx%>/order/getOrderList">个人中心</a>
         |
         <a href="<%=ctx%>/client/logout">登出</a>
         <%
