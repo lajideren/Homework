@@ -11,7 +11,7 @@ public interface OrderService {
      * @param username 用户id
      * @param cid 课程id
      */
-    void addOrder(String username,String cid);
+    void addOrder(String username,String cid,String cname);
 
 
     /**

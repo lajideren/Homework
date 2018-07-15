@@ -7,6 +7,7 @@ public class Order {
     private int oid;
     private String username;
     private String cid;
+    private String cname;
     private int price;
     private Timestamp createTime;
 
@@ -35,6 +36,14 @@ public class Order {
 
     public void setCid(String cid) {
         this.cid = cid;
+    }
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
     public int getPrice() {

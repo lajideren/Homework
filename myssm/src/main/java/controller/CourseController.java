@@ -67,10 +67,10 @@ public class CourseController {
 
     @RequestMapping("addOrder")
     @ResponseBody
-    public void addOrder(HttpSession session, String cid){
+    public void addOrder(HttpSession session, String cid,String cname){
 
         String username=(String)session.getAttribute("username");
-        orderService.addOrder(username,cid);
+        orderService.addOrder(username,cid,cname);
 
     }
 

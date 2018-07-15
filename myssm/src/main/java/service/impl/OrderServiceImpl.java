@@ -18,9 +18,9 @@ public class OrderServiceImpl implements OrderService {
     private CourseService courseService;
 
     @Override
-    public void addOrder(String username, String cid) {
+    public void addOrder(String username, String cid,String cname) {
         Course course=courseService.findCourseById(cid);
-        orderMapper.addOrder(username,cid,course.getPrice(),new Timestamp(System.currentTimeMillis()));
+        orderMapper.addOrder(username,cid,cname,course.getPrice(),new Timestamp(System.currentTimeMillis()));
     }
 
     @Override

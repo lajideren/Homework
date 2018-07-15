@@ -61,7 +61,7 @@
                     $.ajax({
                         type: 'POST',
                         url: 'http://localhost:8080/course/addOrder',
-                        data: 'cid=' + '<%=course.getCid()%>',
+                        data: 'cid=<%=course.getCid()%>&cname=<%=course.getCname()%>',
                         success: function () {
 
                             sleep(500);

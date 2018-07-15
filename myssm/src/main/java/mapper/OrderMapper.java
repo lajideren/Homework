@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface OrderMapper {
 
-    void addOrder(@Param("username")String username,@Param("cid") String cid,@Param("price") int price,@Param("createTime") Timestamp createTime);
+    void addOrder(@Param("username")String username,@Param("cid") String cid,@Param("cname")String cname,@Param("price") int price,@Param("createTime") Timestamp createTime);
 
     List<Order> showOrders(@Param("username") String username);
 

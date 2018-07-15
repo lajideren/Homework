@@ -121,11 +121,11 @@
 
 <div style="width: 200px;height:200px;position: absolute;padding-top: 10px;margin-left: 200px;">
     <img src="<%=ctx%>/resources/img/user/user.png" width="100%" height="100%">
-    <span style="margin-top: 20px;display: inline-block;font-size: 25px;"><%=username%></span>
+    <span style="margin-top: 20px;display: inline-block;font-size: 25px"><%=username%></span>
     <br>
 
     <div style="margin-top: 20px">
-        <span class="glyphicon glyphicon-send"></span><span style="font-size: 15px;margin-left: 10px"><%=client.getEmail()%></span>
+        <span class="glyphicon glyphicon-send" style="color: #ff8b31"></span><span style="font-size: 15px;margin-left: 10px;color: #ff8b31"><%=client.getEmail()%></span>
     </div>
     <a style="margin-top: 20px;margin-left: 2px;display: inline-block" href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-edit"></span>&nbsp修改密码</a>
     <span style="display: block;border-bottom: 1px #b3b3b3 solid;margin-top: 20px"></span>
@@ -136,12 +136,13 @@
         <li class="active"><a href="#orderList" data-toggle="tab">我的课程</a></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane fade in active" id="orderList" style="padding-top: 20px">
-            <table id="myTable" class="table">
+        <div class="tab-pane fade in active" id="orderList" style="padding-top: 20px;">
+            <table id="myTable" class="table" style="font-size: 13px">
                 <thead>
                 <tr>
                     <th style="width: 15%">订单编号</th>
                     <th style="width: 20%">课程编号</th>
+                    <th style="width: 20%">课程名称</th>
                     <th style="width: 45%">创建时间</th>
                     <th style="width: 20%">价格</th>
                 </tr>
@@ -152,8 +153,9 @@
                 %>
                 <c:forEach items="<%=orders%>" var="order">
                     <tr onclick="window.location.href='http://localhost:8080/course/showInfo?cid=${order.cid}'">
-                        <td>${order.oid}</td>
+                        <td s>${order.oid}</td>
                         <td>${order.cid}</td>
+                        <td>${order.cname}</td>
                         <td>${order.createTime}</td>
                         <td>${order.price}</td>
                     </tr>
