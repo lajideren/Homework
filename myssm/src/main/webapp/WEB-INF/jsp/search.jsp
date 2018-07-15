@@ -12,6 +12,8 @@
     String sort = (String) request.getAttribute("sort");
     String grade = (String) request.getAttribute("grade");
     String subject = (String) request.getAttribute("subject");
+    int pageNum = (int) request.getAttribute("page");
+    int max = (int) request.getAttribute("max");
 %>
 <html>
 <head>
@@ -33,6 +35,26 @@
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/header.css" />
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/css/search.css" />
     <link rel="stylesheet" type="text/css" href="<%=ctx%>/resources/jquery-ui-1.12.1/jquery-ui.css" />
+    
+    <script>
+        $(function () {
+            $("#toPage").click(function () {
+                var p = $("#nextPage").val();
+                window.location.href = "<%=ctx%>/search/changePage?sort=<%=sort%>&grade=<%=grade%>&subject=<%=subject%>&page="+p;
+                event.stopPropagation();
+            });
+            $("#before").click(function () {
+                var p = <%=pageNum%> - 1;
+                window.location.href = "<%=ctx%>/search/changePage?sort=<%=sort%>&grade=<%=grade%>&subject=<%=subject%>&page="+p;
+                event.stopPropagation();
+            });
+            $("#next").click(function () {
+                var p = <%=pageNum%> + 1;
+                window.location.href = "<%=ctx%>/search/changePage?sort=<%=sort%>&grade=<%=grade%>&subject=<%=subject%>&page="+p;
+                event.stopPropagation();
+            })
+        })
+    </script>
 
 
 </head>
@@ -271,11 +293,31 @@
             <%--</div>--%>
             <div class="l selectPageBox">
                 <div class="selectPage r">
+                    <%
+                        if (pageNum>1){
+                    %>
+                    <span id="before">&#60上一页</span>
+                    <%
+                        }else {
+                    %>
                     <span class="disabled">&#60上一页</span>
-                    <span>1</span>
+                    <%
+                        }
+                    %>
+                    <span><%=pageNum%></span>
+                    <%
+                        if (pageNum<max){
+                    %>
+                    <span id="next">下一页&#62</span>
+                    <%
+                        }else {
+                    %>
                     <span class="disabled xyy">下一页&#62</span>
-                    共1页 到第
-                    <input type="text" placeholder="1">
+                    <%
+                        }
+                    %>
+                    共<%=max%>页 到第
+                    <input id="nextPage" type="number" placeholder="<%=pageNum%>">
                     <span id="toPage">确定</span>
                 </div>
             </div>

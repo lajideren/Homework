@@ -30,7 +30,9 @@ public class OrderController {
         String username = (String) session.getAttribute("username");
 
         List<Order> orders = orderService.showOrders(username);
+        Client client = clientService.findClient(username);
         model.addAttribute("orders", orders);
+        model.addAttribute("client", client);
         return "user";
     }
 }

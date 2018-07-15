@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="pobject.Order" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="pobject.Client" %><%--
   Created by IntelliJ IDEA.
   To change this template use File | Settings | File Templates.
 --%>
@@ -8,7 +9,7 @@
 
 <%
     String ctx=request.getContextPath();
-//    String username=(String) session.getAttribute("username");
+    Client client = (Client) request.getAttribute("client");
 %>
 <html>
 <head>
@@ -114,14 +115,20 @@
         });
     </script>
 </head>
-<body>
+<body style="background-color: white">
 
 <%@include file="header.jsp"%>
 
 <div style="width: 200px;height:200px;position: absolute;padding-top: 10px;margin-left: 200px;">
     <img src="<%=ctx%>/resources/img/user/user.png" width="100%" height="100%">
     <span style="margin-top: 20px;display: inline-block;font-size: 25px;"><%=username%></span>
+    <br>
 
+    <div style="margin-top: 20px">
+        <span class="glyphicon glyphicon-send"></span><span style="font-size: 15px;margin-left: 10px"><%=client.getEmail()%></span>
+    </div>
+    <a style="margin-top: 20px;margin-left: 2px;display: inline-block" href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-edit"></span>&nbsp修改密码</a>
+    <span style="display: block;border-bottom: 1px #b3b3b3 solid;margin-top: 20px"></span>
 </div>
 
 <div class="tab" style="width: 50%;margin-left: 30%;margin-top: 100px">
