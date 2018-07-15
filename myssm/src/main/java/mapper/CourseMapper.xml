@@ -35,8 +35,9 @@
                 AND subject=#{subject}
             </if>
         </if>
-        LIMIT (#{pageNum}-1)*#{pageSize},#{pageSize}
+        LIMIT ${(pageNum-1)*pageSize},#{pageSize}
     </select>
+
 
 
     <select id="findCourseCount" resultType="int">

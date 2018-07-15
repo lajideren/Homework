@@ -19,8 +19,12 @@ public class test {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("spring/applicationContext-*.xml");
        CourseService courseService =(CourseService) applicationContext.getBean("courseService");
 
+       List<Course> courses=courseService.findCourse("学前辅导",null,null,1,9);
 
-       System.out.println(courseService.findCoursePageCount("学前辅导",null,null,9));
+        for(Course course:courses){
+            System.out.println(course);
+        }
+//       System.out.println(courseService.findCoursePageCount("学前辅导",null,null,9));
 
 
 
