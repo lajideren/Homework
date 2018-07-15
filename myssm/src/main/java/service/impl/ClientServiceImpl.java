@@ -29,4 +29,9 @@ public class ClientServiceImpl implements ClientService {
         return password.equals(client.getPassword());
 
     }
+
+    @Override
+    public Client findClient(String username) {
+        return clientMapper.findClient(username);
+    }
 }
