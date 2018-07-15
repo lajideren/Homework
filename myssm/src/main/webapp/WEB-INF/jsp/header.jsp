@@ -10,7 +10,7 @@
 
     <div class="logo">
         <span class="title_font glyphicon glyphicon-education"></span>
-        <a href="http://localhost:8080/" class="slogan_font">Training College</a>
+        <a href="http://localhost:8080/" class="slogan_font">New Occidental</a>
     </div>
 
     <div class="selector">

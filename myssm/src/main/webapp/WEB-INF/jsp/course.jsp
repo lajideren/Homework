@@ -266,7 +266,7 @@
     %>
     <div class="teacherdiv">
         <div class="teacherimg">
-            <img src="<%=ctx%>/resources/img/avatar.png">
+            <img src="<%=ctx%>/resources/img/custom/avatar_teacher.png">
         </div>
 
         <span class="font_teacher_name"><%=temp%></span>
