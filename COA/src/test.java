@@ -4,21 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 public class test {
 
-    @Test
-    public void test(){
+    public static void main(String[] args) {
 
-        assertEquals(0,1);
-    }
+        System.out.println();
 
-    @Test
-    public void test1(){
-
-        assertEquals(0,0);
-    }
-    @Test
-    public void test2(){
-
-        assertEquals(0,2);
     }
 
 
