@@ -21,7 +21,8 @@ public class Graph {
 
     public void DFS(int v, List<String> cycle) {
 
-        if (path.indexOf(vertex.get(v)) == -1) {
+        if(!visited[v]){
+
             visited[v] = true;
             path.add(vertex.get(v));
             for (int i = 0; i < vertexNum; i++) {
@@ -30,6 +31,7 @@ public class Graph {
                 }
             }
             path.remove(path.size() - 1);
+
         } else {
             StringBuffer sb = new StringBuffer();
             for (int i = path.indexOf(vertex.get(v)); i < path.size(); i++) {
@@ -53,10 +55,12 @@ public class Graph {
         try {
 
             //读入边的数据
-            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            Scanner sc = new Scanner(new File(fileName));
             String temp;
 
-            while ((temp = br.readLine()) != null) {
+            while (sc.hasNext()) {
+
+                temp=sc.nextLine();
 
                 String[] strs = temp.split(",");
                 int head = Integer.parseInt(strs[0]);
@@ -101,7 +105,7 @@ public class Graph {
 
     public static void main(String[] args) {
 
-        Graph g = createGragh("src/ex7/edges2.txt");
+        Graph g = createGragh("src/ex7/edges.txt");
         List<String> cycles = new ArrayList<>();
         g.DFS(0, cycles);
 

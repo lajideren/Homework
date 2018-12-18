@@ -34,10 +34,25 @@ public class ALUTest {
 
 
     @Test
-    public void test1_floatTrueValue(){
+    public void test1_floatTrueValue1(){
 
-//        assertEquals("0.9375",new ALU().floatTrueValue("00111111011100000000000000000000",8,23));
-        assertEquals("-INF",new ALU().floatTrueValue("11111111100000000000000000000000",8,23));
+        assertEquals("0.5",new ALU().floatTrueValue("00111111000000000000000000000000",8,23));
+    }
+
+    @Test
+    public void test1_floatTrueValue2(){
+
+        assertEquals("0.0625",new ALU().floatTrueValue("00111101100000000000000000000000",8,23));
+    }
+
+
+    @Test
+    public void test1_floatAddition(){
+
+        String[] res=new String[2];
+        res[0]="10000100000000000000000000";
+        res[1]="00111101100000000000000000000000";
+        assertEquals(res,new ALU().floatAddition("00111111000000000000000000000000","10111110111000000000000000000000",8,23));
     }
 
 

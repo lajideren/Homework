@@ -152,7 +152,133 @@ public class ALU {
         }
 
         float f = a + b;
+        if(sign.equals("1"))
+            f=-f;
         return Float.toString(f);
+
+    }
+
+    /**
+     * 二进制浮点数相加
+     * string[0] = 尾数相加的最高进位 + 符号位 + 尾数 (sLength+3,尾数包括隐藏的1)
+     * 如果没有进行尾数相加，string[0] = 全0
+     * string[1] = 最后的结果
+     */
+    public String[] floatAddition(String operand1, String operand2, int eLength, int sLength) {
+
+        String[] res = new String[2];
+
+        String frac;
+        String exps;
+        String sign;
+
+        String sign1 = operand1.substring(0, 1);
+        String sign2 = operand2.substring(0, 1);
+        String exps1 = operand1.substring(1, 1 + eLength);
+        String exps2 = operand2.substring(1, 1 + eLength);
+        String frac1 = "1" + operand1.substring(1 + eLength);
+        String frac2 = "1" + operand2.substring(1 + eLength);
+
+        int exp1 = BinaryToInteger(exps1);
+        int exp2 = BinaryToInteger(exps2);
+
+        int exp = Integer.max(exp1, exp2);
+        int expDif = Math.abs(exp1 - exp2);
+        //右移操作数1
+        if (exp1 <= exp2) {
+
+            for (int i = 0; i < expDif; i++) {
+                frac1 = logicalRightShift(frac1, 1);
+                if (isZero(frac1)) {
+                    res[0] = IntegerToBinary(0, 3 + sLength);
+                    res[1] = operand2;
+                    return res;
+                }
+            }
+
+        } else {//右移操作数2
+
+            for (int i = 0; i < expDif; i++) {
+                frac2 = logicalRightShift(frac2, 1);
+                if (isZero(frac2)) {
+                    res[0] = IntegerToBinary(0, 3 + sLength);
+                    res[1] = operand1;
+                    return res;
+                }
+            }
+
+        }
+
+        //符号相同，尾数相加
+        if (sign1.equals(sign2)) {
+            sign = sign1;
+            String temp = serialCarryAdder(frac1, frac2);
+            //有进位,右移尾数,增加指数
+            if (temp.charAt(0) == '1') {
+
+                frac = temp.substring(0, sLength + 1);
+
+                exp++;
+                //返回无穷
+                if (exp == pow(2, eLength) - 1) {
+
+                    res[0] = temp.substring(0, 1) + sign + frac;
+                    res[1] = sign + IntegerToBinary(exp, eLength) + IntegerToBinary(0, sLength);
+                    return res;
+
+                }
+
+
+            } else {
+
+                frac = temp.substring(1);
+
+            }
+
+            res[0] = temp.substring(0, 1) + sign + frac;
+
+        } else {
+
+            sign = sign1;
+            //将frac2取反加1
+            frac2=serialCarryAdder(negation(frac2),IntegerToBinary(1,sLength+1)).substring(1);
+//            System.out.println(frac2);
+            String temp = serialCarryAdder(frac1, frac2);
+            //没有产生进位，变正负，尾数取反加一
+            if (temp.charAt(0) == '0') {
+                sign = sign.equals("0") ? "1" : "0";
+                frac = temp.substring(1);
+                //结果取反加一
+                frac = serialCarryAdder(negation(frac), IntegerToBinary(1, sLength + 1)).substring(1);
+            } else {
+                frac = temp.substring(1);
+            }
+
+            res[0] = temp.substring(0, 1) + sign + frac;
+
+
+        }
+
+
+        if(isZero(frac)){
+            res[1]=sign+IntegerToBinary(0,eLength)+IntegerToBinary(0,sLength);
+            return res;
+        }
+
+        int step=frac.indexOf('1');
+        for(int i=0;i<step;i++){
+
+            frac=leftShift(frac,1);
+            exp--;
+            if(exp==0)
+                break;
+
+        }
+
+
+        res[1]=sign+IntegerToBinary(exp,eLength)+frac.substring(1);
+        return res;
+
 
     }
 
