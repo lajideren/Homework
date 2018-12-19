@@ -12,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ALU.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ALU.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/exam2/ALU.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="820">
-              <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+            <state relative-caret-position="186">
+              <caret line="224" column="4" selection-start-line="224" selection-start-column="4" selection-end-line="254" selection-end-column="5" />
               <folding>
                 <element signature="method#serialCarryAdder#0;class#ALU#0" />
                 <element signature="method#leftShift#0;class#ALU#0" />
@@ -25,6 +25,43 @@
                 <element signature="method#fullAdder#0;class#ALU#0" />
                 <element signature="method#floatRrepresentation#0;class#ALU#0" />
                 <element signature="method#floatTrueValue#0;class#ALU#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Int.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/exam2/Int.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
+              <folding>
+                <element signature="method#mulByBooth#0;class#Int#0" />
+                <element signature="method#divByRec#0;class#Int#0" />
+                <element signature="method#leftShift#0;class#Int#0" />
+                <element signature="method#negation#0;class#Int#0" />
+                <element signature="method#fullAdder#0;class#Int#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NBCD.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/exam2/NBCD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1755">
+              <caret line="198" column="62" selection-start-line="198" selection-start-column="62" selection-end-line="198" selection-end-column="62" />
+              <folding>
+                <element signature="method#NBCDRresentation#0;class#NBCD#0" />
+                <element signature="method#IntegerToBinary#0;class#NBCD#0" />
+                <element signature="method#NBCDTrueValue#0;class#NBCD#0" />
+                <element signature="method#BinaryToInteger#0;class#NBCD#0" />
+                <element signature="method#NBCDComplement#0;class#NBCD#0" />
+                <element signature="method#serialCarryAdder#0;class#NBCD#0" />
+                <element signature="method#leftShift#0;class#NBCD#0" />
+                <element signature="method#logicalRightShift#0;class#NBCD#0" />
+                <element signature="method#negation#0;class#NBCD#0" />
+                <element signature="method#fullAdder#0;class#NBCD#0" />
               </folding>
             </state>
           </provider>
@@ -54,6 +91,8 @@
         <option value="$PROJECT_DIR$/src/ALU.java" />
         <option value="$PROJECT_DIR$/src/ALUTest.java" />
         <option value="$PROJECT_DIR$/src/exam2/ALU.java" />
+        <option value="$PROJECT_DIR$/src/exam2/Int.java" />
+        <option value="$PROJECT_DIR$/src/exam2/NBCD.java" />
       </list>
     </option>
   </component>
@@ -83,8 +122,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -99,12 +136,20 @@
             </path>
             <path>
               <item name="COA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="COA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="exam2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="COA" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -129,7 +174,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ALU">
+  <component name="RunManager" selected="Application.NBCD">
     <configuration name="ALU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exam2.ALU" />
       <module name="COA" />
@@ -141,10 +186,27 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="NBCD1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="NBCD1" />
+    <configuration name="Int" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam2.Int" />
       <module name="COA" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="NBCD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam2.NBCD" />
+      <module name="COA" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -160,23 +222,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ALUTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="NBCD1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COA" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="NBCD1" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -228,18 +273,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.test" />
-      <item itemvalue="JUnit.NBCD1" />
-      <item itemvalue="Application.NBCD1" />
       <item itemvalue="JUnit.ALUTest" />
       <item itemvalue="Application.ALU" />
+      <item itemvalue="Application.Int" />
+      <item itemvalue="Application.NBCD" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NBCD" />
+        <item itemvalue="Application.Int" />
         <item itemvalue="Application.ALU" />
         <item itemvalue="JUnit.ALUTest" />
         <item itemvalue="Application.test" />
-        <item itemvalue="Application.NBCD1" />
-        <item itemvalue="JUnit.NBCD1" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +307,8 @@
       <workItem from="1545009753546" duration="8832000" />
       <workItem from="1545100949729" duration="310000" />
       <workItem from="1545116701625" duration="5734000" />
-      <workItem from="1545141151843" duration="2791000" />
+      <workItem from="1545141151843" duration="2841000" />
+      <workItem from="1545181907054" duration="9504000" />
     </task>
     <servers />
   </component>
@@ -299,7 +345,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115090000" />
+    <option name="totallyTimeSpent" value="124644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -325,7 +371,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39976415" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -338,15 +384,15 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2783019" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2783019" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -356,13 +402,13 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32900944" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,6 +472,22 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/exam2/ALU.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+          <folding>
+            <element signature="method#serialCarryAdder#0;class#ALU#0" />
+            <element signature="method#leftShift#0;class#ALU#0" />
+            <element signature="method#logicalRightShift#0;class#ALU#0" />
+            <element signature="method#negation#0;class#ALU#0" />
+            <element signature="method#fullAdder#0;class#ALU#0" />
+            <element signature="method#floatRrepresentation#0;class#ALU#0" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/exam2/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
@@ -685,10 +747,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/exam2/Int.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="method#mulByBooth#0;class#Int#0" />
+            <element signature="method#divByRec#0;class#Int#0" />
+            <element signature="method#leftShift#0;class#Int#0" />
+            <element signature="method#negation#0;class#Int#0" />
+            <element signature="method#fullAdder#0;class#Int#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/exam2/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+        <state relative-caret-position="186">
+          <caret line="224" column="4" selection-start-line="224" selection-start-column="4" selection-end-line="254" selection-end-column="5" />
           <folding>
             <element signature="method#serialCarryAdder#0;class#ALU#0" />
             <element signature="method#leftShift#0;class#ALU#0" />
@@ -697,6 +773,25 @@
             <element signature="method#fullAdder#0;class#ALU#0" />
             <element signature="method#floatRrepresentation#0;class#ALU#0" />
             <element signature="method#floatTrueValue#0;class#ALU#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exam2/NBCD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1755">
+          <caret line="198" column="62" selection-start-line="198" selection-start-column="62" selection-end-line="198" selection-end-column="62" />
+          <folding>
+            <element signature="method#NBCDRresentation#0;class#NBCD#0" />
+            <element signature="method#IntegerToBinary#0;class#NBCD#0" />
+            <element signature="method#NBCDTrueValue#0;class#NBCD#0" />
+            <element signature="method#BinaryToInteger#0;class#NBCD#0" />
+            <element signature="method#NBCDComplement#0;class#NBCD#0" />
+            <element signature="method#serialCarryAdder#0;class#NBCD#0" />
+            <element signature="method#leftShift#0;class#NBCD#0" />
+            <element signature="method#logicalRightShift#0;class#NBCD#0" />
+            <element signature="method#negation#0;class#NBCD#0" />
+            <element signature="method#fullAdder#0;class#NBCD#0" />
           </folding>
         </state>
       </provider>

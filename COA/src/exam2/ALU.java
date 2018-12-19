@@ -112,12 +112,39 @@ public class ALU {
         String exps1 = operand1.substring(1, 1 + eLength);
         String exps2 = operand2.substring(1, 1 + eLength);
 
-
         String exps = serialCarryAdder(exps1, complement(exps2)).substring(1);
+        exps=serialCarryAdder(exps,IntegerToBinary(pow(2,eLength-1)-1,eLength)).substring(1);
 
-//        for (int i = 0; )
+        String frac1="1"+operand1.substring(1+eLength);
+        String frac2="1"+operand2.substring(1+eLength);
 
-        return null;
+        StringBuffer sb=new StringBuffer();
+        for(int i=0;i<(1+sLength);i++){
+            String temp=serialCarryAdder(frac1,complement(frac2));
+            //如果有进位，说明enough
+            if(temp.charAt(0)=='1') {
+                frac1 = temp.substring(1);
+                sb.append(1);
+            }else {
+                sb.append(0);
+            }
+            frac1=leftShift(frac1,1);
+        }
+
+        String frac=sb.toString();
+
+        if(isZero(exps)){
+            frac=logicalRightShift(frac,1);
+        }
+
+        frac=frac.substring(1);
+
+        System.out.println(sign + " " + exps + " " + frac);
+
+
+        return sign + exps + frac;
+
+
     }
 
     //取反加一
@@ -137,15 +164,17 @@ public class ALU {
 
     public static void main(String[] args) {
 
-//        String op1=floatTrueValue("00111111000000000000000000000000",8,23);
-//        String op2=floatTrueValue("00111110111000000000000000000000",8,23);
+        String op1=floatTrueValue("10111110111000000000000000000000",8,23);
+        String op2=floatTrueValue("00111111000000000000000000000000",8,23);
 //
 //        System.out.println(op1+" "+op2);
 
 
-//        String res = mulFloat(floatRrepresentation("0.75", 8, 23), floatRrepresentation("-65.25", 8, 23), 8, 23);
-        String res=mulFloat("00011111110000000000000000000000","10100000000000101000000000000000",8,23);
-//        System.out.println(floatTrueValue(res, 8, 23));
+        String res = divFloat(floatRrepresentation("0.75", 8, 23), floatRrepresentation("-65.25", 8, 23), 8, 23);
+//        String res=mulFloat("0 0011111110000000000000000000000","10100000000000101000000000000000",8,23);
+//        String res=divFloat("10111110111000000000000000000000","00111111000000000000000000000000",8,23);
+
+        System.out.println(floatTrueValue(res, 8, 23));
     }
 
     public static int pow(int base, int exp) {
