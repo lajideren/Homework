@@ -12,12 +12,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ALU.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ALU1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/exam2/ALU1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="5" column="94" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="94" />
+              <folding>
+                <element signature="method#mulFloat#0;class#ALU1#0" />
+                <element signature="method#divFloat#0;class#ALU1#0" />
+                <element signature="method#serialCarryAdder#0;class#ALU1#0" />
+                <element signature="method#leftShift#0;class#ALU1#0" />
+                <element signature="method#logicalRightShift#0;class#ALU1#0" />
+                <element signature="method#negation#0;class#ALU1#0" />
+                <element signature="method#fullAdder#0;class#ALU1#0" />
+                <element signature="method#floatRrepresentation#0;class#ALU1#0" />
+                <element signature="method#floatTrueValue#0;class#ALU1#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ALU.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/exam2/ALU.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="224" column="4" selection-start-line="224" selection-start-column="4" selection-end-line="254" selection-end-column="5" />
+            <state relative-caret-position="-44">
+              <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-end-line="98" />
               <folding>
+                <element signature="method#mulFloat#0;class#ALU#0" />
+                <element signature="method#complement#0;class#ALU#0" />
+                <element signature="method#main#0;class#ALU#0" />
+                <element signature="method#pow#0;class#ALU#0" />
+                <element signature="method#BinaryToInteger#0;class#ALU#0" />
+                <element signature="method#IntegerToBinary#0;class#ALU#0" />
+                <element signature="method#isZero#0;class#ALU#0" />
                 <element signature="method#serialCarryAdder#0;class#ALU#0" />
                 <element signature="method#leftShift#0;class#ALU#0" />
                 <element signature="method#logicalRightShift#0;class#ALU#0" />
@@ -25,43 +52,6 @@
                 <element signature="method#fullAdder#0;class#ALU#0" />
                 <element signature="method#floatRrepresentation#0;class#ALU#0" />
                 <element signature="method#floatTrueValue#0;class#ALU#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Int.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exam2/Int.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
-              <folding>
-                <element signature="method#mulByBooth#0;class#Int#0" />
-                <element signature="method#divByRec#0;class#Int#0" />
-                <element signature="method#leftShift#0;class#Int#0" />
-                <element signature="method#negation#0;class#Int#0" />
-                <element signature="method#fullAdder#0;class#Int#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NBCD.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/exam2/NBCD.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1755">
-              <caret line="198" column="62" selection-start-line="198" selection-start-column="62" selection-end-line="198" selection-end-column="62" />
-              <folding>
-                <element signature="method#NBCDRresentation#0;class#NBCD#0" />
-                <element signature="method#IntegerToBinary#0;class#NBCD#0" />
-                <element signature="method#NBCDTrueValue#0;class#NBCD#0" />
-                <element signature="method#BinaryToInteger#0;class#NBCD#0" />
-                <element signature="method#NBCDComplement#0;class#NBCD#0" />
-                <element signature="method#serialCarryAdder#0;class#NBCD#0" />
-                <element signature="method#leftShift#0;class#NBCD#0" />
-                <element signature="method#logicalRightShift#0;class#NBCD#0" />
-                <element signature="method#negation#0;class#NBCD#0" />
-                <element signature="method#fullAdder#0;class#NBCD#0" />
               </folding>
             </state>
           </provider>
@@ -90,9 +80,11 @@
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/ALU.java" />
         <option value="$PROJECT_DIR$/src/ALUTest.java" />
+        <option value="$PROJECT_DIR$/src/exam2/NBCD.java" />
         <option value="$PROJECT_DIR$/src/exam2/ALU.java" />
         <option value="$PROJECT_DIR$/src/exam2/Int.java" />
-        <option value="$PROJECT_DIR$/src/exam2/NBCD.java" />
+        <option value="$PROJECT_DIR$/src/exam2/ALU1.java" />
+        <option value="$PROJECT_DIR$/src/exam2/Int1.java" />
       </list>
     </option>
   </component>
@@ -121,7 +113,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -150,6 +141,7 @@
       </pane>
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,7 +166,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NBCD">
+  <component name="RunManager" selected="Application.Int1">
     <configuration name="ALU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exam2.ALU" />
       <module name="COA" />
@@ -186,8 +178,30 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="ALU1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam2.ALU1" />
+      <module name="COA" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Int" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exam2.Int" />
+      <module name="COA" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Int1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam2.Int1" />
       <module name="COA" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -210,28 +224,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <module name="COA" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="ALUTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COA" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ALUTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -272,19 +264,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.test" />
-      <item itemvalue="JUnit.ALUTest" />
       <item itemvalue="Application.ALU" />
       <item itemvalue="Application.Int" />
       <item itemvalue="Application.NBCD" />
+      <item itemvalue="Application.ALU1" />
+      <item itemvalue="Application.Int1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NBCD" />
+        <item itemvalue="Application.Int1" />
+        <item itemvalue="Application.ALU1" />
         <item itemvalue="Application.Int" />
         <item itemvalue="Application.ALU" />
-        <item itemvalue="JUnit.ALUTest" />
-        <item itemvalue="Application.test" />
+        <item itemvalue="Application.NBCD" />
       </list>
     </recent_temporary>
   </component>
@@ -308,7 +300,8 @@
       <workItem from="1545100949729" duration="310000" />
       <workItem from="1545116701625" duration="5734000" />
       <workItem from="1545141151843" duration="2841000" />
-      <workItem from="1545181907054" duration="9504000" />
+      <workItem from="1545181907054" duration="19305000" />
+      <workItem from="1545271654650" duration="2749000" />
     </task>
     <servers />
   </component>
@@ -345,7 +338,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124644000" />
+    <option name="totallyTimeSpent" value="137194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -360,19 +353,19 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2783019" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2783019" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39976415" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39976415" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -382,30 +375,30 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32900944" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2783019" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2783019" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39976415" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32900944" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
@@ -467,16 +460,50 @@
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exam2/Int.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exam2/NBCD.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/exam2/Int1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+          <folding>
+            <element signature="method#divByNotRec#0;class#Int1#0" />
+            <element signature="method#divByRec#0;class#Int1#0" />
+            <element signature="method#serialCarryAdder#0;class#Int1#0" />
+            <element signature="method#leftShift#0;class#Int1#0" />
+            <element signature="method#negation#0;class#Int1#0" />
+            <element signature="method#fullAdder#0;class#Int1#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/exam2/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2220">
           <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
           <folding>
+            <element signature="method#mulFloat#0;class#ALU#0" />
+            <element signature="method#complement#0;class#ALU#0" />
+            <element signature="method#main#0;class#ALU#0" />
+            <element signature="method#pow#0;class#ALU#0" />
+            <element signature="method#BinaryToInteger#0;class#ALU#0" />
+            <element signature="method#IntegerToBinary#0;class#ALU#0" />
+            <element signature="method#isZero#0;class#ALU#0" />
             <element signature="method#serialCarryAdder#0;class#ALU#0" />
             <element signature="method#leftShift#0;class#ALU#0" />
             <element signature="method#logicalRightShift#0;class#ALU#0" />
@@ -493,6 +520,13 @@
         <state relative-caret-position="1605">
           <caret line="107" selection-start-line="107" selection-end-line="107" />
           <folding>
+            <element signature="method#mulFloat#0;class#ALU#0" />
+            <element signature="method#complement#0;class#ALU#0" />
+            <element signature="method#main#0;class#ALU#0" />
+            <element signature="method#pow#0;class#ALU#0" />
+            <element signature="method#BinaryToInteger#0;class#ALU#0" />
+            <element signature="method#IntegerToBinary#0;class#ALU#0" />
+            <element signature="method#isZero#0;class#ALU#0" />
             <element signature="method#serialCarryAdder#0;class#ALU#0" />
             <element signature="method#leftShift#0;class#ALU#0" />
             <element signature="method#logicalRightShift#0;class#ALU#0" />
@@ -729,8 +763,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="158" selection-end-column="5" />
+        <state relative-caret-position="-73">
+          <caret line="284" column="36" selection-start-line="284" selection-start-column="36" selection-end-line="284" selection-end-column="36" />
           <folding>
             <element signature="method#floatRrepresentation#0;class#ALU#0" />
             <element signature="method#floatTrueValue#0;class#ALU#0" />
@@ -747,13 +781,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/exam2/NBCD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="98" column="72" lean-forward="true" selection-start-line="98" selection-start-column="72" selection-end-line="98" selection-end-column="72" />
+          <folding>
+            <element signature="method#NBCDRresentation#0;class#NBCD#0" />
+            <element signature="method#IntegerToBinary#0;class#NBCD#0" />
+            <element signature="method#NBCDTrueValue#0;class#NBCD#0" />
+            <element signature="method#BinaryToInteger#0;class#NBCD#0" />
+            <element signature="method#NBCDComplement#0;class#NBCD#0" />
+            <element signature="method#NBCDAddition#0;class#NBCD#0" />
+            <element signature="method#serialCarryAdder#0;class#NBCD#0" />
+            <element signature="method#leftShift#0;class#NBCD#0" />
+            <element signature="method#logicalRightShift#0;class#NBCD#0" />
+            <element signature="method#negation#0;class#NBCD#0" />
+            <element signature="method#fullAdder#0;class#NBCD#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exam2/Int1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="120" column="20" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
+          <folding>
+            <element signature="method#divByNotRec#0;class#Int1#0" />
+            <element signature="method#divByRec#0;class#Int1#0" />
+            <element signature="method#serialCarryAdder#0;class#Int1#0" />
+            <element signature="method#leftShift#0;class#Int1#0" />
+            <element signature="method#negation#0;class#Int1#0" />
+            <element signature="method#fullAdder#0;class#Int1#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/exam2/Int.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        <state relative-caret-position="120">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="81" />
           <folding>
             <element signature="method#mulByBooth#0;class#Int#0" />
             <element signature="method#divByRec#0;class#Int#0" />
+            <element signature="method#divByNotRec#0;class#Int#0" />
+            <element signature="method#main#0;class#Int#0" />
+            <element signature="method#serialCarryAdder#0;class#Int#0" />
             <element signature="method#leftShift#0;class#Int#0" />
             <element signature="method#negation#0;class#Int#0" />
             <element signature="method#fullAdder#0;class#Int#0" />
@@ -761,11 +833,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/exam2/ALU1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="5" column="94" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="94" />
+          <folding>
+            <element signature="method#mulFloat#0;class#ALU1#0" />
+            <element signature="method#divFloat#0;class#ALU1#0" />
+            <element signature="method#serialCarryAdder#0;class#ALU1#0" />
+            <element signature="method#leftShift#0;class#ALU1#0" />
+            <element signature="method#logicalRightShift#0;class#ALU1#0" />
+            <element signature="method#negation#0;class#ALU1#0" />
+            <element signature="method#fullAdder#0;class#ALU1#0" />
+            <element signature="method#floatRrepresentation#0;class#ALU1#0" />
+            <element signature="method#floatTrueValue#0;class#ALU1#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/exam2/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="224" column="4" selection-start-line="224" selection-start-column="4" selection-end-line="254" selection-end-column="5" />
+        <state relative-caret-position="-44">
+          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-end-line="98" />
           <folding>
+            <element signature="method#mulFloat#0;class#ALU#0" />
+            <element signature="method#complement#0;class#ALU#0" />
+            <element signature="method#main#0;class#ALU#0" />
+            <element signature="method#pow#0;class#ALU#0" />
+            <element signature="method#BinaryToInteger#0;class#ALU#0" />
+            <element signature="method#IntegerToBinary#0;class#ALU#0" />
+            <element signature="method#isZero#0;class#ALU#0" />
             <element signature="method#serialCarryAdder#0;class#ALU#0" />
             <element signature="method#leftShift#0;class#ALU#0" />
             <element signature="method#logicalRightShift#0;class#ALU#0" />
@@ -773,25 +870,6 @@
             <element signature="method#fullAdder#0;class#ALU#0" />
             <element signature="method#floatRrepresentation#0;class#ALU#0" />
             <element signature="method#floatTrueValue#0;class#ALU#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/exam2/NBCD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="198" column="62" selection-start-line="198" selection-start-column="62" selection-end-line="198" selection-end-column="62" />
-          <folding>
-            <element signature="method#NBCDRresentation#0;class#NBCD#0" />
-            <element signature="method#IntegerToBinary#0;class#NBCD#0" />
-            <element signature="method#NBCDTrueValue#0;class#NBCD#0" />
-            <element signature="method#BinaryToInteger#0;class#NBCD#0" />
-            <element signature="method#NBCDComplement#0;class#NBCD#0" />
-            <element signature="method#serialCarryAdder#0;class#NBCD#0" />
-            <element signature="method#leftShift#0;class#NBCD#0" />
-            <element signature="method#logicalRightShift#0;class#NBCD#0" />
-            <element signature="method#negation#0;class#NBCD#0" />
-            <element signature="method#fullAdder#0;class#NBCD#0" />
           </folding>
         </state>
       </provider>

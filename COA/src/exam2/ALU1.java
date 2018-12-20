@@ -1,190 +1,93 @@
 package exam2;
 
-public class ALU {
+public class ALU1 {
 
-    /**
-     * 二进制表示浮点数相乘
-     */
+
     public static String mulFloat(String operand1, String operand2, int eLength, int sLength) {
-
-
-
-        String sign;
-        String exps;
-        String frac;
-
-        String sign1 = operand1.substring(0, 1);
-        String sign2 = operand2.substring(0, 1);
-        sign = sign1.equals(sign2) ? "0" : "1";
-
-
-        //首先判断是否有0
-        if (isZero(operand1.substring(1)) || isZero(operand2.substring(1))) {
-            return sign + IntegerToBinary(0, eLength + sLength);
-        }
-
-
-        String exps1 = operand1.substring(1, 1 + eLength);
-        String exps2 = operand2.substring(1, 1 + eLength);
-        String frac1 = operand1.substring(1 + eLength);
-        String frac2 = operand2.substring(1 + eLength);
-
-        //如果是非规格数补0，规格数补1
-//        if (isZero(exps1)) frac1 = leftShift(frac1,1);
-//        else frac1 = "1" + frac1;
-//
-//        if (isZero(exps2)) frac2 = leftShift(frac2,1);
-//        else frac2 = "1" + frac2;
-
-        frac1="1"+frac1;
-        frac2="1"+frac2;
-
-
-//        int bias = pow(2, eLength - 1) - 1;
-//        int exp = BinaryToInteger(exps1) + BinaryToInteger(exps2) - bias;
-//        if (exp >= pow(2, eLength) - 1) {
-//            System.out.println("overflow");
-//            return null;
-//        } else if (exp <= 0) {
-//            System.out.println("underflow");
-//            return null;
-//        }
-//        exps = IntegerToBinary(exp, eLength);
-
-        exps=serialCarryAdder(exps1,exps2).substring(1);
-        StringBuffer sb=new StringBuffer();
-        for(int i=0;i<eLength;i++){
-            if(i==0)
-                sb.append(0);
-            else
-                sb.append(1);
-        }
-        exps=serialCarryAdder(exps,complement(sb.toString())).substring(1);
-
-
-
-        String P = IntegerToBinary(0, 1 + sLength);
-        String X = frac1;
-        String Y = frac2;
-
-        for (int i = Y.length() - 1; i >= 0; i--) {
-
-            if (Y.charAt(i) == '1') {
-                P = serialCarryAdder(P, X).substring(1);
-            }
-
-            //右移P
-            P = "0" + P;
-            //左移X
-            X = X + "0";
-
-        }
-        //乘法最后的位数是2n-1位
-        P = P.substring(1);
-        if(isZero(exps)){
-            P=logicalRightShift(P,1);
-        }
-
-        frac = P.substring(1, 1 + sLength);
-
-
-
-        System.out.println(sign + " " + exps + " " + frac);
-
-
-        return sign + exps + frac;
-
-
-    }
-
-
-    public static String divFloat(String operand1, String operand2, int eLength, int sLength) {
 
         String sign1 = operand1.substring(0, 1);
         String sign2 = operand2.substring(0, 1);
         String sign = sign1.equals(sign2) ? "0" : "1";
 
-        if (isZero(operand1.substring(1))) {
+        if (isZero(operand1.substring(1)) || isZero(operand2.substring(1))) {
             return sign + IntegerToBinary(0, eLength + sLength);
-        } else if (isZero(operand2.substring(1))) {
-            return sign + IntegerToBinary(pow(2, eLength) - 1, eLength) + IntegerToBinary(0, sLength);
         }
-
 
         String exps1 = operand1.substring(1, 1 + eLength);
         String exps2 = operand2.substring(1, 1 + eLength);
 
-        String exps = serialCarryAdder(exps1, complement(exps2)).substring(1);
-        exps=serialCarryAdder(exps,IntegerToBinary(pow(2,eLength-1)-1,eLength)).substring(1);
+        String exps = serialCarryAdder(exps1, exps2).substring(1);
+        String bias = IntegerToBinary(pow(2, eLength - 1) - 1, eLength);
+        exps = serialCarryAdder(exps, complement(bias)).substring(1);
 
-        String frac1="1"+operand1.substring(1+eLength);
-        String frac2="1"+operand2.substring(1+eLength);
+        String frac1 = "01" + operand1.substring(1 + eLength);
+        String frac2 = "01" + operand2.substring(1 + eLength);
 
-        StringBuffer sb=new StringBuffer();
-        for(int i=0;i<(1+sLength);i++){
-            String temp=serialCarryAdder(frac1,complement(frac2));
-            //如果有进位，说明enough
-            if(temp.charAt(0)=='1') {
-                frac1 = temp.substring(1);
-                sb.append(1);
-            }else {
-                sb.append(0);
+        String P = IntegerToBinary(0, sLength + 2);
+        String X = frac1;
+        String Y = frac2;
+
+        for (int i = sLength + 1; i >= 0; i--) {
+
+            if (Y.charAt(i) == '1') {
+                P = serialCarryAdder(P, X).substring(1);
             }
-            frac1=leftShift(frac1,1);
+            P = "0" + P;
+            X = X + "0";
+
         }
 
-        String frac=sb.toString();
-
-        if(isZero(exps)){
-            frac=logicalRightShift(frac,1);
+        if (P.charAt(1) == '1') {
+            exps = serialCarryAdder(exps, IntegerToBinary(1, eLength)).substring(1);
         }
 
-        frac=frac.substring(1);
+        String frac = P.substring(P.indexOf("1") + 1, P.indexOf("1") + 1 + sLength);
 
-        System.out.println(sign + " " + exps + " " + frac);
-
+        System.out.println(sign+" "+exps+" "+frac);
 
         return sign + exps + frac;
 
-
     }
 
-    //取反加一
-    public static String complement(String num) {
 
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < num.length(); i++) {
-            if (i != num.length() - 1)
-                sb.append(0);
-            else
-                sb.append(1);
+    public static String divFloat(String operand1,String operand2,int eLength,int sLength){
+
+        String sign1=operand1.substring(0,1);
+        String sign2=operand2.substring(0,1);
+        String sign=sign1.equals(sign2)?"0":"1";
+
+        if(isZero(operand1.substring(1))){
+            return sign+IntegerToBinary(0,eLength+sLength);
         }
-        return serialCarryAdder(negation(num), sb.toString()).substring(1);
+
+        if(isZero(operand2.substring(1))){
+            return sign+IntegerToBinary(1,eLength)+IntegerToBinary(0,sLength);
+        }
+
+        return null;
+
 
     }
-
 
     public static void main(String[] args) {
 
-        System.out.println(Integer.valueOf("00101000",2));
+        mulFloat(floatRrepresentation("0.75",8,23),floatRrepresentation("-65.25",8,23),8,23);
     }
 
     public static int pow(int base, int exp) {
-        int sum = 1;
-        for (int i = 0; i < exp; i++)
-            sum *= base;
-        return sum;
-    }
 
-
-    public static int BinaryToInteger(String str) {
-        int sum = 0;
-        for (int i = 0; i < str.length(); i++) {
-            sum = sum * 2 + str.charAt(i) - '0';
+        int num = 1;
+        for (int i = 0; i < exp; i++) {
+            num *= base;
         }
-        return sum;
+        return num;
     }
 
+    public static String complement(String num) {
+
+        return serialCarryAdder(negation(num), IntegerToBinary(1, num.length())).substring(1);
+
+    }
 
     public static String IntegerToBinary(int num, int len) {
 
@@ -199,17 +102,17 @@ public class ALU {
 
     }
 
+    public static int BinaryToInteger(String str) {
+        int sum = 0;
+        for (int i = 0; i < str.length(); i++) {
+            sum = sum * 2 + str.charAt(i) - '0';
+        }
+        return sum;
+    }
 
     public static boolean isZero(String num) {
 
-        for (int i = 0; i < num.length(); i++) {
-
-            if (num.charAt(i) == '1')
-                return false;
-
-        }
-
-        return true;
+        return num.indexOf("1") == -1;
 
     }
 
@@ -313,7 +216,6 @@ public class ALU {
         return res;
 
     }
-
 
     /**
      * 将浮点数转换为二进制形式
@@ -471,6 +373,4 @@ public class ALU {
         return Float.toString(f);
 
     }
-
-
 }
