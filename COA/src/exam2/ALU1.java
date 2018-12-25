@@ -64,6 +64,39 @@ public class ALU1 {
             return sign+IntegerToBinary(1,eLength)+IntegerToBinary(0,sLength);
         }
 
+
+        String exps1=operand1.substring(1,1+eLength);
+        String exps2=operand2.substring(1,1+eLength);
+        String exps=serialCarryAdder(exps1,complement(exps2)).substring(1);
+        String bias=IntegerToBinary(pow(2,eLength-1)-1,eLength);
+        exps=serialCarryAdder(exps,bias).substring(1);
+
+        String frac1="1"+operand1.substring(1+eLength);
+        String frac2="1"+operand2.substring(1+eLength);
+
+        String x=frac1;
+        String y=frac2;
+
+        StringBuffer sb=new StringBuffer();
+
+        for(int i=0;i<(1+sLength);i++){
+
+            String temp=serialCarryAdder(x,complement(y));
+            if(temp.charAt(0)=='1'){
+                x=temp.substring(1);
+                sb.append(1);
+            }else {
+                sb.append(0);
+            }
+
+            x=x.substring(1)+'0';
+
+        }
+
+        String frac=sb.toString().substring(1);
+
+        System.out.println(sign+" "+exps+" "+frac);
+
         return null;
 
 
@@ -71,7 +104,7 @@ public class ALU1 {
 
     public static void main(String[] args) {
 
-        mulFloat(floatRrepresentation("0.75",8,23),floatRrepresentation("-65.25",8,23),8,23);
+        divFloat(floatRrepresentation("0.4375",8,23),floatRrepresentation("-0.5",8,23),8,23);
     }
 
     public static int pow(int base, int exp) {

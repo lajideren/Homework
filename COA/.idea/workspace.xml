@@ -12,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ALU1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ALU1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/exam2/ALU1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="5" column="94" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="94" />
+            <state relative-caret-position="120">
+              <caret line="52" column="90" selection-start-line="52" selection-start-column="90" selection-end-line="52" selection-end-column="90" />
               <folding>
                 <element signature="method#mulFloat#0;class#ALU1#0" />
                 <element signature="method#divFloat#0;class#ALU1#0" />
@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ALU.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ALU.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/exam2/ALU.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-44">
-              <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-end-line="98" />
+            <state relative-caret-position="918">
+              <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
               <folding>
                 <element signature="method#mulFloat#0;class#ALU#0" />
                 <element signature="method#complement#0;class#ALU#0" />
@@ -83,8 +83,8 @@
         <option value="$PROJECT_DIR$/src/exam2/NBCD.java" />
         <option value="$PROJECT_DIR$/src/exam2/ALU.java" />
         <option value="$PROJECT_DIR$/src/exam2/Int.java" />
-        <option value="$PROJECT_DIR$/src/exam2/ALU1.java" />
         <option value="$PROJECT_DIR$/src/exam2/Int1.java" />
+        <option value="$PROJECT_DIR$/src/exam2/ALU1.java" />
       </list>
     </option>
   </component>
@@ -166,7 +166,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Int1">
+  <component name="RunManager" selected="Application.ALU1">
     <configuration name="ALU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exam2.ALU" />
       <module name="COA" />
@@ -272,8 +272,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Int1" />
         <item itemvalue="Application.ALU1" />
+        <item itemvalue="Application.Int1" />
         <item itemvalue="Application.Int" />
         <item itemvalue="Application.ALU" />
         <item itemvalue="Application.NBCD" />
@@ -301,7 +301,7 @@
       <workItem from="1545116701625" duration="5734000" />
       <workItem from="1545141151843" duration="2841000" />
       <workItem from="1545181907054" duration="19305000" />
-      <workItem from="1545271654650" duration="2749000" />
+      <workItem from="1545271654650" duration="4068000" />
     </task>
     <servers />
   </component>
@@ -338,7 +338,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137194000" />
+    <option name="totallyTimeSpent" value="138513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -358,7 +358,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -833,28 +833,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/exam2/ALU1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="5" column="94" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="94" />
-          <folding>
-            <element signature="method#mulFloat#0;class#ALU1#0" />
-            <element signature="method#divFloat#0;class#ALU1#0" />
-            <element signature="method#serialCarryAdder#0;class#ALU1#0" />
-            <element signature="method#leftShift#0;class#ALU1#0" />
-            <element signature="method#logicalRightShift#0;class#ALU1#0" />
-            <element signature="method#negation#0;class#ALU1#0" />
-            <element signature="method#fullAdder#0;class#ALU1#0" />
-            <element signature="method#floatRrepresentation#0;class#ALU1#0" />
-            <element signature="method#floatTrueValue#0;class#ALU1#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/exam2/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-end-line="98" />
+        <state relative-caret-position="918">
+          <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
           <folding>
             <element signature="method#mulFloat#0;class#ALU#0" />
             <element signature="method#complement#0;class#ALU#0" />
@@ -870,6 +852,24 @@
             <element signature="method#fullAdder#0;class#ALU#0" />
             <element signature="method#floatRrepresentation#0;class#ALU#0" />
             <element signature="method#floatTrueValue#0;class#ALU#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exam2/ALU1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="52" column="90" selection-start-line="52" selection-start-column="90" selection-end-line="52" selection-end-column="90" />
+          <folding>
+            <element signature="method#mulFloat#0;class#ALU1#0" />
+            <element signature="method#divFloat#0;class#ALU1#0" />
+            <element signature="method#serialCarryAdder#0;class#ALU1#0" />
+            <element signature="method#leftShift#0;class#ALU1#0" />
+            <element signature="method#logicalRightShift#0;class#ALU1#0" />
+            <element signature="method#negation#0;class#ALU1#0" />
+            <element signature="method#fullAdder#0;class#ALU1#0" />
+            <element signature="method#floatRrepresentation#0;class#ALU1#0" />
+            <element signature="method#floatTrueValue#0;class#ALU1#0" />
           </folding>
         </state>
       </provider>
