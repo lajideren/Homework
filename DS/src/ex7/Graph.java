@@ -19,6 +19,8 @@ public class Graph {
         this.path = new ArrayList<>();
     }
 
+//    public void DFS
+
     public void DFS(int v, List<String> cycle) {
 
         if(!visited[v]){
@@ -105,7 +107,7 @@ public class Graph {
 
     public static void main(String[] args) {
 
-        Graph g = createGragh("src/ex7/edges.txt");
+        Graph g = createGragh("src/ex7/edges2.txt");
         List<String> cycles = new ArrayList<>();
         g.DFS(0, cycles);
 

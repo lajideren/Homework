@@ -5,7 +5,7 @@ public class ex2 {
         /**
          * n为盘子的数量
          */
-        int n=6;
+        int n=3;
 
         hanoi('A','C','B',n);
     }

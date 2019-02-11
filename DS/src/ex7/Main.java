@@ -11,15 +11,50 @@ import java.util.Scanner;
 public class Main {
 
     static int vertexNum;
-    static boolean[] visited;
+//    static boolean[] visited;
     static int[][] edge;
     static List<Integer> vertex;
     static List<Integer> path;
 
+
+    public static void DFSByStack(int v){
+
+        boolean[] visited=new boolean[vertexNum];
+        int[] stack=new int[vertexNum];
+        int top=-1;
+
+        //第一个节点入栈
+        visited[v]=true;
+        stack[++top]=v;
+        System.out.print(vertex.get(v)+" ");
+
+        while(top!=-1){
+
+
+
+            int i;
+            for(i=0;i<vertexNum;i++){
+                if(edge[stack[top]][i]==1&&!visited[i]){
+                    visited[i]=true;
+                    System.out.print(vertex.get(i)+" ");
+                    stack[++top]=i;
+                    break;
+                }
+            }
+            //没有找到没有访问过的子节点
+            if(i==vertexNum){
+                top--;
+            }
+
+        }
+
+
+    }
+
     public static void DFS(int v, List<List<Integer>> cycle) {
 
         if (path.indexOf(vertex.get(v)) == -1) {
-            visited[v] = true;
+//            visited[v] = true;
             path.add(vertex.get(v));
             for (int i = 0; i < vertexNum; i++) {
                 if (edge[v][i] == 1) {
@@ -84,7 +119,7 @@ public class Main {
 
         //读入边的数据
 //        Scanner sc=new Scanner(new File(FileName));
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(new File("src/ex7/edges2.txt"));
         String temp;
 
         while (sc.hasNext()) {
@@ -130,7 +165,7 @@ public class Main {
             edge[vertexList.indexOf(head)][vertexList.indexOf(tail)] = 1;
         }
 
-        Main.visited=visited;
+//        Main.visited=visited;
         Main.edge=edge;
         Main.vertex=vertexList;
         Main.vertexNum=vertexList.size();
@@ -169,7 +204,8 @@ public class Main {
         List<List<Integer>> cycles = new ArrayList<>();
         DFS(0,cycles);
         printCycles(cycles);
-
+        System.out.println();
+        DFSByStack(0);
 
 
     }
